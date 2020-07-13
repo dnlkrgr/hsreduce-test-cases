@@ -1,18 +1,13 @@
 #!/run/current-system/sw/bin/bash
-START1=$(date +"%s")
-echo main | ghci Bug.hs 
-END1=$(date +"%s")
-A=$(expr $END1 - $START1)
- 
 
-ghc -O1 Bug.hs
+ghc -O0 Bug.hs -rtsopts > /dev/null
+FAST=$(./Bug +RTS -t --machine-readable -RTS 2>&1 | grep -oP 'mutator_wall_seconds\", \"\K[0-9]*\.[0-9]*')
 
-START2=$(date +"%s")
-./Bug 
-END2=$(date +"%s")
-B=$(expr $END2 - $START2)
+ghc -O1 Bug.hs -rtsopts > /dev/null
+SLOW=$(./Bug +RTS -t --machine-readable -RTS 2>&1 | grep -oP 'mutator_wall_seconds\", \"\K[0-9]*\.[0-9]*')
 
+RATIO=$(python -c "print ($SLOW * 1.0/ $FAST)")
+echo $RATIO
 
-RATIO=$(expr $B / $A)
-
-[[ $RATIO -ge 5 ]]
+RESULT=$(python -c "print ($RATIO > 5.0)")
+[[ $RESULT == "True" ]]

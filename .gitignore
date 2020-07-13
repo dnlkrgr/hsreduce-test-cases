@@ -24,3 +24,7 @@ cabal.project.local~
 Bug
 error.txt
 output.txt
+Bug.hs.stale_state
+Bug.stale.hs
+Bug.stale
+Bug.old.hs

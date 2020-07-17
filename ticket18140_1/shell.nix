@@ -7,6 +7,6 @@ with import (builtins.fetchGit {
 
 let ghc = haskell.packages.ghc8101.ghcWithPackages (p: with p; [ aeson bytestring syb vector utf8-string integer-gmp base16-bytestring ]);
 in mkShell {
-  name = "arst";
+  name = "ticket18140_1";
   buildInputs = [ ghc ];
 }

@@ -1,4 +1,4 @@
-{-# LANGUAGE AllowAmbiguousTypes, RankNTypes, TypeApplications, TypeFamilies, TypeInType #-}
+{-# LANGUAGE AllowAmbiguousTypes, ConstraintKinds, GADTs, RankNTypes, ScopedTypeVariables, TemplateHaskell, Trustworthy, TypeApplications, TypeFamilies, TypeInType, TypeOperators #-}
 module Eliminator (
     ) where
 import Data.Kind

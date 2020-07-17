@@ -1,4 +1,4 @@
-{-# LANGUAGE TypeInType, ViewPatterns, PatternSynonyms, GADTs, ScopedTypeVariables #-}
+{-# LANGUAGE TypeInType, ViewPatterns, TypeOperators, RankNTypes, PatternSynonyms, FlexibleInstances, GADTs, ScopedTypeVariables, UndecidableInstances, TypeApplications #-}
 module DataTypeableInternal (
     ) where
 data TypeRep (a :: k)

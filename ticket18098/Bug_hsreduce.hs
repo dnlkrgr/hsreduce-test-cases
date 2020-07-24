@@ -1,21 +1,17 @@
-{-# LANGUAGE BangPatterns, FlexibleContexts, GADTs, MultiParamTypeClasses, RankNTypes, ScopedTypeVariables, TypeFamilies #-}
+{-# LANGUAGE FlexibleContexts, GADTs, MultiParamTypeClasses, RankNTypes, TypeFamilies #-}
 module Bug (
         gcons
     ) where
-import Control.Monad.ST ( runST )
-import Data.Kind ( Type )
-import Data.Functor.Identity ( Identity(..) )
-import GHC.ST ( ST(..) )
-import GHC.Types ( SPEC(..) )
-gcons :: forall v a. GVector v a => a -> v a -> ()
-gcons x v
-  = gelemseq (undefined :: v a) undefined $ gunstream $ bcons x
-      $ gstream v
+import Data.Functor.Identity
+import GHC.ST
+import GHC.Types
+gcons :: GVector v a => a -> v a -> v a
+gcons x v = gunstream $ bcons x $ gstream v
 {-# INLINE gcons #-}
-data New v a = New (forall s. ST s ())
+data New v a = New (forall s. ST s (Mutable v s a))
 data Chunk v a
   = Chunk Int (forall m.
-               GVector v a => Mutable v (PrimState m) a -> m ())
+               (PrimMonad m, GVector v a) => Mutable v (PrimState m) a -> m ())
 data Step s a
   where
     Yield :: a -> s -> Step s a
@@ -34,29 +30,30 @@ data MBundle m v a
 class Monad m => PrimMonad m where
   type PrimState m
 instance PrimMonad (ST s) where
-  type PrimState (ST s) = ()
+  type PrimState (ST s) = s
 type family Mutable (v :: Type -> Type) :: Type -> Type -> Type
 class GMVector v a where
-  gmbasicLength :: v () a -> Int
-  gmbasicUnsafeSlice :: () -> () -> v () a -> v () a
-  gmbasicUnsafeNew :: () -> m (v () a)
+  gmbasicLength :: v s a -> Int
+  gmbasicUnsafeSlice :: () -> Int -> v s a -> v s a
+  gmbasicUnsafeNew :: () -> m (v (PrimState m) a)
   gmbasicUnsafeWrite :: v (PrimState m) a -> () -> a -> m ()
   gmbasicUnsafeGrow :: () -> () -> m (v () a)
 class GMVector (Mutable v) a => GVector v a where
-  gbasicUnsafeFreeze :: () -> m (v a)
+  gbasicUnsafeFreeze :: Mutable v (PrimState m) a -> m (v a)
   gbasicLength :: v a -> ()
   gbasicUnsafeIndexM :: v () -> () -> m a
   gbasicUnsafeCopy :: () -> v a -> m ()
-  gelemseq :: v a -> () -> () -> ()
+  gelemseq :: v a -> ()
 sfoldlM m w (Stream step t)
-  = foldlM_loop SPEC w t
+  = foldlM_loop undefined w t
   where
-      foldlM_loop !_ z s
+      foldlM_loop _ z s
         = do r <- step s
-             case r of {
+             case r of
                Yield x s'
                  -> do z' <- m z x
-                       foldlM_loop SPEC z' s' }
+                       foldlM_loop undefined z' s'
+               _ -> return undefined
 {-# INLINE [1] sfoldlM #-}
 Stream stepa _ `sappend` Stream stepb _
   = Stream step (Left undefined)
@@ -85,10 +82,8 @@ blift (Bundle _ (Stream vstep t) _ _)
       undefined
       undefined
 bmfromVector v
-  = v `seq` n
-      `seq` Bundle undefined (Stream vstep undefined) undefined undefined
+  = Bundle undefined (Stream vstep undefined) undefined undefined
   where
-      n = gbasicLength v
       vstep True
         = return
             (Yield
@@ -106,28 +101,27 @@ bmfromStream (Stream step _) _
                $ fmap (\ x -> Chunk 1 (\ v -> gmbasicUnsafeWrite v undefined x)) r
 bmchunks = sChunks
 nrun (New p) = p
-nunstream s = s `seq` New (gmvunstream s)
+nunstream :: GVector v a => Bundle v a -> New v a
+nunstream s = New (gmvunstream s)
 gmunsafeNew _ = gmbasicUnsafeNew undefined
 gmvunstream s = gmvmunstream (blift s)
 {-# INLINE [1] gmvunstream #-}
 gmvmunstream s = gmvmunstreamUnknown s
-{-# INLINE [1] gmvmunstream #-}
 gmvmunstreamUnknown s
   = do v <- gmunsafeNew undefined
-       _ <- sfoldlM copyChunk (v, 0) (bmchunks s)
-       undefined
+       _ <- sfoldlM copyChunk (v, undefined) (bmchunks s)
+       return $ undefined
   where
-      copyChunk (v, i) (Chunk n f)
-        = do let j = i + n
-             v' <- if gmbasicLength v < j then
-                       gmunsafeGrow undefined undefined
-                   else
-                       undefined
-             f (gmbasicUnsafeSlice undefined undefined v')
+      copyChunk (v, _) (Chunk n f)
+        = do let j = n
+             v' <- if gmbasicLength v < j then undefined else return undefined
+             f (gmbasicUnsafeSlice undefined n v')
              return (v', j)
 {-# INLINE gmvmunstreamUnknown #-}
-gmunsafeGrow _ _ = gmbasicUnsafeGrow undefined undefined
-gnew m = m `seq` runST (undefined =<< nrun m)
+gnew m = runST (gunsafeFreeze =<< nrun m)
 gstream v = gstream' v
 gstream' v = bfromVector v
+gunsafeFreeze ::
+  GVector v a => Mutable v (PrimState m) a -> m (v a)
+gunsafeFreeze = gbasicUnsafeFreeze
 gunstream s = gnew (nunstream s)

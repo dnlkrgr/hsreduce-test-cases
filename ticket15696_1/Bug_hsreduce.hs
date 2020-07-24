@@ -1,16 +1,16 @@
 module Main (
         main
     ) where
-import qualified Data.Foldable as Foldable
+import Data.Foldable as Foldable
 main
-  = print $ Foldable.foldl' (flip wumbo) (singleton a) b
+  = print $ foldl' (flip wumbo) (singleton a) b
   where
       f _ = T2
       a = f undefined
       b = [f undefined]
 data T
   = T1 | T2
-  deriving (Eq, Show)
+  deriving Show
 data Set a
   = Bin !a !(Set ()) !(Set a) | Tip
   deriving Show

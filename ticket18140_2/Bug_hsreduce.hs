@@ -1,90 +1,70 @@
-{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DeriveGeneric, DeriveDataTypeable, GeneralizedNewtypeDeriving, CPP #-}
 module AllInOne (
     ) where
-import qualified Data.Data
-import qualified Data.Typeable
-import qualified GHC.Classes
-import qualified GHC.Generics
-import qualified GHC.Maybe
-import qualified GHC.Read
-import qualified GHC.Show
-import qualified GHC.Types
-import qualified Text.ProtocolBuffers.Basic
-data FileOptions_TextDescriptorProtosFileOptions
-  = FileOptions_TextDescriptorProtosFileOptions {java_package_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe Text.ProtocolBuffers.Basic.Utf8),
-                                                 java_outer_classname_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe Text.ProtocolBuffers.Basic.Utf8),
-                                                 java_multiple_files_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe GHC.Types.Bool),
-                                                 java_generate_equals_and_hash_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe GHC.Types.Bool),
-                                                 java_string_check_utf8_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe GHC.Types.Bool),
-                                                 optimize_for_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe OptimizeMode_TextDescriptorProtosFileOptionsOptimizeMode),
-                                                 go_package_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe Text.ProtocolBuffers.Basic.Utf8),
-                                                 cc_generic_services_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe GHC.Types.Bool),
-                                                 java_generic_services_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe GHC.Types.Bool),
-                                                 py_generic_services_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe GHC.Types.Bool),
-                                                 deprecated_TextDescriptorProtosFileOptions :: !(GHC.Maybe.Maybe GHC.Types.Bool),
-                                                 cc_enable_arenas_TextDescriptorProtosFileOptions :: (),
-                                                 objc_class_prefix_TextDescriptorProtosFileOptions :: (),
-                                                 csharp_namespace_TextDescriptorProtosFileOptions :: (),
-                                                 javanano_use_deprecated_package_TextDescriptorProtosFileOptions :: (),
-                                                 uninterpreted_option_TextDescriptorProtosFileOptions :: (),
-                                                 ext'field_TextDescriptorProtosFileOptions :: (),
-                                                 unknown'field_TextDescriptorProtosFileOptions :: ()}
-  deriving (GHC.Show.Show,
-            GHC.Classes.Eq,
-            GHC.Classes.Ord,
-            Data.Typeable.Typeable,
-            Data.Data.Data,
-            GHC.Generics.Generic)
-instance Text.ProtocolBuffers.Basic.Mergeable FileOptions_TextDescriptorProtosFileOptions where
-  mergeAppend
-    (FileOptions_TextDescriptorProtosFileOptions x'1
-                                                 x'2
-                                                 x'3
-                                                 x'4
-                                                 x'5
-                                                 x'6
-                                                 x'7
-                                                 x'8
-                                                 x'9
-                                                 x'10
-                                                 x'11
-                                                 _
-                                                 _
-                                                 _
-                                                 _
-                                                 _
-                                                 _
-                                                 _)
-    (FileOptions_TextDescriptorProtosFileOptions y'1
-                                                 y'2
-                                                 y'3
-                                                 y'4
-                                                 y'5
-                                                 y'6
-                                                 y'7
-                                                 y'8
-                                                 y'9
-                                                 y'10
-                                                 y'11
-                                                 _
-                                                 _
-                                                 _
-                                                 _
-                                                 _
-                                                 _
-                                                 _)
-    = FileOptions_TextDescriptorProtosFileOptions
-        (Text.ProtocolBuffers.Basic.mergeAppend x'1 y'1)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'2 y'2)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'3 y'3)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'4 y'4)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'5 y'5)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'6 y'6)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'7 y'7)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'8 y'8)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'9 y'9)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'10 y'10)
-        (Text.ProtocolBuffers.Basic.mergeAppend x'11 y'11)
+import Data.Aeson
+import Data.ByteString.Lazy
+import Data.Sequence
+import Data.String
+import GHC.Base
+import GHC.Enum
+import GHC.Int
+import GHC.Maybe
+import GHC.Read
+import GHC.Show
+import GHC.Types
+import GHC.Word
+data FileOptions_TextDescriptorProtosFileOptions_AllInOne
+  = FileOptions_TextDescriptorProtosFileOptions_AllInOne () () () !(Maybe ()) !(Maybe ()) !(Maybe ()) !(Maybe ()) !(Maybe ()) !(Maybe ()) !(Maybe ()) !(Maybe ()) () () () () () () ()
+instance Mergeable_TextProtocolBuffersBasic FileOptions_TextDescriptorProtosFileOptions_AllInOne where
+  mergeAppend_TextProtocolBuffersBasic
+    (FileOptions_TextDescriptorProtosFileOptions_AllInOne _
+                                                          _
+                                                          _
+                                                          x'4
+                                                          x'5
+                                                          x'6
+                                                          x'7
+                                                          x'8
+                                                          x'9
+                                                          x'10
+                                                          x'11
+                                                          _
+                                                          _
+                                                          _
+                                                          _
+                                                          _
+                                                          _
+                                                          _)
+    (FileOptions_TextDescriptorProtosFileOptions_AllInOne _
+                                                          _
+                                                          _
+                                                          y'4
+                                                          y'5
+                                                          y'6
+                                                          y'7
+                                                          y'8
+                                                          y'9
+                                                          y'10
+                                                          y'11
+                                                          _
+                                                          _
+                                                          _
+                                                          _
+                                                          _
+                                                          _
+                                                          _)
+    = FileOptions_TextDescriptorProtosFileOptions_AllInOne
+        undefined
+        undefined
+        undefined
+        (mergeAppend_TextProtocolBuffersBasic x'4 y'4)
+        (mergeAppend_TextProtocolBuffersBasic x'5 y'5)
+        (mergeAppend_TextProtocolBuffersBasic x'6 y'6)
+        (mergeAppend_TextProtocolBuffersBasic x'7 y'7)
+        (mergeAppend_TextProtocolBuffersBasic x'8 y'8)
+        (mergeAppend_TextProtocolBuffersBasic x'9 y'9)
+        (mergeAppend_TextProtocolBuffersBasic x'10 y'10)
+        (mergeAppend_TextProtocolBuffersBasic x'11 y'11)
         undefined
         undefined
         undefined
@@ -92,15 +72,67 @@ instance Text.ProtocolBuffers.Basic.Mergeable FileOptions_TextDescriptorProtosFi
         undefined
         undefined
         undefined
-instance Text.ProtocolBuffers.Basic.Default FileOptions_TextDescriptorProtosFileOptions where
-data OptimizeMode_TextDescriptorProtosFileOptionsOptimizeMode
-  = LITE_RUNTIME_TextDescriptorProtosFileOptionsOptimizeMode
-  deriving (GHC.Read.Read,
-            GHC.Show.Show,
-            GHC.Classes.Eq,
-            GHC.Classes.Ord,
-            Data.Typeable.Typeable,
-            Data.Data.Data,
-            GHC.Generics.Generic)
-instance Text.ProtocolBuffers.Basic.Mergeable OptimizeMode_TextDescriptorProtosFileOptionsOptimizeMode
-instance Text.ProtocolBuffers.Basic.Default OptimizeMode_TextDescriptorProtosFileOptionsOptimizeMode where
+instance Default_TextProtocolBuffersBasic FileOptions_TextDescriptorProtosFileOptions_AllInOne
+data OptimizeMode_TextDescriptorProtosFileOptionsOptimizeMode_AllInOne
+  = LITE_RUNTIME_TextDescriptorProtosFileOptionsOptimizeMode_AllInOne
+instance Mergeable_TextProtocolBuffersBasic OptimizeMode_TextDescriptorProtosFileOptionsOptimizeMode_AllInOne
+instance Default_TextProtocolBuffersBasic OptimizeMode_TextDescriptorProtosFileOptionsOptimizeMode_AllInOne
+newtype Utf8_TextProtocolBuffersBasic
+  = Utf8_TextProtocolBuffersBasic ()
+instance Read Utf8_TextProtocolBuffersBasic
+instance Show Utf8_TextProtocolBuffersBasic
+instance IsString ()
+instance Semigroup Utf8_TextProtocolBuffersBasic
+instance Monoid Utf8_TextProtocolBuffersBasic
+instance ToJSON Utf8_TextProtocolBuffersBasic where
+  toJSON _ = undefined
+instance FromJSON Utf8_TextProtocolBuffersBasic where
+  parseJSON _ = undefined
+newtype WireTag_TextProtocolBuffersBasic
+  = WireTag_TextProtocolBuffersBasic Word32
+newtype FieldId_TextProtocolBuffersBasic
+  = FieldId_TextProtocolBuffersBasic Int32
+instance Bounded FieldId_TextProtocolBuffersBasic
+newtype WireType_TextProtocolBuffersBasic
+  = WireType_TextProtocolBuffersBasic Word32
+instance Bounded WireType_TextProtocolBuffersBasic
+newtype FieldType_TextProtocolBuffersBasic
+  = FieldType_TextProtocolBuffersBasic Int
+instance Bounded FieldType_TextProtocolBuffersBasic
+newtype EnumCode_TextProtocolBuffersBasic
+  = EnumCode_TextProtocolBuffersBasic Int32
+instance Bounded EnumCode_TextProtocolBuffersBasic
+class Mergeable_TextProtocolBuffersBasic a where
+  mergeAppend_TextProtocolBuffersBasic :: a -> a -> a
+  mergeConcat_TextProtocolBuffersBasic :: () -> a
+class Default_TextProtocolBuffersBasic a where
+  defaultValue_TextProtocolBuffersBasic :: a
+instance Mergeable_TextProtocolBuffersBasic (Maybe a) where
+  mergeAppend_TextProtocolBuffersBasic
+    = mayMerge_TextProtocolBuffersBasic
+{-# INLINE mayMerge_TextProtocolBuffersBasic #-}
+mayMerge_TextProtocolBuffersBasic :: Maybe b -> Maybe b -> Maybe b
+mayMerge_TextProtocolBuffersBasic Nothing y = y
+mayMerge_TextProtocolBuffersBasic x Nothing = x
+mayMerge_TextProtocolBuffersBasic _ _ = Just undefined
+instance Mergeable_TextProtocolBuffersBasic ()
+instance Mergeable_TextProtocolBuffersBasic Bool
+instance Mergeable_TextProtocolBuffersBasic Utf8_TextProtocolBuffersBasic
+instance Mergeable_TextProtocolBuffersBasic ByteString
+instance Mergeable_TextProtocolBuffersBasic Double
+instance Mergeable_TextProtocolBuffersBasic Float
+instance Mergeable_TextProtocolBuffersBasic Int32
+instance Mergeable_TextProtocolBuffersBasic Int64
+instance Mergeable_TextProtocolBuffersBasic Word32
+instance Mergeable_TextProtocolBuffersBasic Word64
+instance Default_TextProtocolBuffersBasic ()
+instance Default_TextProtocolBuffersBasic Word32
+instance Default_TextProtocolBuffersBasic Int64
+instance Default_TextProtocolBuffersBasic Int32
+instance Default_TextProtocolBuffersBasic Float
+instance Default_TextProtocolBuffersBasic Double
+instance Default_TextProtocolBuffersBasic Bool
+instance Default_TextProtocolBuffersBasic (Maybe a)
+instance Default_TextProtocolBuffersBasic (Seq a)
+instance Default_TextProtocolBuffersBasic ByteString
+instance Default_TextProtocolBuffersBasic Utf8_TextProtocolBuffersBasic

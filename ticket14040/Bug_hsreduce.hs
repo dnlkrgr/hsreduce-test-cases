@@ -1,8 +1,10 @@
-{-# LANGUAGE AllowAmbiguousTypes, ConstraintKinds, GADTs, RankNTypes, ScopedTypeVariables, TemplateHaskell, Trustworthy, TypeApplications, TypeFamilies, TypeInType, TypeOperators #-}
+{-# LANGUAGE AllowAmbiguousTypes, RankNTypes, TypeApplications, TypeFamilies, TypeInType, TypeOperators #-}
 module Eliminator (
     ) where
 import Data.Kind
 data family Sing a
+type family Apply f x
+type a @@ b = Apply () ()
 data FunArrow = (:->)
 class FunType arr where
   type Fun k1 arr k2
@@ -13,12 +15,11 @@ instance FunType (:->) where
 instance AppType (:->) where
   type App () (:->) k2 f x = f x
 listElimTyFun ::
-  () -> () -> (forall xs. Sing () -> Sing () -> () -> p) -> ()
-listElimTyFun = listElimPoly @(:->) @() @() @()
+  () -> () -> (forall xs. Sing () -> Sing () -> () -> () @@ ()) -> ()
+listElimTyFun = listElimPoly @(:->) @()
 listElimPoly ::
-  forall arr a p l.
   ()
   -> ()
-     -> (forall xs. Sing () -> Sing () -> () -> App () arr Type p (xs))
+     -> (forall x. Sing () -> Sing () -> () -> App () arr Type p (x))
         -> ()
-listElimPoly _ _ _ = undefined
+listElimPoly _ = undefined

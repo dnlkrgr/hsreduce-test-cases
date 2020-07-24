@@ -10,20 +10,19 @@ import GHC.Generics
 import GHC.TypeLits
 data Poly a b
   = PCons a (Poly b a)
-  deriving (Show, Generic)
+  deriving Generic
 poly = PCons undefined undefined
 strs = toListOf (param @0) poly
 toListOf l = foldrOf l undefined undefined
 foldrOf l _ _ = flip appEndo undefined . foldMapOf l undefined
 foldMapOf l _ = getConst #. l undefined
 class Profunctor p where
-  dimap :: () -> () -> () -> ()
+  dimap :: () -> ()
   (#.) :: Coercible c b => q b c -> p a b -> p a c
 instance Profunctor (->) where
-  dimap _ _ _ = undefined
+  dimap _ = undefined
   {-# INLINE dimap #-}
-  (#.) _
-    = coerce (\ x -> x :: b) :: forall a b. Coercible b a => a -> b
+  (#.) _ = coerce
   {-# INLINE (#.) #-}
 class HasParam p s t a b | p t a -> s, p s b -> t, p s -> a, p
                                                              t -> b where
@@ -42,14 +41,13 @@ confusing t
 newtype Yoneda f a
   = Yoneda {runYoneda :: forall b. (a -> b) -> f b}
 instance Functor (Yoneda f) where
-  fmap _ m = Yoneda (\ _ -> runYoneda m undefined)
 instance Applicative (Yoneda f) where
 newtype Curried f a
   = Curried {runCurried :: forall r. f (a -> r) -> f r}
-instance Functor f => Functor (Curried f) where
-  fmap _ (Curried g) = Curried (g . fmap undefined)
+instance Functor (Curried f) where
+  fmap _ (Curried g) = Curried (g . undefined)
   {-# INLINE fmap #-}
-instance (Functor f) => Applicative (Curried f) where
+instance Applicative (Curried f) where
   pure _ = undefined
   {-# INLINE pure #-}
   _ <*> Curried ma = Curried (ma . undefined . undefined)
@@ -69,7 +67,7 @@ instance GHasParam p s t a b =>
 instance {-# OVERLAPPABLE #-} (GHasParamRec (LookupParam si p) s t a b) =>
                               GHasParam p (Rec si s) (Rec ti t) a b where
   gparam f (Rec (K1 x))
-    = undefined <$> gparamRec @(LookupParam si p) f x
+    = Rec . K1 <$> gparamRec @(LookupParam si p) f x
 class GHasParamRec param s t a b | param t a b -> s, param
                                                      s
                                                      a

@@ -1,0 +1,17 @@
+_passName,_successfulAttempts,_totalAttempts,_removedBytes
+expr2Undefined,1,97,6
+localBinds,1,1,10
+pat2Wildcard,1,21,0
+pragmas,0,105,0
+removeExports,1,1,20
+rmvDecls,4,154,217
+rmvImports,3,20,57
+simplifyConDecl,0,36,0
+simplifyDecl,2,18,124
+simplifyExpr,0,18,0
+simplifyMatch,0,12,0
+simplifyMatches,1,11,22
+simplifyType,2,4,16
+tyVarBndr,1,6,12
+type2Unit,4,229,20
+unqualImport,1,15,28

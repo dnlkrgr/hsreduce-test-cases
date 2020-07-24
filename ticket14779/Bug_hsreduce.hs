@@ -3,7 +3,7 @@ module Data.Fixed (
     ) where
 data DataType = DataType {datarep :: DataRep}
 data Constr = Constr {conrep :: ConstrRep, constring :: String}
-data DataRep = AlgRep [Constr] | NoRep
+data DataRep = AlgRep [Constr] | CharRep
 data ConstrRep = AlgConstr ()
 mkDataType _ cs = DataType {datarep = AlgRep cs}
 mkConstr dt str _ _

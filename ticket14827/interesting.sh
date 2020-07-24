@@ -9,5 +9,5 @@ SLOW=$(./Bug +RTS -t --machine-readable -RTS 2>&1 | grep -oP 'mutator_wall_secon
 RATIO=$(python -c "print ($SLOW * 1.0/ $FAST)")
 echo $RATIO
 
-RESULT=$(python -c "print ($RATIO > 5.0)")
+RESULT=$(python -c "print ($RATIO > 4.0)")
 [[ $RESULT == "True" ]]

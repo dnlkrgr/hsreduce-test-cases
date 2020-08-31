@@ -1,9 +1,5 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
-timeout 25s ghc -XFlexibleContexts Bug -O2 
+timeout 37s ghc -O2 -XFlexibleContexts Bug.hs 
 
-if [ $? = 124 ] || [ $? = 137 ]; then
-    exit 0;
-else
-    exit 1;
-fi;
+[[ $? -eq 124 || $? -eq 137 ]]

@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
 OUTPUT=output.txt
 ERROR=error.txt

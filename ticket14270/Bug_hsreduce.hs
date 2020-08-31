@@ -1,12 +1,13 @@
-{-# LANGUAGE TypeInType, ViewPatterns, PatternSynonyms, GADTs, ScopedTypeVariables #-}
+{-# LANGUAGE TypeInType, ViewPatterns, PatternSynonyms, GADTs #-}
 module DataTypeableInternal (
     ) where
-data TypeRep (a :: k)
+data A (a :: b)
   where
-    TrFun :: forall r1 r2 a b. () -> () -> () -> TypeRep (() -> ())
-pattern App f x <- (splitApp -> Just (IsApp f x)) where
+    C :: () -> () -> () -> A ()
+    D :: () -> () -> () -> A ()
+    E :: () -> () -> () -> A (() -> ())
+pattern App f h <- (f -> Just (G f h)) where
                   App _ _ = undefined
-data IsApp a
-  where IsApp :: forall k k' f x. TypeRep f -> () -> IsApp (f ())
-splitApp :: TypeRep a -> Maybe (IsApp a)
-splitApp rep@(TrFun _ _ _) = Just (IsApp undefined undefined)
+data G a where G :: A f -> () -> G (f ())
+f :: A a -> Maybe (G a)
+f i@(E _ _ _) = Just (G undefined undefined)

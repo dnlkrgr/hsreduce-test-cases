@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash 
 
 ghc Bug.hs 2> error.txt
 

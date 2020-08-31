@@ -1,13 +1,23 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
-ghc -O Bug.hs -rtsopts > /dev/null
-A=$(./Bug +RTS -t --machine-readable -RTS 2>&1 | grep -oP 'bytes allocated\", \"\K[0-9]*')
+rm -f Bug
+ghc -rtsopts -O2 Bug.hs > /dev/null
 
-ghc -O2 Bug.hs -rtsopts > /dev/null
-B=$(./Bug +RTS -t --machine-readable -RTS 2>&1 | grep -oP 'bytes allocated\", \"\K[0-9]*')
+rm -f output.txt
+timeout 25s ./Bug 2 +RTS -t --machine-readable -RTS > output.txt 2>&1
+A_BROKEN=$?
+A=$(grep -oP 'bytes allocated\", \"\K[0-9]*' output.txt)
+
+rm -f output.txt
+timeout 25s ./Bug 1 +RTS -t --machine-readable -RTS > output.txt 2>&1
+B_BROKEN=$?
+B=$(grep -oP 'bytes allocated\", \"\K[0-9]*' output.txt)
+
 
 RATIO=$(python -c "print ($A * 1.0/ $B)")
 echo $RATIO
 
-RESULT=$(python -c "print ($RATIO > 5.0)")
-[[ $RESULT == "True" ]]
+BIG_ENOUGH=$(python -c "print ($RATIO > 15.0)")
+SMALL_ENOUGH=$(python -c "print ($RATIO < 64.0)")
+
+[[ $A_BROKEN -eq 0 && $B_BROKEN -eq 0 && $BIG_ENOUGH == "True" && $SMALL_ENOUGH == "True" ]]

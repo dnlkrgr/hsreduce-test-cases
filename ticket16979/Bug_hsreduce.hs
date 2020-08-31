@@ -1,6 +1,6 @@
-{-# LANGUAGE AllowAmbiguousTypes, DataKinds, DeriveGeneric, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, InstanceSigs, PolyKinds, RankNTypes, ScopedTypeVariables, TypeApplications, TypeFamilies, TypeOperators, UndecidableInstances #-}
+{-# LANGUAGE AllowAmbiguousTypes, DataKinds, DeriveGeneric, FlexibleInstances, FunctionalDependencies, GADTs, InstanceSigs, PolyKinds, RankNTypes, ScopedTypeVariables, TypeApplications, TypeFamilies, TypeOperators, UndecidableInstances #-}
 module Bug (
-        strs
+        a
     ) where
 import Control.Applicative
 import Data.Coerce
@@ -8,40 +8,39 @@ import Data.Kind
 import Data.Monoid
 import GHC.Generics
 import GHC.TypeLits
-data Poly a b
-  = PCons a (Poly b a)
+data B a b
+  = C a (B b a)
   deriving Generic
-poly = PCons undefined undefined
-strs = toListOf (param @0) poly
-toListOf l = foldrOf l undefined undefined
-foldrOf l _ _ = flip appEndo undefined . foldMapOf l undefined
-foldMapOf l _ = getConst #. l undefined
-class Profunctor p where
-  dimap :: () -> ()
-  (#.) :: Coercible c b => q b c -> p a b -> p a c
-instance Profunctor (->) where
-  dimap _ = undefined
+d = C undefined undefined
+a = e (f @0) d
+e g = foldrOf g undefined undefined
+foldrOf g _ _ = flip appEndo undefined . foldMapOf g undefined
+foldMapOf g _ = getConst #. g undefined
+class H i where
+  dimap :: () -> () -> () -> ()
+  (#.) :: Coercible c b => j b c -> i a b -> i a c
+instance H (->) where
+  dimap _ _ _ = undefined
   {-# INLINE dimap #-}
-  (#.) _ = coerce
+  (#.) _ = coerce :: forall a b. Coercible b a => a -> b
   {-# INLINE (#.) #-}
-class HasParam p s t a b | p t a -> s, p s b -> t, p s -> a, p
-                                                             t -> b where
-  param :: Applicative g => (a -> g b) -> s -> g t
-instance (GenericN s,
-          GenericN t,
-          s ~ Infer t (P n ()  'PTag) (),
-          t ~ Infer s (P n ()  'PTag) b,
-          b ~ ArgAt t n,
-          GHasParam n (RepN s) (RepN t) () b) =>
-         HasParam n s t () b where
-  param = confusing (\ f s -> toN <$> gparam @n f (fromN s))
-  {-# INLINE param #-}
-confusing t
-  = \ f -> lowerYoneda . lowerCurried . t (liftCurriedYoneda . f)
-newtype Yoneda f a
-  = Yoneda {runYoneda :: forall b. (a -> b) -> f b}
-instance Functor (Yoneda f) where
-instance Applicative (Yoneda f) where
+class HasParam i k l a b | i l a -> k, i k b -> l, i k -> a, i
+                                                             l -> b where
+  f :: Applicative g => (a -> g b) -> k -> g l
+instance (GenericN k,
+          GenericN l,
+          k ~ Infer l (M n () 'N) (),
+          l ~ Infer k (M n () 'N) b,
+          b ~ ArgAt l n,
+          GHasParam n (O k) (O l) () b) =>
+         HasParam n k l () b where
+  f = confusing (\ f k -> p <$> gparam @n f (fromN k))
+  {-# INLINE f #-}
+confusing l
+  = \ f -> lowerYoneda . lowerCurried . l (liftCurriedYoneda . f)
+newtype Q f a = Q {r :: forall b. (a -> b) -> f b}
+instance Functor (Q f) where
+instance Applicative (Q f) where
 newtype Curried f a
   = Curried {runCurried :: forall r. f (a -> r) -> f r}
 instance Functor (Curried f) where
@@ -50,86 +49,82 @@ instance Functor (Curried f) where
 instance Applicative (Curried f) where
   pure _ = undefined
   {-# INLINE pure #-}
-  _ <*> Curried ma = Curried (ma . undefined . undefined)
+  Curried mf <*> Curried ma = Curried (ma . mf . undefined)
   {-# INLINE (<*>) #-}
-lowerYoneda (Yoneda f) = f id
+lowerYoneda (Q f) = f id
 lowerCurried (Curried f) = f (pure id)
-liftCurriedYoneda fa = Curried (`yap` fa)
-yap (Yoneda k) fa = undefined (\ _ -> k (undefined .) <*> fa)
-class GHasParam p s t a b where
-  gparam :: Applicative g => (a -> g b) -> s () -> g (t ())
-instance (GHasParam p l l' a b, GHasParam p r r' a b) =>
-         GHasParam p (l :*: r) (l' :*: r') a b where
-  gparam f (l :*: r) = (:*:) <$> gparam @p f l <*> gparam @p f r
-instance GHasParam p s t a b =>
-         GHasParam p (M1 () meta s) (M1 () meta t) a b where
-  gparam f (M1 x) = M1 <$> gparam @p f x
-instance {-# OVERLAPPABLE #-} (GHasParamRec (LookupParam si p) s t a b) =>
-                              GHasParam p (Rec si s) (Rec ti t) a b where
-  gparam f (Rec (K1 x))
-    = Rec . K1 <$> gparamRec @(LookupParam si p) f x
-class GHasParamRec param s t a b | param t a b -> s, param
-                                                     s
-                                                     a
-                                                     b -> t where
-  gparamRec :: Applicative g => (a -> g b) -> s -> g t
-instance GHasParamRec  'Nothing a a () () where
-instance (HasParam n s t a b) =>
-         GHasParamRec ( 'Just n) s t a b where
-  gparamRec = param @n
-type family LookupParam (a :: k) (p :: Nat) :: Maybe Nat where
-  LookupParam (param (n :: Nat)) m =  'Nothing
-  LookupParam (a (_ m)) n = IfEq m n ( 'Just 0) (MaybeAdd (LookupParam a n) 1)
+liftCurriedYoneda fa = Curried (`s` fa)
+s (Q k) fa = undefined (\ _ -> k (undefined .) <*> fa)
+class GHasParam i k l a b where
+  gparam :: Applicative g => (a -> g b) -> k () -> g (l ())
+instance (GHasParam i g l' () (), GHasParam i r r' a b) =>
+         GHasParam i (g :*: r) (l' :*: r') a b where
+  gparam f (_ :*: r) = (:*:) <$> undefined <*> gparam @i f r
+instance GHasParam i k l a b =>
+         GHasParam i (M1 () meta k) (M1 () meta l) a b where
+  gparam f (M1 t) = M1 <$> gparam @i f t
+instance {-# OVERLAPPABLE #-} (GHasParamRec (LookupParam si i) k l a b) =>
+                              GHasParam i (Rec si k) (Rec ti l) a b where
+  gparam f (Rec (K1 t))
+    = undefined <$> gparamRec @(LookupParam si i) f t
+class GHasParamRec f k l a b | f l a b -> k, f k a b -> l where
+  gparamRec :: Applicative g => (a -> g b) -> k -> g l
+instance GHasParamRec 'Nothing a a () () where
+instance (HasParam n k l a b) =>
+         GHasParamRec ('Just n) k l a b where
+  gparamRec = f @n
+type family LookupParam (a :: k) (i :: Nat) :: Maybe Nat where
+  LookupParam (f (n :: Nat)) m = 'Nothing
+  LookupParam (a (_ (m))) n = IfEq m n ('Just 0) (MaybeAdd (LookupParam a n) 1)
   LookupParam () n = MaybeAdd (LookupParam () n) 1
-  LookupParam () _ =  'Nothing
+  LookupParam () _ = 'Nothing
 type family MaybeAdd a b where
-  MaybeAdd  'Nothing _ =  'Nothing
-  MaybeAdd ( 'Just a) b =  'Just (b)
-type family IfEq a b t f where
-  IfEq a a t _ = t
+  MaybeAdd 'Nothing _ = 'Nothing
+  MaybeAdd ('Just a) b = 'Just (b)
+type family IfEq a b l f where
+  IfEq a a l _ = l
   IfEq _ _ _ f = f
 data Sub where Sub :: Nat -> k -> Sub
-type family ReplaceArg (t :: k) (pos :: Nat) (to :: j) :: k where
-  ReplaceArg (t ()) 0 to = t to
-  ReplaceArg (t ()) pos to = ReplaceArg t (pos - 1) to ()
+type family ReplaceArg (l :: k) (pos :: Nat) (to :: j) :: k where
+  ReplaceArg (l ()) 0 to = l to
+  ReplaceArg (l ()) pos to = ReplaceArg l (pos - 1) to ()
   ReplaceArg () _ () = ()
-type family ReplaceArgs t subs where
-  ReplaceArgs t '[] = t
-  ReplaceArgs t ( 'Sub n arg
-                 : ss) = ReplaceArgs (ReplaceArg t n arg) ss
-type family ArgAt (t :: k) (n :: Nat) :: j where
-  ArgAt (t a) 0 = a
-  ArgAt (t ()) n = ArgAt t (n - 1)
-type family Unify (a :: k) (b :: k) :: [Sub] where
-  Unify (p n ()  'PTag) a' = '[ 'Sub n a']
-  Unify (a ()) (b ()) = Unify a b
-  Unify () () = '[]
-type family Infer s a' b where
-  Infer (s a) a' b = ReplaceArgs (s ()) (Unify a' b)
+type family ReplaceArgs l subs where
+  ReplaceArgs l '[] = l
+  ReplaceArgs l ('Sub n arg
+                 : ss) = ReplaceArgs (ReplaceArg l n arg) ss
+type family ArgAt (l :: k) (n :: Nat) :: j where
+  ArgAt (l a) 0 = a
+  ArgAt (l ()) n = ArgAt l (n - 1)
+type family U (a :: k) (b :: k) :: [Sub] where
+  U (i n () 'N) a' = '[ 'Sub n a']
+  U (a ()) (b ()) = U a b
+  U () () = '[]
+type family Infer k a' b where
+  Infer (k a) a' b = ReplaceArgs (k ()) (U a' b)
   Infer () () () = ()
-data PTag = PTag
-type family P :: Nat -> k -> PTag -> k
+data N = N
+type family M :: Nat -> k -> N -> k
 type family Param where
-type family Indexed (t :: k) (i :: Nat) :: k where
-  Indexed (t a) i = Indexed t (1) (Param i)
-  Indexed t _ = t
-newtype Rec p a x = Rec {unRec :: K1 () a x}
-type family Zip a b where
-  Zip (M1 mt m s) (M1 mt m t) = M1 () m (Zip s t)
-  Zip (r) (l' :+: r') = Zip r r'
-  Zip (l :*: r) (l' :*: r') = Zip l l' :*: Zip r r'
-  Zip (Rec0 p) (Rec0 a) = Rec p a
-  Zip U1 U1 = U1
-class (Coercible (Rep a) (RepN a), Generic ()) => GenericN a where
-  type RepN a :: Type -> Type
-  type RepN a = Zip (Rep (Indexed a 0)) (Rep a)
-  toN :: RepN a () -> a
-  fromN :: a -> RepN a ()
-instance (Coercible (Rep a) (RepN a), Generic a) =>
-         GenericN a where
-  toN :: RepN a () -> a
-  toN = undefined
-  {-# INLINE toN #-}
-  fromN :: forall x. a -> RepN a x
-  fromN = coerce (from :: a -> Rep a x)
+type family Indexed (l :: k) (i :: Nat) :: k where
+  Indexed (l a) i = Indexed l (1) (Param i)
+  Indexed l _ = l
+newtype Rec i a t = Rec {unRec :: K1 () a t}
+type family Y a b where
+  Y (M1 mt m k) (M1 mt m l) = M1 () m (Y k l)
+  Y (g :+: r) (l' :+: r') = Y r r'
+  Y (g :*: r) (l' :*: r') = Y g l' :*: Y r r'
+  Y (Rec0 i) (Rec0 a) = Rec i a
+  Y U1 U1 = U1
+class GenericN a where
+  type O a :: Type -> Type
+  type O a = Y (Rep (Indexed a 0)) (Rep a)
+  p :: O a () -> a
+  fromN :: a -> O a ()
+instance (Coercible (Rep a) (O a), Generic a) => GenericN a where
+  p :: O a () -> a
+  p = undefined
+  {-# INLINE p #-}
+  fromN :: forall t. a -> O a t
+  fromN = coerce (from :: a -> Rep a t)
   {-# INLINE fromN #-}

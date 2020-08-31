@@ -1,70 +1,86 @@
-{-# LANGUAGE ScopedTypeVariables, BangPatterns #-}
+{-# OPTIONS_GHC -Wall #-}
+-- both sieve1 and sieve2 run in about the same time now in 8.4.1 but sieve2, the forM_ version allocates 50% more
 
--- Example of how forM_ [1..N] is slow
+module Main  (main) where 
 
-module Main (main) where
-
-import Prelude hiding (read)
-import Control.Monad
-import Data.Vector ((!), Vector)
-import qualified Data.Vector as V
-import qualified Data.Vector.Unboxed as U
+import System.Environment (getArgs)
+import Control.Monad (when, forM_)
+import GHC.ST
 import qualified Data.Vector.Unboxed.Mutable as UM
-import Data.Vector.Mutable (STVector, new, read, unsafeWrite, write)
-import qualified Data.Vector.Mutable as VM
-import Debug.Trace
+import qualified Data.Vector.Unboxed as U
 
-_SIZE :: Int
-_SIZE = 512
-
-a, c :: Vector (U.Vector Int)
-
-a = V.replicate _SIZE (U.replicate _SIZE 1)
-
--- c = V.generate _SIZE $ \i ->
---       V.generate _SIZE $ \k ->
---         sum [ a!i!j * a!j!k | j <- [0.._SIZE-1] ]
-
-c = V.create $ do
-      -- Initialize result vector with 0
-      v :: STVector s (UM.STVector s Int) <- new _SIZE
-      forM_ [0.._SIZE-1] $ \i -> do
-        w <- UM.replicate _SIZE 0
-        write v i w
-
-      -- Fill result vector
-      loop _SIZE $ \i -> do
-        y <- read v i
-        loop _SIZE $ \k -> do
-          -- forM_ [0.._SIZE-1] $ \j -> do -- slow
-          loop _SIZE $ \j -> do -- fast
-            x <- UM.unsafeRead y j
-            UM.unsafeWrite y j $! x + (a!i!.j) * (a!k!.j)
-
-      -- Freeze inner vectors
-      r <- new _SIZE
-      forM_ [0.._SIZE-1] $ \i -> do
-        y <- read v i
-        w <- U.unsafeFreeze y
-        write r i w
-
-      return r
+--if a the returned vector then a ! i = number of numbers < i that are relatively prime to i
+sieve2 :: Int -> U.Vector Int     
+sieve2 n = 
+    U.create (
+    do 
+      sieve <- U.unsafeThaw (U.generate (n + 1) initSieve)
+      -- performance issue here, see https://ghc.haskell.org/trac/ghc/ticket/8763
+      -- twice as slow as it should be
+      forM_ [3, 5 ..n `quot` 2] $ \p -> do
+        v <- UM.unsafeRead sieve p
+        let isPrime = v == (p - 1)
+        when isPrime $ 
+          forM_ [p + p, p + p + p .. n] $ \k ->  do
+            v' <- UM.unsafeRead sieve k
+            --need a comment explaining why this works
+            UM.unsafeWrite sieve k  (v' - (v' `quot` p))
+      return sieve
+    )
+    where
+      initSieve 0 = 0
+      initSieve 1 = 1
+      initSieve i
+         | odd i     = i - 1 -- assume prime
+         | otherwise = i `quot` 2
 
 
-{-# INLINE (!.) #-}
-(!.) :: (U.Unbox a) => U.Vector a -> Int -> a
-(!.) = U.unsafeIndex
+sieve1 :: Int -> U.Vector Int     
+sieve1 n = 
+    U.create (
+    do 
+      sieveArr <- U.unsafeThaw (U.generate (n + 1) initSieve)
+      loop1 (n `quot` 2) $ \ p -> do
+        val <- UM.unsafeRead sieveArr p
+        let isPrime = val == (p - 1)
+        when isPrime $ 
+          loop2 n p $ \ k ->  do
+            v <- UM.unsafeRead sieveArr k
+            --need a comment explaining why this works
+            UM.unsafeWrite sieveArr k  (v - (v `quot` p))
+      return sieveArr
+    )
+    where    
+      initSieve 0 = 0
+      initSieve 1 = 1
+      initSieve i
+          | odd i     = i - 1
+          | otherwise = i `quot` 2
 
-
-{-# INLINE loop #-}
-loop :: (Monad m) => Int -> (Int -> m ()) -> m ()
-loop bex f = go 0
+{-# INLINE loop1 #-}    
+loop1 :: Int -> (Int -> ST s ()) ->  ST s ()    
+loop1 count f = go 3
   where
-    go !n | n == bex  = return ()
-          | otherwise = f n >> go (n+1)
+    go n | n > count = return ()
+         | otherwise = f n >> go (n + 2)
 
 
-res = V.sum (V.map U.sum c)
-
-main = print res
-
+     
+{-# INLINE loop2 #-}    
+loop2 :: Int -> Int -> (Int -> ST s ()) ->  ST s ()          
+loop2 count ind f = go (ind + ind)
+  where
+    go n | n > count = return ()
+         | otherwise = f n >> go (n + ind)
+           
+-- with arg   40000000 
+-- ans is 486341683267690
+main :: IO ()
+main = 
+    do
+      args <- getArgs
+      let n  = (read (head args)) :: Int
+      case n of
+        1 -> print $ U.sum (sieve1 40000000)                    
+        2 -> print $ U.sum (sieve2 40000000) 
+        _ -> error "arg must be '1' or '2'"

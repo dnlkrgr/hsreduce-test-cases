@@ -1,0 +1,17 @@
+_passName,_successfulAttempts,_totalAttempts,_removedBytes
+expr2Undefined,13,148,-113
+filterExprSubList,5,10,-125
+formatting,1,1,-776
+localBinds,0,4,0
+mkExportsExplicit,1,1,204
+pat2Wildcard,4,4,-9
+rmvConArgs,0,5,0
+rmvDecls,11,45,-364
+rmvExports,12,20,-167
+shortenNames,10,68,-156
+simplifyConDecl,4,13,-113
+simplifyDecl,8,16,-123
+simplifyExpr,0,29,0
+simplifyMatch,0,16,0
+simplifyMatches,1,11,-38
+type2Unit,7,17,-27

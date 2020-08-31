@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
 ghc -O0 Bug.hs -rtsopts > /dev/null
 FAST=$(./Bug +RTS -t --machine-readable -RTS 2>&1 | grep -oP 'mutator_wall_seconds\", \"\K[0-9]*\.[0-9]*')

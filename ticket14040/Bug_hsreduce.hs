@@ -1,25 +1,25 @@
-{-# LANGUAGE AllowAmbiguousTypes, RankNTypes, TypeApplications, TypeFamilies, TypeInType, TypeOperators #-}
+{-# LANGUAGE AllowAmbiguousTypes, GADTs, RankNTypes, TypeApplications, TypeFamilies, TypeInType, TypeOperators #-}
 module Eliminator (
     ) where
 import Data.Kind
-data family Sing a
-type family Apply f x
-type a @@ b = Apply () ()
+data family A (a :: b)
+type a < b = a
 data FunArrow = (:->)
 class FunType arr where
-  type Fun k1 arr k2
-class () => AppType arr where
-  type App k1 arr k2 (f :: Fun () arr k2) (x :: ()) :: k2
+  type Fun i arr j
+class AppType arr where
+  type App i arr j (f :: Fun i arr j) (g :: i) :: j
 instance FunType (:->) where
-  type Fun () (:->) k2 = () -> k2
+  type Fun i (:->) j = i -> j
 instance AppType (:->) where
-  type App () (:->) k2 f x = f x
-listElimTyFun ::
-  () -> () -> (forall xs. Sing () -> Sing () -> () -> () @@ ()) -> ()
-listElimTyFun = listElimPoly @(:->) @()
-listElimPoly ::
+  type App i (:->) j (f) g = f g
+k ::
+  ()
+  -> () -> (forall g (f :: [()]). A () -> A f -> m < () -> ()) -> ()
+k = l @(:->) @() @()
+l ::
+  forall arr a m l.
   ()
   -> ()
-     -> (forall x. Sing () -> Sing () -> () -> App () arr Type p (x))
-        -> ()
-listElimPoly _ = undefined
+     -> (forall f. A () -> A f -> App [()] arr Type m f -> ()) -> ()
+l = n

@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 TICKET=Bug
 OUTPUT=output.txt
 ERROR=error.txt

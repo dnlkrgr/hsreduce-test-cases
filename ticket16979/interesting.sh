@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 ERROR=error.txt
 OUTPUT=output.txt
 ghc -O -dcore-lint -g -c Bug.hs > $OUTPUT 2> $ERROR

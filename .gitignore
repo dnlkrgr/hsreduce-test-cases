@@ -28,3 +28,5 @@ Bug.hs.stale_state
 Bug.stale.hs
 Bug.stale
 Bug.old.hs
+creduce_bug_*
+Bug.hs.orig

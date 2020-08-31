@@ -5,5 +5,6 @@ in mkShell {
     name        = "ghc822AndText"; 
     buildInputs = [
         ghc
+        python
     ];
 }

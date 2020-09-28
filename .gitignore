@@ -27,6 +27,12 @@ output.txt
 Bug.hs.stale_state
 Bug.stale.hs
 Bug.stale
+hsreduce.log
 Bug.old.hs
+
 creduce_bug_*
+
 Bug.hs.orig
+Bug.hs.bak
+*.swp
+shrinks

@@ -1,18 +1,21 @@
 module Data.Fixed (
-        a, b
+        mkConstr, conMkFixed
     ) where
-data C = C {d :: DataRep}
-data Constr = Constr {conrep :: ConstrRep, constring :: String}
-data DataRep = AlgRep [Constr] | E
-data ConstrRep = AlgConstr ()
-f _ cs = C {d = AlgRep cs}
-a dt g _ _
-  = Constr {conrep = AlgConstr h}
+data DataType = DataType {datarep :: DataRep}
+data Constr = Constr {conrep :: (), constring :: String}
+data DataRep = AlgRep [Constr] | IntRep
+mkDataType _ cs = DataType {datarep = AlgRep cs}
+mkConstr dt str _ _
+  = Constr {conrep = idx}
   where
-      h = head
+      idx
+        = head
             [undefined |
-               (c, _) <- dataTypeConstrs dt `zip` undefined, i c == g]
-dataTypeConstrs dt = case d dt of { (AlgRep cons) -> cons }
-i = constring
-j = f undefined [b]
-b = a j "MkFixed" undefined undefined
+               (c, _) <- dataTypeConstrs dt `zip` undefined, showConstr c == str]
+dataTypeConstrs dt
+  = case datarep dt of
+      (AlgRep cons) -> cons
+      _ -> undefined ++ undefined
+showConstr = constring
+tyFixed = mkDataType undefined [conMkFixed]
+conMkFixed = mkConstr tyFixed "MkFixed" undefined undefined

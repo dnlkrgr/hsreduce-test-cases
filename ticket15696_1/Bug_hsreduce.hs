@@ -3,20 +3,20 @@ module Main (
     ) where
 import Data.Foldable as Foldable
 main
-  = print $ foldl' (flip m) (q a) b
+  = print $ foldl' (flip wumbo) (singleton a) b
   where
       f _ = T2
-      a = f undefined
-      b = [f undefined]
+      a = f ()
+      b = [f ()]
 data T
-  = A | T2
+  = T2
   deriving Show
-data K a
-  = Bin !a !(K ()) !(K a) | Tip
+data Set a
+  = Bin !a !(Set a) !(Set a) | Tip
   deriving Show
-m n
-  = o n undefined
+wumbo x0
+  = go x0 x0
   where
-      o p _ Tip = q p
-      o p _ t@(Bin y l r) = Bin y l (o p undefined r)
-q x = Bin x Tip Tip
+      go orig _ Tip = singleton orig
+      go orig x t@(Bin y l r) = Bin y l (go orig x r)
+singleton x = Bin x Tip Tip

@@ -4,9 +4,8 @@ module Main (
     ) where
 import Data.Foldable as Foldable
 data Set_DataSetInternal a
-  = Bin_DataSetInternal {-# UNPACK #-} !Size_DataSetInternal !a !(Set_DataSetInternal a) !(Set_DataSetInternal a) |
+  = Bin_DataSetInternal {-# UNPACK #-} !Int !a !(Set_DataSetInternal a) !(Set_DataSetInternal a) |
     Tip_DataSetInternal
-type Size_DataSetInternal = Int
 singleton_DataSetInternal x
   = Bin_DataSetInternal 1 x Tip_DataSetInternal Tip_DataSetInternal
 insert_DataSetInternal x0
@@ -44,13 +43,5 @@ main
       $ let f _ = T2_Main
         in fromList_DataSetInternal [f undefined, f undefined]
 data T_Main
-  = T1_Main |
-    T2_Main |
-    T3_Main |
-    T4_Main |
-    T5_Main |
-    T6_Main |
-    T7_Main |
-    T8_Main |
-    T9_Main
+  = T2_Main
   deriving Show

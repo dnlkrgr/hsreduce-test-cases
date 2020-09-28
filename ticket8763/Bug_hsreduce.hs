@@ -5,42 +5,49 @@ import System.Environment
 import Control.Monad
 import qualified Data.Vector.Unboxed.Mutable as UM
 import qualified Data.Vector.Unboxed as U
-a b
+sieve2 n
   = U.create
-      (do c <- U.unsafeThaw (U.generate (b + 1) d)
-          forM_ [3, 5 .. b `quot` 2]
-            $ \ e
-                -> do f <- UM.unsafeRead c e
-                      let g = f == (e - 1)
-                      when g $ forM_ [e, e + e .. b]
-                        $ \ h
-                            -> do _ <- UM.unsafeRead c h
-                                  UM.unsafeWrite c h ((e))
-          return c)
+      (do sieve <- U.unsafeThaw (U.generate (n + 1) initSieve)
+          forM_ [3, 5 .. n `quot` 2]
+            $ \ p
+                -> do v <- UM.unsafeRead sieve p
+                      let isPrime = v == (p - 1)
+                      when isPrime $ forM_ [p, p + p .. n]
+                        $ \ k
+                            -> do _ <- UM.unsafeRead sieve k
+                                  UM.unsafeWrite sieve k ((p))
+          return sieve)
   where
-      d i
+      initSieve i
         | odd i = i - 1
         | otherwise = 2
-i b
+sieve1 n
   = U.create
-      (do j <- U.unsafeThaw (U.generate (b + 1) d)
-          k (2)
-            $ \ e
-                -> do l <- UM.unsafeRead j e
-                      let g = l == (1)
-                      undefined
-          return j)
+      (do sieveArr <- U.unsafeThaw (U.generate (n + 1) initSieve)
+          loop1 (2)
+            $ \ p
+                -> do _ <- undefined
+                      let
+                      loop2 undefined p
+                        $ \ k
+                            -> do _ <- undefined
+                                  UM.unsafeWrite sieveArr k ((p))
+          return sieveArr)
   where
-      d i = i `quot` 2
-k count f
+      initSieve _ = 1
+loop1 count f
   = go 3
   where
-      go b
-        | b > count = return undefined
-        | otherwise = f b >> go (2)
+      go n
+        | n > count = return undefined
+        | undefined = f undefined >> undefined
+loop2 _ ind f
+  = go undefined
+  where
+      go n = f n >> go (ind)
 main
   = do args <- getArgs
-       let b = (read (head args))
-       case b of
-         1 -> print $ U.sum (i 40000000)
-         _ -> print $ U.sum (a 40000000)
+       let n = (read (head args))
+       case n of
+         1 -> print $ U.sum (sieve1 40000000)
+         _ -> print $ U.sum (sieve2 40000000)

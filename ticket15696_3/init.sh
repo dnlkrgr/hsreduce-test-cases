@@ -2,6 +2,14 @@
 
 DIR_NAME=containers
 
+
+# intializing submodule
+cd $DIR_NAME
+git submodule init
+git submodule update
+cd ..
+
+# copying buggy stuff
 cp Main.hs $DIR_NAME
 cp containers.cabal $DIR_NAME
 cp shell.nix $DIR_NAME
@@ -12,6 +20,7 @@ cp interesting.sh $DIR_NAME
 
 cd $DIR_NAME
 
+# merging project into one file
 nix-shell --run 'hsreduce merge --sourceFile Main.hs'
 
 echo ''

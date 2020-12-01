@@ -1,6 +1,6 @@
 # hsreduce-test-cases
 
-This is a repo containing test cases for evaluating a reduction tool for Haskell programs (https://github.com/dnlkrgr/hsreduce).
+This is a repo containing test cases for evaluating a yet unreleased reduction tool for Haskell programs (https://github.com/dnlkrgr/hsreduce).
 
 Each folder has the same structure:
 * a haskell file we want to reduce

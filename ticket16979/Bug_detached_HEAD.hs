@@ -1,4 +1,4 @@
-{-# LANGUAGE AllowAmbiguousTypes, DataKinds, DeriveGeneric, FlexibleContexts, FlexibleInstances, FunctionalDependencies, GADTs, InstanceSigs, PolyKinds, RankNTypes, ScopedTypeVariables, TypeApplications, TypeFamilies, TypeOperators, UndecidableInstances #-}
+{-# LANGUAGE AllowAmbiguousTypes, DataKinds, DeriveGeneric, FlexibleInstances, FunctionalDependencies, InstanceSigs, PolyKinds, RankNTypes, ScopedTypeVariables, TypeApplications, TypeFamilies, TypeOperators, UndecidableInstances #-}
 module Bug (
         strs
     ) where
@@ -9,24 +9,29 @@ import Data.Monoid
 import GHC.Generics
 import GHC.TypeLits
 data Poly a b
-  = PCons a (Poly () a)
+  = PCons a (Poly b a)
   deriving Generic
-poly = PCons 20 undefined
-strs = flip appEndo undefined . (getConst #. param undefined) poly
+poly = ((PCons 20 undefined))
+strs = toListOf (param @0) poly
+toListOf l = foldrOf l undefined undefined
+foldrOf l _ _ = flip appEndo undefined . foldMapOf l undefined
+foldMapOf l _ = getConst #. l undefined
 class Profunctor p where
+  dimap :: () -> () -> () -> ()
   (#.) :: Coercible c b => q b c -> p a b -> p a c
 instance Profunctor (->) where
-  (#.) _ = coerce
+  dimap _ _ _ = undefined
+  {-# INLINE dimap #-}
+  (#.) _ = coerce :: Coercible b a => a -> b
   {-# INLINE (#.) #-}
 class HasParam p s t a b where
   param :: Applicative g => (a -> g b) -> s -> g t
-instance (GenericN s, s ~ t, GHasParam n (RepN s) (RepN t) a b) =>
+instance (GenericN t, s ~ t, GHasParam n (RepN s) (RepN t) a b) =>
          HasParam n s t a b where
-  param
-    = \ f
-        -> lowerYoneda . lowerCurried
-             . \ s -> toN <$> gparam @n (liftCurriedYoneda . f) (fromN s)
+  param = confusing (\ f s -> toN <$> gparam @n f (fromN s))
   {-# INLINE param #-}
+confusing t
+  = \ f -> lowerYoneda . lowerCurried . t (liftCurriedYoneda . f)
 newtype Yoneda f a
   = Yoneda {runYoneda :: forall b. (a -> b) -> f b}
 instance Functor (Yoneda f) where
@@ -39,7 +44,7 @@ instance Functor (Curried f) where
 instance Applicative (Curried f) where
   pure _ = undefined
   {-# INLINE pure #-}
-  _ <*> Curried ma = Curried (ma . undefined)
+  _ <*> Curried ma = Curried (ma . undefined . undefined)
   {-# INLINE (<*>) #-}
 lowerYoneda (Yoneda f) = f id
 lowerCurried (Curried f) = f (pure id)
@@ -47,34 +52,32 @@ liftCurriedYoneda fa = Curried (`yap` fa)
 yap (Yoneda k) fa = undefined (\ _ -> k (undefined .) <*> fa)
 class GHasParam p s t a b where
   gparam :: Applicative g => (a -> g b) -> s () -> g (t ())
-instance (GHasParam p l l' a b, GHasParam p r r' a b) =>
+instance GHasParam p r r' a b =>
          GHasParam p (l :*: r) (l' :*: r') a b where
-  gparam f (l :*: r) = (:*:) <$> gparam @p f l <*> gparam @p f r
+  gparam f (_ :*: r) = (:*:) <$> undefined <*> gparam @p f r
 instance GHasParam p s t a b =>
          GHasParam p (M1 () meta s) (M1 () meta t) a b where
   gparam f (M1 x) = M1 <$> gparam @p f x
-instance {-# OVERLAPPABLE #-} (GHasParamRec (LookupParam si) s t a b) =>
+instance {-# OVERLAPPABLE #-} (GHasParamRec (LookupParam si p) s t a b) =>
                               GHasParam p (Rec si s) (Rec ti t) a b where
   gparam f (Rec (K1 x))
-    = Rec . K1 <$> gparamRec @(LookupParam si) f x
+    = Rec . K1 <$> gparamRec @(LookupParam si p) f x
 class GHasParamRec param s t a b where
   gparamRec :: Applicative g => (a -> g b) -> s -> g t
-instance GHasParamRec 'Nothing a a c d where
 instance (HasParam n s t a b) =>
          GHasParamRec ('Just n) s t a b where
   gparamRec = param @n
-type family LookupParam a where
-  LookupParam (_ (_ :: Nat)) = 'Nothing
-  LookupParam _ = ('Just ())
+type family LookupParam a p where
+  LookupParam (a (_ (m))) n = ((('Just 0)))
 type family Param where
 type family Indexed (t :: k) (i :: Nat) :: k where
-  Indexed (t _) i = Indexed t (1) (Param i)
+  Indexed (t a) i = Indexed t (1) (Param i)
   Indexed t _ = t
 newtype Rec p a x = Rec {unRec :: K1 () a x}
 type family Zip a b where
-  Zip (_ s) (_ m t) = M1 () m (Zip s t)
+  Zip (M1 mt m s) (M1 mt m t) = M1 () m (M1 () m (Zip s t))
   Zip (l :*: r) (l' :*: r') = Zip l l' :*: Zip r r'
-  Zip (_ p) (_ a) = Rec p a
+  Zip (Rec0 p) (Rec0 a) = Rec p a
 class GenericN a where
   type RepN a :: Type -> Type
   type RepN a = Zip (Rep (Indexed a 0)) (Rep a)

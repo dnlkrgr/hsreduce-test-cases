@@ -36,3 +36,5 @@ Bug.hs.orig
 Bug.hs.bak
 *.swp
 shrinks
+
+run_tests.sh

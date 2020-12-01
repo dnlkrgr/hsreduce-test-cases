@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-timeout 30s ghc -O2 -XFlexibleContexts Bug.hs 
+ulimit -v 6000000
+ghc -O2 -XFlexibleContexts Bug.hs 
 
-[[ $? -eq 124 || $? -eq 137 ]]
+[[ $? -eq 251 ]]

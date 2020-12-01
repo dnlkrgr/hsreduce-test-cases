@@ -1,3 +1,3 @@
 _passName,_successfulAttempts,_totalAttempts,_removedBytes
-formatting,1,1,-1233
-typefamilies:apply,0,122,0
+formatting,1,1,0
+rmvUnusedParams,3,15,-71

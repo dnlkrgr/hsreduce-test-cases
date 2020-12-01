@@ -1,0 +1,50 @@
+cabal-version: >=1.8
+name:          containers
+version:       0.6.0.1
+license:       BSD3
+license-file:  LICENSE
+maintainer:    libraries@haskell.org
+bug-reports:   https://github.com/haskell/containers/issues
+synopsis:      Assorted concrete container types
+description:
+    .
+    This package contains efficient general-purpose implementations
+    of various immutable container types including sets, maps, sequences,
+    trees, and graphs.
+    .
+    For a walkthrough of what this package provides with examples of common
+    operations see the [containers
+    introduction](https://haskell-containers.readthedocs.io).
+    .
+    The declared cost of each operation is either worst-case or amortized, but
+    remains valid even if structures are shared.
+
+category:      Data Structures
+build-type:    Simple
+
+source-repository head
+    type:     git
+    location: http://github.com/haskell/containers.git
+
+library
+    other-extensions: CPP BangPatterns
+    include-dirs:     include
+    ghc-options:      -O2 -Wall
+    build-depends:
+        base >=4.6 && <5,
+        array >=0.4.0.0,
+        deepseq >=1.2 && <1.5
+
+    if impl(ghc -any)
+        build-depends: ghc-prim -any
+
+    if impl(ghc -any)
+
+executable containers
+    main-is:       Main.hs
+    build-depends:
+        base >=4.6 && <5,
+        array >=0.4.0.0,
+        deepseq >=1.2 && <1.5,
+        containers -any,
+        ghc-prim -any

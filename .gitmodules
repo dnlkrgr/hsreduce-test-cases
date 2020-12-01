@@ -1,0 +1,3 @@
+[submodule "ticket15696_3/containers"]
+	path = ticket15696_3/containers
+	url = https://github.com/haskell/containers.git

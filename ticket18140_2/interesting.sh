@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-timeout 3m ./run.sh
+ulimit -v 6000000
+ghc -O2 -XFlexibleContexts Bug.hs 
+
+[[ $? -eq 251 ]]

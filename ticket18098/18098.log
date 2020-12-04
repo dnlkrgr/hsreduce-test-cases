@@ -1,0 +1,2712 @@
+[10:19:51][Info][ThreadId 4] ***NEW ITERATION***
+[10:19:53][Info][ThreadId 4] ****************************************
+[10:19:53][Info][ThreadId 4] TypeFamilies.apply
+[10:19:53][Info][ThreadId 4] state size: 10172
+[10:19:53][Info][ThreadId 4] # proposed changes: 23
+[10:19:53][Info][ThreadId 4] # batches: 11
+[10:19:53][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2,2]
+[10:19:54][Info][ThreadId 4] ****************************************
+[10:19:54][Info][ThreadId 4] splitSigs
+[10:19:54][Info][ThreadId 4] state size: 10172
+[10:19:54][Info][ThreadId 4] # proposed changes: 1
+[10:19:54][Info][ThreadId 4] # batches: 1
+[10:19:54][Info][ThreadId 4] batch sizes: [1]
+[10:19:54][Info][ThreadId 4] ****************************************
+[10:19:54][Info][ThreadId 4] rmvSigs
+[10:19:54][Info][ThreadId 4] state size: 10172
+[10:19:54][Info][ThreadId 4] # proposed changes: 67
+[10:19:54][Info][ThreadId 4] # batches: 8
+[10:19:54][Info][ThreadId 4] batch sizes: [11,8,8,8,8,8,8,8]
+[10:19:57][Notice][ThreadId 2179] APPLIED CHANGE
+[10:19:57][Notice][ThreadId 2179] First "{-# INLINE gunsafeFreeze #-}"
+[10:20:00][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:00][Notice][ThreadId 2179] First "gunstream :: GVector v a => Bundle v a -> v a"
+[10:20:04][Notice][ThreadId 2181] APPLIED CHANGE
+[10:20:04][Notice][ThreadId 2181] First "gmvmunstreamUnknown ::"
+[10:20:04][Notice][ThreadId 2181] First "  (PrimMonad m, GVector v a) =>"
+[10:20:04][Notice][ThreadId 2181] First "  MBundle m v a -> m (Mutable v (PrimState m) a)"
+[10:20:07][Notice][ThreadId 2201] APPLIED CHANGE
+[10:20:07][Notice][ThreadId 2201] First "upperBound :: Size -> Maybe Int"
+[10:20:10][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:10][Notice][ThreadId 2179] First "{-# INLINE gunstream #-}"
+[10:20:13][Notice][ThreadId 2201] APPLIED CHANGE
+[10:20:13][Notice][ThreadId 2201] First "sfoldlM :: Monad m => (a -> b -> m a) -> a -> Stream m b -> m a"
+[10:20:17][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:17][Notice][ThreadId 2179] First "enlarge_delta :: GMVector v a => v s a -> Int"
+[10:20:20][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:20][Notice][ThreadId 2179] First "gnew :: GVector v a => New v a -> v a"
+[10:20:23][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:23][Notice][ThreadId 2179] First "{-# INLINE [1] gnew #-}"
+[10:20:26][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:26][Notice][ThreadId 2179] First "gstream :: GVector v a => v a -> Bundle v a"
+[10:20:30][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:30][Notice][ThreadId 2179] First "{-# INLINE [1] gstream #-}"
+[10:20:33][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:33][Notice][ThreadId 2179] First "gstream' :: GVector v a => v a -> Bundle v a"
+[10:20:36][Notice][ThreadId 2201] APPLIED CHANGE
+[10:20:36][Notice][ThreadId 2201] First "sfoldlM' :: Monad m => (a -> b -> m a) -> a -> Stream m b -> m a"
+[10:20:40][Notice][ThreadId 2179] APPLIED CHANGE
+[10:20:40][Notice][ThreadId 2179] First "{-# INLINE gstream' #-}"
+[10:20:43][Notice][ThreadId 2201] APPLIED CHANGE
+[10:20:43][Notice][ThreadId 2201] First "{-# INLINE [1] sfoldlM' #-}"
+[10:20:46][Notice][ThreadId 2201] APPLIED CHANGE
+[10:20:46][Notice][ThreadId 2201] First "sappend :: Monad m => Stream m a -> Stream m a -> Stream m a"
+[10:20:50][Notice][ThreadId 2193] APPLIED CHANGE
+[10:20:50][Notice][ThreadId 2193] First "bcons :: a -> Bundle v a -> Bundle v a"
+[10:20:53][Notice][ThreadId 2193] APPLIED CHANGE
+[10:20:53][Notice][ThreadId 2193] First "{-# INLINE bcons #-}"
+[10:20:56][Notice][ThreadId 2193] APPLIED CHANGE
+[10:20:56][Notice][ThreadId 2193] First "bmcons :: Monad m => a -> MBundle m v a -> MBundle m v a"
+[10:20:59][Notice][ThreadId 2193] APPLIED CHANGE
+[10:20:59][Notice][ThreadId 2193] First "{-# INLINE bmcons #-}"
+[10:21:02][Notice][ThreadId 2201] APPLIED CHANGE
+[10:21:02][Notice][ThreadId 2201] First "ssingleton :: Monad m => a -> Stream m a"
+[10:21:05][Notice][ThreadId 2189] APPLIED CHANGE
+[10:21:05][Notice][ThreadId 2189] First "bmchunks :: MBundle m v a -> Stream m (Chunk v a)"
+[10:21:07][Notice][ThreadId 2189] APPLIED CHANGE
+[10:21:07][Notice][ThreadId 2189] First "{-# INLINE bmchunks #-}"
+[10:21:10][Notice][ThreadId 2181] APPLIED CHANGE
+[10:21:10][Notice][ThreadId 2181] First "gmunsafeSlice :: GMVector v a => Int -> Int -> v s a -> v s a"
+[10:21:12][Notice][ThreadId 2181] APPLIED CHANGE
+[10:21:12][Notice][ThreadId 2181] First "{-# INLINE gmunsafeSlice #-}"
+[10:21:15][Notice][ThreadId 2187] APPLIED CHANGE
+[10:21:15][Notice][ThreadId 2187] First "gmunsafeNew ::"
+[10:21:15][Notice][ThreadId 2187] First "  (PrimMonad m, GMVector v a) => Int -> m (v (PrimState m) a)"
+[10:21:17][Notice][ThreadId 2187] APPLIED CHANGE
+[10:21:17][Notice][ThreadId 2187] First "{-# INLINE gmunsafeNew #-}"
+[10:21:20][Notice][ThreadId 2187] APPLIED CHANGE
+[10:21:20][Notice][ThreadId 2187] First "gmvunstream ::"
+[10:21:20][Notice][ThreadId 2187] First "  (PrimMonad m, GVector v a) =>"
+[10:21:20][Notice][ThreadId 2187] First "  Bundle v a -> m (Mutable v (PrimState m) a)"
+[10:21:22][Notice][ThreadId 2187] APPLIED CHANGE
+[10:21:22][Notice][ThreadId 2187] First "{-# INLINE [1] gmvunstream #-}"
+[10:21:25][Notice][ThreadId 2203] APPLIED CHANGE
+[10:21:25][Notice][ThreadId 2203] First "delay_inline :: (a -> b) -> a -> b"
+[10:21:27][Notice][ThreadId 2203] APPLIED CHANGE
+[10:21:27][Notice][ThreadId 2203] First "{-# INLINE [0] delay_inline #-}"
+[10:21:30][Notice][ThreadId 2187] APPLIED CHANGE
+[10:21:30][Notice][ThreadId 2187] First "gmvmunstream ::"
+[10:21:30][Notice][ThreadId 2187] First "  (PrimMonad m, GVector v a) =>"
+[10:21:30][Notice][ThreadId 2187] First "  MBundle m v a -> m (Mutable v (PrimState m) a)"
+[10:21:33][Notice][ThreadId 2193] APPLIED CHANGE
+[10:21:33][Notice][ThreadId 2193] First "bmsingleton :: Monad m => a -> MBundle m v a"
+[10:21:37][Notice][ThreadId 2203] APPLIED CHANGE
+[10:21:37][Notice][ThreadId 2203] First "checkedAdd :: (Int -> Size) -> Int -> Int -> Size"
+[10:21:39][Notice][ThreadId 2189] APPLIED CHANGE
+[10:21:39][Notice][ThreadId 2189] First "bmsize :: MBundle m v a -> Size"
+[10:21:42][Notice][ThreadId 2189] APPLIED CHANGE
+[10:21:42][Notice][ThreadId 2189] First "{-# INLINE bmsize #-}"
+[10:21:44][Notice][ThreadId 2189] APPLIED CHANGE
+[10:21:44][Notice][ThreadId 2189] First "nrun :: New v a -> ST s (Mutable v s a)"
+[10:21:47][Notice][ThreadId 2189] APPLIED CHANGE
+[10:21:47][Notice][ThreadId 2189] First "{-# INLINE nrun #-}"
+[10:21:51][Notice][ThreadId 2203] APPLIED CHANGE
+[10:21:51][Notice][ThreadId 2203] First "{-# INLINE checkedAdd #-}"
+[10:21:53][Notice][ThreadId 2196] APPLIED CHANGE
+[10:21:53][Notice][ThreadId 2196] First "{-# INLINE [1] ssingleton #-}"
+[10:21:55][Notice][ThreadId 2196] APPLIED CHANGE
+[10:21:55][Notice][ThreadId 2196] First "bmappend ::"
+[10:21:55][Notice][ThreadId 2196] First "  Monad m => MBundle m v a -> MBundle m v a -> MBundle m v a"
+[10:21:58][Notice][ThreadId 2187] APPLIED CHANGE
+[10:21:58][Notice][ThreadId 2187] First "gmvmunstreamMax ::"
+[10:21:58][Notice][ThreadId 2187] First "  (PrimMonad m, GVector v a) =>"
+[10:21:58][Notice][ThreadId 2187] First "  MBundle m v a -> Int -> m (Mutable v (PrimState m) a)"
+[10:22:00][Notice][ThreadId 2193] APPLIED CHANGE
+[10:22:00][Notice][ThreadId 2193] First "bmfromStream :: Monad m => Stream m a -> Size -> MBundle m v a"
+[10:22:02][Notice][ThreadId 2193] APPLIED CHANGE
+[10:22:02][Notice][ThreadId 2193] First "{-# INLINE bmfromStream #-}"
+[10:22:04][Notice][ThreadId 2181] APPLIED CHANGE
+[10:22:04][Notice][ThreadId 2181] First "{-# INLINE gmlength #-}"
+[10:22:06][Notice][ThreadId 2181] APPLIED CHANGE
+[10:22:06][Notice][ThreadId 2181] First "gmunsafeGrow ::"
+[10:22:06][Notice][ThreadId 2181] First "  (PrimMonad m, GMVector v a) =>"
+[10:22:06][Notice][ThreadId 2181] First "  v (PrimState m) a -> Int -> m (v (PrimState m) a)"
+[10:22:08][Notice][ThreadId 2203] APPLIED CHANGE
+[10:22:08][Notice][ThreadId 2203] First "checkedSubtract :: (Int -> Size) -> Int -> Int -> Size"
+[10:22:10][Notice][ThreadId 2203] APPLIED CHANGE
+[10:22:10][Notice][ThreadId 2203] First "{-# INLINE checkedSubtract #-}"
+[10:22:11][Notice][ThreadId 2181] APPLIED CHANGE
+[10:22:11][Notice][ThreadId 2181] First "{-# INLINE gmunsafeGrow #-}"
+[10:22:14][Notice][ThreadId 2196] APPLIED CHANGE
+[10:22:14][Notice][ThreadId 2196] First "{-# INLINE bfromVector #-}"
+[10:22:16][Notice][ThreadId 2196] APPLIED CHANGE
+[10:22:16][Notice][ThreadId 2196] First "blift :: Monad m => Bundle v a -> MBundle m v a"
+[10:22:18][Notice][ThreadId 2196] APPLIED CHANGE
+[10:22:18][Notice][ThreadId 2196] First "bmfromVector :: (Monad m, GVector v a) => v a -> MBundle m v a"
+[10:22:18][Info][ThreadId 4] ****************************************
+[10:22:18][Info][ThreadId 4] rmvDecls
+[10:22:18][Info][ThreadId 4] state size: 7820
+[10:22:18][Info][ThreadId 4] # proposed changes: 68
+[10:22:18][Info][ThreadId 4] # batches: 8
+[10:22:18][Info][ThreadId 4] batch sizes: [12,8,8,8,8,8,8,8]
+[10:22:26][Info][ThreadId 4] ****************************************
+[10:22:26][Info][ThreadId 4] rmvConstructors
+[10:22:26][Info][ThreadId 4] state size: 7820
+[10:22:26][Info][ThreadId 4] # proposed changes: 11
+[10:22:26][Info][ThreadId 4] # batches: 10
+[10:22:26][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1]
+[10:22:26][Info][ThreadId 4] ****************************************
+[10:22:26][Info][ThreadId 4] simplifyConDecl
+[10:22:26][Info][ThreadId 4] state size: 7820
+[10:22:26][Info][ThreadId 4] # proposed changes: 5
+[10:22:26][Info][ThreadId 4] # batches: 1
+[10:22:26][Info][ThreadId 4] batch sizes: [5]
+[10:22:28][Info][ThreadId 4] ***NEW ITERATION***
+[10:22:29][Info][ThreadId 4] ****************************************
+[10:22:29][Info][ThreadId 4] TypeFamilies.apply
+[10:22:29][Info][ThreadId 4] state size: 7820
+[10:22:29][Info][ThreadId 4] # proposed changes: 12
+[10:22:29][Info][ThreadId 4] # batches: 11
+[10:22:29][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:22:30][Info][ThreadId 4] ****************************************
+[10:22:30][Info][ThreadId 4] splitSigs
+[10:22:30][Info][ThreadId 4] state size: 7820
+[10:22:30][Info][ThreadId 4] # proposed changes: 1
+[10:22:30][Info][ThreadId 4] # batches: 1
+[10:22:30][Info][ThreadId 4] batch sizes: [1]
+[10:22:30][Info][ThreadId 4] ****************************************
+[10:22:30][Info][ThreadId 4] rmvSigs
+[10:22:30][Info][ThreadId 4] state size: 7820
+[10:22:30][Info][ThreadId 4] # proposed changes: 15
+[10:22:30][Info][ThreadId 4] # batches: 14
+[10:22:30][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1,1,1,1]
+[10:22:34][Info][ThreadId 4] ****************************************
+[10:22:34][Info][ThreadId 4] rmvDecls
+[10:22:34][Info][ThreadId 4] state size: 7820
+[10:22:34][Info][ThreadId 4] # proposed changes: 68
+[10:22:34][Info][ThreadId 4] # batches: 8
+[10:22:34][Info][ThreadId 4] batch sizes: [12,8,8,8,8,8,8,8]
+[10:22:41][Info][ThreadId 4] ****************************************
+[10:22:41][Info][ThreadId 4] rmvConstructors
+[10:22:41][Info][ThreadId 4] state size: 7820
+[10:22:41][Info][ThreadId 4] # proposed changes: 11
+[10:22:41][Info][ThreadId 4] # batches: 10
+[10:22:41][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1]
+[10:22:42][Info][ThreadId 4] ****************************************
+[10:22:42][Info][ThreadId 4] simplifyConDecl
+[10:22:42][Info][ThreadId 4] state size: 7820
+[10:22:42][Info][ThreadId 4] # proposed changes: 5
+[10:22:42][Info][ThreadId 4] # batches: 1
+[10:22:42][Info][ThreadId 4] batch sizes: [5]
+[10:22:43][Info][ThreadId 4] ***NEW ITERATION***
+[10:22:45][Info][ThreadId 4] ****************************************
+[10:22:45][Info][ThreadId 4] inlineType
+[10:22:45][Info][ThreadId 4] state size: 7820
+[10:22:45][Info][ThreadId 4] # proposed changes: 1
+[10:22:45][Info][ThreadId 4] # batches: 1
+[10:22:45][Info][ThreadId 4] batch sizes: [1]
+[10:22:45][Info][ThreadId 4] ****************************************
+[10:22:45][Info][ThreadId 4] rmvConArgs
+[10:22:45][Info][ThreadId 4] state size: 7820
+[10:22:45][Info][ThreadId 4] # proposed changes: 12
+[10:22:45][Info][ThreadId 4] # batches: 11
+[10:22:45][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:22:47][Notice][ThreadId 3529] APPLIED CHANGE
+[10:22:47][Notice][ThreadId 3529] First "            _sVector :: Maybe (v a),"
+[10:22:47][Notice][ThreadId 3529] First "Bundle sa ta _ na `bmappend` Bundle sb tb _ nb"
+[10:22:47][Notice][ThreadId 3529] First "  = Bundle (sappend sa sb) (sappend ta tb) Nothing (na + nb)"
+[10:22:47][Notice][ThreadId 3529] Second "Bundle sa ta na `bmappend` Bundle sb tb nb"
+[10:22:47][Notice][ThreadId 3529] Second "  = Bundle (sappend sa sb) (sappend ta tb) (na + nb)"
+[10:22:47][Notice][ThreadId 3529] First "blift (Bundle (Stream step s) (Stream vstep t) v sz)"
+[10:22:47][Notice][ThreadId 3529] Second "blift (Bundle (Stream step s) (Stream vstep t) sz)"
+[10:22:47][Notice][ThreadId 3529] First "      v"
+[10:22:47][Notice][ThreadId 3529] First "      `seq` Bundle (Stream step 0) (Stream vstep True) (Just v) (Exact n)"
+[10:22:47][Notice][ThreadId 3529] Second "      `seq` Bundle (Stream step 0) (Stream vstep True) (Exact n)"
+[10:22:47][Notice][ThreadId 3529] First "  = Bundle (Stream step t) (Stream step' t) Nothing sz"
+[10:22:47][Notice][ThreadId 3529] Second "  = Bundle (Stream step t) (Stream step' t) sz"
+[10:22:47][Info][ThreadId 4] ****************************************
+[10:22:47][Info][ThreadId 4] rmvRHSs
+[10:22:47][Info][ThreadId 4] state size: 7744
+[10:22:47][Info][ThreadId 4] # proposed changes: 97
+[10:22:47][Info][ThreadId 4] # batches: 8
+[10:22:47][Info][ThreadId 4] batch sizes: [13,12,12,12,12,12,12,12]
+[10:22:49][Notice][ThreadId 3582] APPLIED CHANGE
+[10:22:49][Notice][ThreadId 3582] First "      step i"
+[10:22:49][Notice][ThreadId 3582] First "        | i >= n = return Done"
+[10:22:49][Notice][ThreadId 3582] First "        | otherwise"
+[10:22:49][Notice][ThreadId 3582] First "        = case gbasicUnsafeIndexM v i of {"
+[10:22:49][Notice][ThreadId 3582] First "            Box x -> return $ Yield x (i + 1) }"
+[10:22:49][Notice][ThreadId 3582] Second "      step i | i >= n = return Done"
+[10:22:50][Notice][ThreadId 3591] APPLIED CHANGE
+[10:22:50][Notice][ThreadId 3591] First "  | otherwise = con r"
+[10:22:52][Notice][ThreadId 3591] APPLIED CHANGE
+[10:22:52][Notice][ThreadId 3591] First "  | otherwise = con r"
+[10:22:52][Info][ThreadId 4] ****************************************
+[10:22:52][Info][ThreadId 4] rmvMatches
+[10:22:52][Info][ThreadId 4] state size: 7581
+[10:22:52][Info][ThreadId 4] # proposed changes: 93
+[10:22:52][Info][ThreadId 4] # batches: 8
+[10:22:52][Info][ThreadId 4] batch sizes: [16,11,11,11,11,11,11,11]
+[10:22:55][Notice][ThreadId 3624] APPLIED CHANGE
+[10:22:55][Notice][ThreadId 3624] First "  (*)"
+[10:22:55][Notice][ThreadId 3624] First "    = error \"vector: internal error * for Bundle.size isn't defined\""
+[10:22:58][Notice][ThreadId 3624] APPLIED CHANGE
+[10:22:58][Notice][ThreadId 3624] First "  abs"
+[10:22:58][Notice][ThreadId 3624] First "    = error \"vector: internal error abs for Bundle.size isn't defined\""
+[10:23:00][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:00][Notice][ThreadId 3626] First "  Exact m + Max n = checkedAdd Max m n"
+[10:23:03][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:03][Notice][ThreadId 3626] First "  Max m + Exact n = checkedAdd Max m n"
+[10:23:05][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:05][Notice][ThreadId 3626] First "  Max m + Max n = checkedAdd Max m n"
+[10:23:08][Notice][ThreadId 3606] APPLIED CHANGE
+[10:23:08][Notice][ThreadId 3606] First "  = case upperBound (bmsize s) of"
+[10:23:08][Notice][ThreadId 3606] First "      Just n -> gmvmunstreamMax s n"
+[10:23:08][Notice][ThreadId 3606] First "      Nothing -> gmvmunstreamUnknown s"
+[10:23:08][Notice][ThreadId 3606] Second "  = case upperBound (bmsize s) of {"
+[10:23:08][Notice][ThreadId 3606] Second "      Nothing -> gmvmunstreamUnknown s }"
+[10:23:11][Notice][ThreadId 3624] APPLIED CHANGE
+[10:23:11][Notice][ThreadId 3624] First "  signum"
+[10:23:11][Notice][ThreadId 3624] First "    = error"
+[10:23:11][Notice][ThreadId 3624] First "        \"vector: internal error signum for Bundle.size isn't defined\""
+[10:23:13][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:13][Notice][ThreadId 3626] First "  Exact m - Exact n = checkedSubtract Exact m n"
+[10:23:15][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:15][Notice][ThreadId 3626] First "  Exact m - Max _ = Max m"
+[10:23:17][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:17][Notice][ThreadId 3626] First "  Max m - Exact n = checkedSubtract Max m n"
+[10:23:19][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:19][Notice][ThreadId 3626] First "  Max m - Max _ = Max m"
+[10:23:22][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:22][Notice][ThreadId 3626] First "  Max m - Unknown = Max m"
+[10:23:24][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:24][Notice][ThreadId 3626] First "  _ - _ = Unknown"
+[10:23:26][Notice][ThreadId 3626] APPLIED CHANGE
+[10:23:26][Notice][ThreadId 3626] First "  fromInteger n = Exact (fromInteger n)"
+[10:23:28][Notice][ThreadId 3620] APPLIED CHANGE
+[10:23:28][Notice][ThreadId 3620] First "               Skip s' -> foldlM_loop SPEC z s'"
+[10:23:30][Notice][ThreadId 3620] APPLIED CHANGE
+[10:23:30][Notice][ThreadId 3620] First "             case r of"
+[10:23:30][Notice][ThreadId 3620] Second "             case r of {"
+[10:23:30][Notice][ThreadId 3620] First "                       foldlM_loop SPEC z' s'"
+[10:23:30][Notice][ThreadId 3620] First "               Done -> return z"
+[10:23:30][Notice][ThreadId 3620] Second "                       foldlM_loop SPEC z' s' }"
+[10:23:32][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:32][Notice][ThreadId 3634] First "  fmap f (Box x) = Box (f x)"
+[10:23:34][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:34][Notice][ThreadId 3634] First "  pure = Box"
+[10:23:36][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:36][Notice][ThreadId 3634] First "  Box f <*> Box x = Box (f x)"
+[10:23:37][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:37][Notice][ThreadId 3634] First "  return = pure"
+[10:23:39][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:39][Notice][ThreadId 3634] First "  Box x >>= f = f x"
+[10:23:42][Notice][ThreadId 3612] APPLIED CHANGE
+[10:23:42][Notice][ThreadId 3612] First "      vstep False = return Done"
+[10:23:44][Notice][ThreadId 3624] APPLIED CHANGE
+[10:23:44][Notice][ThreadId 3624] First "upperBound (Exact n) = Just n"
+[10:23:45][Notice][ThreadId 3624] APPLIED CHANGE
+[10:23:45][Notice][ThreadId 3624] First "upperBound (Max n) = Just n"
+[10:23:47][Notice][ThreadId 3616] APPLIED CHANGE
+[10:23:47][Notice][ThreadId 3616] First "               Skip sa' -> return $ Skip (Left sa')"
+[10:23:49][Notice][ThreadId 3616] APPLIED CHANGE
+[10:23:49][Notice][ThreadId 3616] First "             case r of"
+[10:23:49][Notice][ThreadId 3616] First "               Yield x sa' -> return $ Yield x (Left sa')"
+[10:23:49][Notice][ThreadId 3616] First "               Done -> return $ Skip (Right tb)"
+[10:23:49][Notice][ThreadId 3616] Second "             case r of { Yield x sa' -> return $ Yield x (Left sa') }"
+[10:23:50][Notice][ThreadId 3616] APPLIED CHANGE
+[10:23:50][Notice][ThreadId 3616] First "               Skip sb' -> return $ Skip (Right sb')"
+[10:23:52][Notice][ThreadId 3616] APPLIED CHANGE
+[10:23:52][Notice][ThreadId 3616] First "             case r of"
+[10:23:52][Notice][ThreadId 3616] First "               Yield x sb' -> return $ Yield x (Right sb')"
+[10:23:52][Notice][ThreadId 3616] First "               Done -> return $ Done"
+[10:23:52][Notice][ThreadId 3616] Second "             case r of { Yield x sb' -> return $ Yield x (Right sb') }"
+[10:23:53][Notice][ThreadId 3620] APPLIED CHANGE
+[10:23:53][Notice][ThreadId 3620] First "                   Skip s' -> foldlM'_loop SPEC z s'"
+[10:23:54][Notice][ThreadId 3620] APPLIED CHANGE
+[10:23:54][Notice][ThreadId 3620] First "                 case r of"
+[10:23:54][Notice][ThreadId 3620] Second "                 case r of {"
+[10:23:54][Notice][ThreadId 3620] First "                           foldlM'_loop SPEC z' s'"
+[10:23:54][Notice][ThreadId 3620] First "                   Done -> return z"
+[10:23:54][Notice][ThreadId 3620] Second "                           foldlM'_loop SPEC z' s' }"
+[10:23:56][Notice][ThreadId 3616] APPLIED CHANGE
+[10:23:56][Notice][ThreadId 3616] First "      step False = Done"
+[10:23:57][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:57][Notice][ThreadId 3634] First "  fmap _ (Skip s) = Skip s"
+[10:23:58][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:58][Notice][ThreadId 3634] First "  fmap _ Done = Done"
+[10:23:59][Notice][ThreadId 3634] APPLIED CHANGE
+[10:23:59][Notice][ThreadId 3634] First "  Exact m + Exact n = checkedAdd Exact m n"
+[10:23:59][Info][ThreadId 4] ****************************************
+[10:23:59][Info][ThreadId 4] rmvGuards
+[10:23:59][Info][ThreadId 4] state size: 6279
+[10:23:59][Info][ThreadId 4] # proposed changes: 6
+[10:23:59][Info][ThreadId 4] # batches: 1
+[10:23:59][Info][ThreadId 4] batch sizes: [6]
+[10:24:00][Notice][ThreadId 4123] APPLIED CHANGE
+[10:24:00][Notice][ThreadId 4123] First "  | r < m || r < n"
+[10:24:01][Notice][ThreadId 4123] APPLIED CHANGE
+[10:24:01][Notice][ThreadId 4123] First "  | r < 0"
+[10:24:02][Notice][ThreadId 4123] APPLIED CHANGE
+[10:24:02][Notice][ThreadId 4123] First "      step i | i >= n = return Done"
+[10:24:02][Notice][ThreadId 4123] Second "      step i = return Done"
+[10:24:02][Info][ThreadId 4] ****************************************
+[10:24:02][Info][ThreadId 4] expr2Undefined
+[10:24:02][Info][ThreadId 4] state size: 6241
+[10:24:02][Info][ThreadId 4] # proposed changes: 533
+[10:24:02][Info][ThreadId 4] # batches: 8
+[10:24:02][Info][ThreadId 4] batch sizes: [71,66,66,66,66,66,66,66]
+[10:24:05][Notice][ThreadId 4144] APPLIED CHANGE
+[10:24:05][Notice][ThreadId 4144] First "            (Yield"
+[10:24:05][Notice][ThreadId 4144] First "               (Chunk (gbasicLength v) (\\ mv -> gbasicUnsafeCopy mv v)) False)"
+[10:24:05][Notice][ThreadId 4144] Second "            (Yield (Chunk (undefined v) (\\ mv -> gbasicUnsafeCopy mv v)) False)"
+[10:24:07][Notice][ThreadId 4144] APPLIED CHANGE
+[10:24:07][Notice][ThreadId 4144] First "            (Yield (Chunk (undefined v) (\\ mv -> gbasicUnsafeCopy mv v)) False)"
+[10:24:07][Notice][ThreadId 4144] Second "            (Yield"
+[10:24:07][Notice][ThreadId 4144] Second "               (Chunk (undefined undefined) (\\ mv -> gbasicUnsafeCopy mv v))"
+[10:24:07][Notice][ThreadId 4144] Second "               False)"
+[10:24:09][Notice][ThreadId 4150] APPLIED CHANGE
+[10:24:09][Notice][ThreadId 4150] First "      (Stream (return . runIdentity . step) s)"
+[10:24:09][Notice][ThreadId 4150] First "      (Stream (return . runIdentity . vstep) t)"
+[10:24:09][Notice][ThreadId 4150] First "      sz"
+[10:24:09][Notice][ThreadId 4150] Second "      (Stream (undefined) s) (Stream (return . runIdentity . vstep) t) sz"
+[10:24:12][Notice][ThreadId 4150] APPLIED CHANGE
+[10:24:12][Notice][ThreadId 4150] First "      (Stream (undefined) s) (Stream (return . runIdentity . vstep) t) sz"
+[10:24:12][Notice][ThreadId 4150] Second "      (Stream (undefined) undefined)"
+[10:24:12][Notice][ThreadId 4150] Second "      (Stream (return . runIdentity . vstep) t)"
+[10:24:12][Notice][ThreadId 4150] Second "      sz"
+[10:24:15][Notice][ThreadId 4134] APPLIED CHANGE
+[10:24:15][Notice][ThreadId 4134] First "                       gmunsafeGrow"
+[10:24:15][Notice][ThreadId 4134] First "                         v (delay_inline max (enlarge_delta v) (j - gmbasicLength v))"
+[10:24:15][Notice][ThreadId 4134] Second "                       gmunsafeGrow v (delay_inline max (enlarge_delta v) undefined)"
+[10:24:17][Notice][ThreadId 4134] APPLIED CHANGE
+[10:24:17][Notice][ThreadId 4134] First "                       return v"
+[10:24:17][Notice][ThreadId 4134] Second "                       undefined"
+[10:24:21][Notice][ThreadId 4152] APPLIED CHANGE
+[10:24:21][Notice][ThreadId 4152] First "             case r of { Yield x sa' -> return $ Yield x (Left sa') }"
+[10:24:21][Notice][ThreadId 4152] Second "             case r of { Yield x sa' -> return $ Yield x (Left undefined) }"
+[10:24:24][Notice][ThreadId 4134] APPLIED CHANGE
+[10:24:24][Notice][ThreadId 4134] First "             f (gmbasicUnsafeSlice i n v')"
+[10:24:24][Notice][ThreadId 4134] Second "             f (gmbasicUnsafeSlice undefined n v')"
+[10:24:27][Notice][ThreadId 4144] APPLIED CHANGE
+[10:24:27][Notice][ThreadId 4144] First "               (Chunk (undefined undefined) (\\ mv -> gbasicUnsafeCopy mv v))"
+[10:24:27][Notice][ThreadId 4144] Second "               (Chunk"
+[10:24:27][Notice][ThreadId 4144] Second "                  (undefined undefined) (\\ mv -> gbasicUnsafeCopy undefined v))"
+[10:24:30][Notice][ThreadId 4136] APPLIED CHANGE
+[10:24:30][Notice][ThreadId 4136] First "       return $ gmunsafeSlice 0 n' v"
+[10:24:30][Notice][ThreadId 4136] Second "       undefined"
+[10:24:33][Notice][ThreadId 4134] APPLIED CHANGE
+[10:24:33][Notice][ThreadId 4134] First "             f (gmbasicUnsafeSlice undefined n v')"
+[10:24:33][Notice][ThreadId 4134] Second "             f (gmbasicUnsafeSlice undefined undefined v')"
+[10:24:37][Notice][ThreadId 4160] APPLIED CHANGE
+[10:24:37][Notice][ThreadId 4160] First "  = gelemseq (undefined :: v a) x $ gunstream $ bcons x $ gstream v"
+[10:24:37][Notice][ThreadId 4160] Second "  = gelemseq (undefined :: v a) undefined $ gunstream $ bcons x"
+[10:24:37][Notice][ThreadId 4160] Second "      $ gstream v"
+[10:24:40][Notice][ThreadId 4150] APPLIED CHANGE
+[10:24:40][Notice][ThreadId 4150] First "  = v `seq` n"
+[10:24:40][Notice][ThreadId 4150] First "      `seq` Bundle (Stream step 0) (Stream vstep True) (Exact n)"
+[10:24:40][Notice][ThreadId 4150] Second "  = v `seq` n `seq` Bundle undefined (Stream vstep True) (Exact n)"
+[10:24:43][Notice][ThreadId 4144] APPLIED CHANGE
+[10:24:43][Notice][ThreadId 4144] First "               False)"
+[10:24:43][Notice][ThreadId 4144] Second "               undefined)"
+[10:24:47][Notice][ThreadId 4142] APPLIED CHANGE
+[10:24:47][Notice][ThreadId 4142] First "             return $ fmap (\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v 0 x)) r"
+[10:24:47][Notice][ThreadId 4142] Second "             return"
+[10:24:47][Notice][ThreadId 4142] Second "               $ fmap (\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v undefined x)) r"
+[10:24:51][Notice][ThreadId 4136] APPLIED CHANGE
+[10:24:51][Notice][ThreadId 4136] First "  = do v <- gmunsafeNew 0"
+[10:24:51][Notice][ThreadId 4136] Second "  = do v <- gmunsafeNew undefined"
+[10:24:54][Notice][ThreadId 4152] APPLIED CHANGE
+[10:24:54][Notice][ThreadId 4152] First "        = do r <- stepb sb"
+[10:24:54][Notice][ThreadId 4152] Second "        = do r <- stepb undefined"
+[10:24:58][Notice][ThreadId 4156] APPLIED CHANGE
+[10:24:58][Notice][ThreadId 4156] First "  = foldlM'_loop SPEC w t"
+[10:24:58][Notice][ThreadId 4156] Second "  = undefined"
+[10:25:02][Notice][ThreadId 4134] APPLIED CHANGE
+[10:25:02][Notice][ThreadId 4134] First "             return (v', j)"
+[10:25:02][Notice][ThreadId 4134] Second "             return (undefined, j)"
+[10:25:06][Notice][ThreadId 4150] APPLIED CHANGE
+[10:25:06][Notice][ThreadId 4150] First "  = v `seq` n `seq` Bundle undefined (Stream vstep True) (Exact n)"
+[10:25:06][Notice][ThreadId 4150] Second "  = v `seq` n"
+[10:25:06][Notice][ThreadId 4150] Second "      `seq` Bundle undefined (Stream vstep undefined) (Exact n)"
+[10:25:09][Notice][ThreadId 4156] APPLIED CHANGE
+[10:25:09][Notice][ThreadId 4156] First "        = z `seq`"
+[10:25:09][Notice][ThreadId 4156] Second "        = undefined"
+[10:25:09][Notice][ThreadId 4156] Second "            `seq`"
+[10:25:13][Notice][ThreadId 4156] APPLIED CHANGE
+[10:25:13][Notice][ThreadId 4156] First "            `seq`"
+[10:25:13][Notice][ThreadId 4156] Second "            `undefined`"
+[10:25:16][Notice][ThreadId 4150] APPLIED CHANGE
+[10:25:16][Notice][ThreadId 4150] First "      `seq` Bundle undefined (Stream vstep undefined) (Exact n)"
+[10:25:16][Notice][ThreadId 4150] Second "      `seq` Bundle undefined (Stream vstep undefined) undefined"
+[10:25:20][Notice][ThreadId 4136] APPLIED CHANGE
+[10:25:20][Notice][ThreadId 4136] First "       return $ gmunsafeSlice 0 n v'"
+[10:25:20][Notice][ThreadId 4136] Second "       undefined"
+[10:25:24][Notice][ThreadId 4142] APPLIED CHANGE
+[10:25:24][Notice][ThreadId 4142] First "gmunsafeNew n = gmbasicUnsafeNew n"
+[10:25:24][Notice][ThreadId 4142] Second "gmunsafeNew n = gmbasicUnsafeNew undefined"
+[10:25:28][Notice][ThreadId 4144] APPLIED CHANGE
+[10:25:28][Notice][ThreadId 4144] First "bmsingleton x = bmfromStream (ssingleton x) (Exact 1)"
+[10:25:28][Notice][ThreadId 4144] Second "bmsingleton x = bmfromStream (ssingleton x) undefined"
+[10:25:32][Notice][ThreadId 4156] APPLIED CHANGE
+[10:25:32][Notice][ThreadId 4156] First "              do r <- step s"
+[10:25:32][Notice][ThreadId 4156] Second "              do r <- step undefined"
+[10:25:36][Notice][ThreadId 4150] APPLIED CHANGE
+[10:25:36][Notice][ThreadId 4150] First "      step i = return Done"
+[10:25:36][Notice][ThreadId 4150] Second "      step i = undefined"
+[10:25:40][Notice][ThreadId 4160] APPLIED CHANGE
+[10:25:40][Notice][ThreadId 4160] First "  fmap f (Yield x s) = Yield (f x) s"
+[10:25:40][Notice][ThreadId 4160] Second "  fmap f (Yield x s) = Yield (f x) undefined"
+[10:25:44][Notice][ThreadId 4134] APPLIED CHANGE
+[10:25:44][Notice][ThreadId 4134] First "gmunsafeSlice i n v = gmbasicUnsafeSlice i n v"
+[10:25:44][Notice][ThreadId 4134] Second "gmunsafeSlice i n v = undefined"
+[10:25:48][Notice][ThreadId 4134] APPLIED CHANGE
+[10:25:48][Notice][ThreadId 4134] First "gmlength = gmbasicLength"
+[10:25:48][Notice][ThreadId 4134] Second "gmlength = undefined"
+[10:25:53][Notice][ThreadId 4156] APPLIED CHANGE
+[10:25:53][Notice][ThreadId 4156] First "                     -> do z' <- m z x"
+[10:25:53][Notice][ThreadId 4156] Second "                     -> do z' <- m undefined x"
+[10:25:57][Notice][ThreadId 4142] APPLIED CHANGE
+[10:25:57][Notice][ThreadId 4142] First "gmvmunstreamMax s n"
+[10:25:57][Notice][ThreadId 4142] First "  = do v <- gmunsafeNew n"
+[10:25:57][Notice][ThreadId 4142] First "       let {-# INLINE [0] copyChunk #-}"
+[10:25:57][Notice][ThreadId 4142] First "           copyChunk i (Chunk m f)"
+[10:25:57][Notice][ThreadId 4142] First "             = do f (gmbasicUnsafeSlice i m v)"
+[10:25:57][Notice][ThreadId 4142] First "                  return (i + m)"
+[10:25:57][Notice][ThreadId 4142] First "       n' <- sfoldlM' copyChunk 0 (bmchunks s)"
+[10:25:57][Notice][ThreadId 4142] First "       undefined"
+[10:25:57][Notice][ThreadId 4142] Second "gmvmunstreamMax s n = undefined"
+[10:26:00][Notice][ThreadId 4144] APPLIED CHANGE
+[10:26:00][Notice][ThreadId 4144] First "  = Bundle (Stream step t) (Stream step' t) sz"
+[10:26:00][Notice][ThreadId 4144] Second "  = Bundle (Stream undefined t) (Stream step' t) sz"
+[10:26:03][Notice][ThreadId 4150] APPLIED CHANGE
+[10:26:03][Notice][ThreadId 4150] First "               (Chunk"
+[10:26:03][Notice][ThreadId 4150] First "                  (undefined undefined) (\\ mv -> gbasicUnsafeCopy undefined v))"
+[10:26:03][Notice][ThreadId 4150] First "               undefined)"
+[10:26:03][Notice][ThreadId 4150] Second "               (Chunk undefined (\\ mv -> gbasicUnsafeCopy undefined v)) undefined)"
+[10:26:06][Notice][ThreadId 4156] APPLIED CHANGE
+[10:26:06][Notice][ThreadId 4156] First "                           foldlM'_loop SPEC z' s' }"
+[10:26:06][Notice][ThreadId 4156] Second "                           undefined }"
+[10:26:09][Notice][ThreadId 4160] APPLIED CHANGE
+[10:26:09][Notice][ThreadId 4160] First "  = error $ \"Data.Vector.Fusion.Bundle.Size.checkedAdd: overflow: \""
+[10:26:09][Notice][ThreadId 4160] First "      ++ show r"
+[10:26:09][Notice][ThreadId 4160] Second "  = undefined"
+[10:26:12][Notice][ThreadId 4160] APPLIED CHANGE
+[10:26:12][Notice][ThreadId 4160] First "      r = m + n"
+[10:26:12][Notice][ThreadId 4160] Second "      r = undefined"
+[10:26:14][Notice][ThreadId 4160] APPLIED CHANGE
+[10:26:14][Notice][ThreadId 4160] First "  = error"
+[10:26:14][Notice][ThreadId 4160] First "      $ \"Data.Vector.Fusion.Bundle.Size.checkedSubtract: underflow: \""
+[10:26:14][Notice][ThreadId 4160] First "      ++ show r"
+[10:26:14][Notice][ThreadId 4160] Second "  = undefined"
+[10:26:18][Notice][ThreadId 4160] APPLIED CHANGE
+[10:26:18][Notice][ThreadId 4160] First "      r = m - n"
+[10:26:18][Notice][ThreadId 4160] Second "      r = undefined"
+[10:26:21][Notice][ThreadId 4136] APPLIED CHANGE
+[10:26:21][Notice][ThreadId 4136] First "                       gmunsafeGrow v (delay_inline max (enlarge_delta v) undefined)"
+[10:26:21][Notice][ThreadId 4136] Second "                       gmunsafeGrow v undefined"
+[10:26:24][Notice][ThreadId 4134] APPLIED CHANGE
+[10:26:24][Notice][ThreadId 4134] First "gmunsafeGrow v n = gmbasicUnsafeGrow v n"
+[10:26:24][Notice][ThreadId 4134] Second "gmunsafeGrow v n = gmbasicUnsafeGrow v undefined"
+[10:26:26][Notice][ThreadId 4134] APPLIED CHANGE
+[10:26:26][Notice][ThreadId 4134] First "enlarge_delta v = max (gmlength v) 1"
+[10:26:26][Notice][ThreadId 4134] Second "enlarge_delta v = undefined"
+[10:26:29][Notice][ThreadId 4152] APPLIED CHANGE
+[10:26:29][Notice][ThreadId 4152] First "      step True = Yield x False"
+[10:26:29][Notice][ThreadId 4152] Second "      step True = Yield x undefined"
+[10:26:32][Notice][ThreadId 4144] APPLIED CHANGE
+[10:26:32][Notice][ThreadId 4144] First "  = Bundle (Stream undefined t) (Stream step' t) sz"
+[10:26:32][Notice][ThreadId 4144] Second "  = Bundle (Stream undefined undefined) (Stream step' t) sz"
+[10:26:36][Notice][ThreadId 4134] APPLIED CHANGE
+[10:26:36][Notice][ThreadId 4134] First "gnew m = m `seq` runST (gunsafeFreeze =<< nrun m)"
+[10:26:36][Notice][ThreadId 4134] Second "gnew m = m `seq` runST (undefined =<< nrun m)"
+[10:26:39][Notice][ThreadId 4144] APPLIED CHANGE
+[10:26:39][Notice][ThreadId 4144] First "  = Bundle (Stream undefined undefined) (Stream step' t) sz"
+[10:26:39][Notice][ThreadId 4144] Second "  = Bundle (Stream undefined undefined) (Stream step' t) undefined"
+[10:26:46][Notice][ThreadId 4134] APPLIED CHANGE
+[10:26:46][Notice][ThreadId 4134] First "gunsafeFreeze = gbasicUnsafeFreeze"
+[10:26:46][Notice][ThreadId 4134] Second "gunsafeFreeze = undefined"
+[10:26:49][Notice][ThreadId 4152] APPLIED CHANGE
+[10:26:49][Notice][ThreadId 4152] First "  = Bundle (sappend sa sb) (sappend ta tb) (na + nb)"
+[10:26:49][Notice][ThreadId 4152] Second "  = Bundle (sappend sa sb) (sappend ta tb) (undefined + nb)"
+[10:26:52][Notice][ThreadId 4152] APPLIED CHANGE
+[10:26:52][Notice][ThreadId 4152] First "  = Bundle (sappend sa sb) (sappend ta tb) (undefined + nb)"
+[10:26:52][Notice][ThreadId 4152] Second "  = Bundle (sappend sa sb) (sappend ta tb) (undefined + undefined)"
+[10:26:55][Notice][ThreadId 4152] APPLIED CHANGE
+[10:26:55][Notice][ThreadId 4152] First "  = Bundle"
+[10:26:55][Notice][ThreadId 4152] First "      (Stream (undefined) undefined)"
+[10:26:55][Notice][ThreadId 4152] First "      (Stream (return . runIdentity . vstep) t)"
+[10:26:55][Notice][ThreadId 4152] First "      sz"
+[10:26:55][Notice][ThreadId 4152] Second "  = Bundle undefined (Stream (return . runIdentity . vstep) t) sz"
+[10:27:00][Info][ThreadId 4] ****************************************
+[10:27:00][Info][ThreadId 4] TypeFamilies.apply
+[10:27:00][Info][ThreadId 4] state size: 5821
+[10:27:00][Info][ThreadId 4] # proposed changes: 12
+[10:27:00][Info][ThreadId 4] # batches: 11
+[10:27:00][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:27:02][Notice][ThreadId 5530] APPLIED CHANGE
+[10:27:02][Notice][ThreadId 5530] First "  gbasicUnsafeCopy ::"
+[10:27:02][Notice][ThreadId 5530] First "    PrimMonad m => Mutable v (PrimState m) a -> v a -> m ()"
+[10:27:02][Notice][ThreadId 5530] Second "  gbasicUnsafeCopy :: PrimMonad m => a -> v a -> m ()"
+[10:27:04][Notice][ThreadId 5536] APPLIED CHANGE
+[10:27:04][Notice][ThreadId 5536] First "  gbasicUnsafeFreeze ::"
+[10:27:04][Notice][ThreadId 5536] First "    PrimMonad m => Mutable v (PrimState m) a -> m (v a)"
+[10:27:04][Notice][ThreadId 5536] Second "  gbasicUnsafeFreeze :: PrimMonad m => a -> m (v a)"
+[10:27:06][Notice][ThreadId 5524] APPLIED CHANGE
+[10:27:06][Notice][ThreadId 5524] First "gunsafeFreeze ::"
+[10:27:06][Notice][ThreadId 5524] First "  (PrimMonad m, GVector v a) => Mutable v (PrimState m) a -> m (v a)"
+[10:27:06][Notice][ThreadId 5524] Second "gunsafeFreeze :: (PrimMonad m, GVector v a) => a -> m (v a)"
+[10:27:06][Info][ThreadId 4] ****************************************
+[10:27:06][Info][ThreadId 4] splitSigs
+[10:27:06][Info][ThreadId 4] state size: 5739
+[10:27:06][Info][ThreadId 4] # proposed changes: 1
+[10:27:06][Info][ThreadId 4] # batches: 1
+[10:27:06][Info][ThreadId 4] batch sizes: [1]
+[10:27:06][Info][ThreadId 4] ****************************************
+[10:27:06][Info][ThreadId 4] rmvSigs
+[10:27:06][Info][ThreadId 4] state size: 5739
+[10:27:06][Info][ThreadId 4] # proposed changes: 15
+[10:27:06][Info][ThreadId 4] # batches: 14
+[10:27:06][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1,1,1,1]
+[10:27:09][Notice][ThreadId 5589] APPLIED CHANGE
+[10:27:09][Notice][ThreadId 5589] First "{-# INLINE gmvmunstreamMax #-}"
+[10:27:12][Notice][ThreadId 5613] APPLIED CHANGE
+[10:27:12][Notice][ThreadId 5613] First "{-# INLINE [1] bmappend #-}"
+[10:27:14][Notice][ThreadId 5597] APPLIED CHANGE
+[10:27:14][Notice][ThreadId 5597] First "{-# INLINE [1] nunstream #-}"
+[10:27:15][Notice][ThreadId 5581] APPLIED CHANGE
+[10:27:15][Notice][ThreadId 5581] First "gunsafeFreeze :: (PrimMonad m, GVector v a) => a -> m (v a)"
+[10:27:17][Notice][ThreadId 5581] APPLIED CHANGE
+[10:27:17][Notice][ThreadId 5581] First "gmlength :: GMVector v a => v s a -> Int"
+[10:27:18][Notice][ThreadId 5599] APPLIED CHANGE
+[10:27:18][Notice][ThreadId 5599] First "nunstream :: GVector v a => Bundle v a -> New v a"
+[10:27:18][Info][ThreadId 4] ****************************************
+[10:27:18][Info][ThreadId 4] rmvDecls
+[10:27:18][Info][ThreadId 4] state size: 5500
+[10:27:18][Info][ThreadId 4] # proposed changes: 62
+[10:27:18][Info][ThreadId 4] # batches: 8
+[10:27:18][Info][ThreadId 4] batch sizes: [13,7,7,7,7,7,7,7]
+[10:27:21][Notice][ThreadId 5670] APPLIED CHANGE
+[10:27:21][Notice][ThreadId 5670] First "enlarge_delta v = undefined"
+[10:27:24][Notice][ThreadId 5688] APPLIED CHANGE
+[10:27:24][Notice][ThreadId 5688] First "checkedAdd con m n"
+[10:27:24][Notice][ThreadId 5688] First "  = undefined"
+[10:27:24][Notice][ThreadId 5688] First "  where"
+[10:27:24][Notice][ThreadId 5688] First "      r = undefined"
+[10:27:27][Notice][ThreadId 5688] APPLIED CHANGE
+[10:27:27][Notice][ThreadId 5688] First "checkedSubtract con m n"
+[10:27:27][Notice][ThreadId 5688] First "  = undefined"
+[10:27:27][Notice][ThreadId 5688] First "  where"
+[10:27:27][Notice][ThreadId 5688] First "      r = undefined"
+[10:27:29][Notice][ThreadId 5692] APPLIED CHANGE
+[10:27:29][Notice][ThreadId 5692] First "instance Monad Box where"
+[10:27:31][Notice][ThreadId 5684] APPLIED CHANGE
+[10:27:31][Notice][ThreadId 5684] First "sfoldlM' m w (Stream step t)"
+[10:27:31][Notice][ThreadId 5684] First "  = undefined"
+[10:27:31][Notice][ThreadId 5684] First "  where"
+[10:27:31][Notice][ThreadId 5684] First "      foldlM'_loop !_ z s"
+[10:27:31][Notice][ThreadId 5684] First "        = undefined"
+[10:27:31][Notice][ThreadId 5684] First "            `undefined`"
+[10:27:31][Notice][ThreadId 5684] First "              do r <- step undefined"
+[10:27:31][Notice][ThreadId 5684] First "                 case r of {"
+[10:27:31][Notice][ThreadId 5684] First "                   Yield x s'"
+[10:27:31][Notice][ThreadId 5684] First "                     -> do z' <- m undefined x"
+[10:27:31][Notice][ThreadId 5684] First "                           undefined }"
+[10:27:33][Notice][ThreadId 5670] APPLIED CHANGE
+[10:27:33][Notice][ThreadId 5670] First "gunsafeFreeze = undefined"
+[10:27:35][Notice][ThreadId 5696] APPLIED CHANGE
+[10:27:35][Notice][ThreadId 5696] First "delay_inline f = f"
+[10:27:37][Notice][ThreadId 5670] APPLIED CHANGE
+[10:27:37][Notice][ThreadId 5670] First "gmvmunstreamMax s n = undefined"
+[10:27:40][Notice][ThreadId 5670] APPLIED CHANGE
+[10:27:40][Notice][ThreadId 5670] First "gmunsafeSlice i n v = undefined"
+[10:27:41][Notice][ThreadId 5670] APPLIED CHANGE
+[10:27:41][Notice][ThreadId 5670] First "gmlength = undefined"
+[10:27:41][Info][ThreadId 4] ****************************************
+[10:27:41][Info][ThreadId 4] rmvConstructors
+[10:27:41][Info][ThreadId 4] state size: 4887
+[10:27:41][Info][ThreadId 4] # proposed changes: 11
+[10:27:41][Info][ThreadId 4] # batches: 10
+[10:27:41][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1]
+[10:27:43][Notice][ThreadId 5890] APPLIED CHANGE
+[10:27:43][Notice][ThreadId 5890] First "    Skip :: s -> Step s a"
+[10:27:45][Notice][ThreadId 5879] APPLIED CHANGE
+[10:27:45][Notice][ThreadId 5879] First "data Size = Exact Int | Max Int | Unknown"
+[10:27:45][Notice][ThreadId 5879] Second "data Size = Max Int | Unknown"
+[10:27:47][Notice][ThreadId 5897] APPLIED CHANGE
+[10:27:47][Notice][ThreadId 5897] First "data Box a = Box a"
+[10:27:47][Notice][ThreadId 5897] Second "data Box a"
+[10:27:48][Notice][ThreadId 5887] APPLIED CHANGE
+[10:27:48][Notice][ThreadId 5887] First "data Step s a"
+[10:27:48][Notice][ThreadId 5887] First "  where"
+[10:27:48][Notice][ThreadId 5887] First "    Yield :: a -> s -> Step s a"
+[10:27:48][Notice][ThreadId 5887] First "    Done :: Step s a"
+[10:27:48][Notice][ThreadId 5887] Second "data Step s a where Yield :: a -> s -> Step s a"
+[10:27:50][Notice][ThreadId 5875] APPLIED CHANGE
+[10:27:50][Notice][ThreadId 5875] First "data Size = Max Int | Unknown"
+[10:27:50][Notice][ThreadId 5875] Second "data Size = Unknown"
+[10:27:50][Info][ThreadId 4] ****************************************
+[10:27:50][Info][ThreadId 4] simplifyConDecl
+[10:27:50][Info][ThreadId 4] state size: 4804
+[10:27:50][Info][ThreadId 4] # proposed changes: 4
+[10:27:50][Info][ThreadId 4] # batches: 1
+[10:27:50][Info][ThreadId 4] batch sizes: [4]
+[10:27:51][Info][ThreadId 4] ***NEW ITERATION***
+[10:27:52][Info][ThreadId 4] ****************************************
+[10:27:52][Info][ThreadId 4] inlineType
+[10:27:52][Info][ThreadId 4] state size: 4804
+[10:27:52][Info][ThreadId 4] # proposed changes: 0
+[10:27:52][Info][ThreadId 4] # batches: 1
+[10:27:52][Info][ThreadId 4] batch sizes: [0]
+[10:27:52][Info][ThreadId 4] ****************************************
+[10:27:52][Info][ThreadId 4] rmvConArgs
+[10:27:52][Info][ThreadId 4] state size: 4804
+[10:27:52][Info][ThreadId 4] # proposed changes: 8
+[10:27:52][Info][ThreadId 4] # batches: 8
+[10:27:52][Info][ThreadId 4] batch sizes: [1,1,1,1,1,1,1,1]
+[10:27:54][Notice][ThreadId 5979] APPLIED CHANGE
+[10:27:54][Notice][ThreadId 5979] First "  = Bundle {_sElems :: Stream m a,"
+[10:27:54][Notice][ThreadId 5979] First "            sChunks :: Stream m (Chunk v a),"
+[10:27:54][Notice][ThreadId 5979] First "            sSize :: Size}"
+[10:27:54][Notice][ThreadId 5979] Second "  = Bundle {sChunks :: Stream m (Chunk v a), sSize :: Size}"
+[10:27:54][Notice][ThreadId 5979] First "Bundle sa ta na `bmappend` Bundle sb tb nb"
+[10:27:54][Notice][ThreadId 5979] First "  = Bundle (sappend sa sb) (sappend ta tb) (undefined + undefined)"
+[10:27:54][Notice][ThreadId 5979] Second "Bundle ta na `bmappend` Bundle tb nb"
+[10:27:54][Notice][ThreadId 5979] Second "  = Bundle (sappend ta tb) (undefined + undefined)"
+[10:27:54][Notice][ThreadId 5979] First "blift (Bundle (Stream step s) (Stream vstep t) sz)"
+[10:27:54][Notice][ThreadId 5979] First "  = Bundle undefined (Stream (return . runIdentity . vstep) t) sz"
+[10:27:54][Notice][ThreadId 5979] Second "blift (Bundle (Stream vstep t) sz)"
+[10:27:54][Notice][ThreadId 5979] Second "  = Bundle (Stream (return . runIdentity . vstep) t) sz"
+[10:27:54][Notice][ThreadId 5979] First "  = v `seq` n"
+[10:27:54][Notice][ThreadId 5979] First "      `seq` Bundle undefined (Stream vstep undefined) undefined"
+[10:27:54][Notice][ThreadId 5979] Second "  = v `seq` n `seq` Bundle (Stream vstep undefined) undefined"
+[10:27:54][Notice][ThreadId 5979] First "  = Bundle (Stream undefined undefined) (Stream step' t) undefined"
+[10:27:54][Notice][ThreadId 5979] Second "  = Bundle (Stream step' t) undefined"
+[10:27:54][Info][ThreadId 4] ****************************************
+[10:27:54][Info][ThreadId 4] rmvRHSs
+[10:27:54][Info][ThreadId 4] state size: 4664
+[10:27:54][Info][ThreadId 4] # proposed changes: 45
+[10:27:54][Info][ThreadId 4] # batches: 8
+[10:27:54][Info][ThreadId 4] batch sizes: [10,5,5,5,5,5,5,5]
+[10:27:54][Info][ThreadId 4] ****************************************
+[10:27:54][Info][ThreadId 4] rmvMatches
+[10:27:54][Info][ThreadId 4] state size: 4664
+[10:27:54][Info][ThreadId 4] # proposed changes: 45
+[10:27:54][Info][ThreadId 4] # batches: 8
+[10:27:54][Info][ThreadId 4] batch sizes: [10,5,5,5,5,5,5,5]
+[10:27:57][Info][ThreadId 4] ****************************************
+[10:27:57][Info][ThreadId 4] rmvGuards
+[10:27:57][Info][ThreadId 4] state size: 4664
+[10:27:57][Info][ThreadId 4] # proposed changes: 0
+[10:27:57][Info][ThreadId 4] # batches: 1
+[10:27:57][Info][ThreadId 4] batch sizes: [0]
+[10:27:57][Info][ThreadId 4] ****************************************
+[10:27:57][Info][ThreadId 4] expr2Undefined
+[10:27:57][Info][ThreadId 4] state size: 4664
+[10:27:57][Info][ThreadId 4] # proposed changes: 319
+[10:27:57][Info][ThreadId 4] # batches: 8
+[10:27:57][Info][ThreadId 4] batch sizes: [46,39,39,39,39,39,39,39]
+[10:28:56][Info][ThreadId 4] ****************************************
+[10:28:56][Info][ThreadId 4] TypeFamilies.apply
+[10:28:56][Info][ThreadId 4] state size: 4664
+[10:28:56][Info][ThreadId 4] # proposed changes: 6
+[10:28:56][Info][ThreadId 4] # batches: 1
+[10:28:56][Info][ThreadId 4] batch sizes: [6]
+[10:28:58][Info][ThreadId 4] ****************************************
+[10:28:58][Info][ThreadId 4] splitSigs
+[10:28:58][Info][ThreadId 4] state size: 4664
+[10:28:58][Info][ThreadId 4] # proposed changes: 1
+[10:28:58][Info][ThreadId 4] # batches: 1
+[10:28:58][Info][ThreadId 4] batch sizes: [1]
+[10:28:58][Info][ThreadId 4] ****************************************
+[10:28:58][Info][ThreadId 4] rmvSigs
+[10:28:58][Info][ThreadId 4] state size: 4664
+[10:28:58][Info][ThreadId 4] # proposed changes: 9
+[10:28:58][Info][ThreadId 4] # batches: 8
+[10:28:58][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:29:00][Info][ThreadId 4] ****************************************
+[10:29:00][Info][ThreadId 4] rmvDecls
+[10:29:00][Info][ThreadId 4] state size: 4664
+[10:29:00][Info][ThreadId 4] # proposed changes: 52
+[10:29:00][Info][ThreadId 4] # batches: 8
+[10:29:00][Info][ThreadId 4] batch sizes: [10,6,6,6,6,6,6,6]
+[10:29:03][Notice][ThreadId 6928] APPLIED CHANGE
+[10:29:03][Notice][ThreadId 6928] First "instance Applicative Box where"
+[10:29:06][Info][ThreadId 4] ****************************************
+[10:29:06][Info][ThreadId 4] rmvConstructors
+[10:29:06][Info][ThreadId 4] state size: 4633
+[10:29:06][Info][ThreadId 4] # proposed changes: 6
+[10:29:06][Info][ThreadId 4] # batches: 1
+[10:29:06][Info][ThreadId 4] batch sizes: [6]
+[10:29:07][Info][ThreadId 4] ****************************************
+[10:29:07][Info][ThreadId 4] simplifyConDecl
+[10:29:07][Info][ThreadId 4] state size: 4633
+[10:29:07][Info][ThreadId 4] # proposed changes: 3
+[10:29:07][Info][ThreadId 4] # batches: 1
+[10:29:07][Info][ThreadId 4] batch sizes: [3]
+[10:29:07][Info][ThreadId 4] ***NEW ITERATION***
+[10:29:08][Info][ThreadId 4] ****************************************
+[10:29:08][Info][ThreadId 4] inlineType
+[10:29:08][Info][ThreadId 4] state size: 4633
+[10:29:08][Info][ThreadId 4] # proposed changes: 0
+[10:29:08][Info][ThreadId 4] # batches: 1
+[10:29:08][Info][ThreadId 4] batch sizes: [0]
+[10:29:08][Info][ThreadId 4] ****************************************
+[10:29:08][Info][ThreadId 4] rmvConArgs
+[10:29:08][Info][ThreadId 4] state size: 4633
+[10:29:08][Info][ThreadId 4] # proposed changes: 7
+[10:29:08][Info][ThreadId 4] # batches: 1
+[10:29:08][Info][ThreadId 4] batch sizes: [7]
+[10:29:10][Info][ThreadId 4] ****************************************
+[10:29:10][Info][ThreadId 4] rmvRHSs
+[10:29:10][Info][ThreadId 4] state size: 4633
+[10:29:10][Info][ThreadId 4] # proposed changes: 45
+[10:29:10][Info][ThreadId 4] # batches: 8
+[10:29:10][Info][ThreadId 4] batch sizes: [10,5,5,5,5,5,5,5]
+[10:29:10][Info][ThreadId 4] ****************************************
+[10:29:10][Info][ThreadId 4] rmvMatches
+[10:29:10][Info][ThreadId 4] state size: 4633
+[10:29:10][Info][ThreadId 4] # proposed changes: 45
+[10:29:10][Info][ThreadId 4] # batches: 8
+[10:29:10][Info][ThreadId 4] batch sizes: [10,5,5,5,5,5,5,5]
+[10:29:13][Info][ThreadId 4] ****************************************
+[10:29:13][Info][ThreadId 4] rmvGuards
+[10:29:13][Info][ThreadId 4] state size: 4633
+[10:29:13][Info][ThreadId 4] # proposed changes: 0
+[10:29:13][Info][ThreadId 4] # batches: 1
+[10:29:13][Info][ThreadId 4] batch sizes: [0]
+[10:29:13][Info][ThreadId 4] ****************************************
+[10:29:13][Info][ThreadId 4] expr2Undefined
+[10:29:13][Info][ThreadId 4] state size: 4633
+[10:29:13][Info][ThreadId 4] # proposed changes: 319
+[10:29:13][Info][ThreadId 4] # batches: 8
+[10:29:13][Info][ThreadId 4] batch sizes: [46,39,39,39,39,39,39,39]
+[10:30:10][Info][ThreadId 4] ****************************************
+[10:30:10][Info][ThreadId 4] TypeFamilies.apply
+[10:30:10][Info][ThreadId 4] state size: 4633
+[10:30:10][Info][ThreadId 4] # proposed changes: 6
+[10:30:10][Info][ThreadId 4] # batches: 1
+[10:30:10][Info][ThreadId 4] batch sizes: [6]
+[10:30:11][Info][ThreadId 4] ****************************************
+[10:30:11][Info][ThreadId 4] splitSigs
+[10:30:11][Info][ThreadId 4] state size: 4633
+[10:30:11][Info][ThreadId 4] # proposed changes: 1
+[10:30:11][Info][ThreadId 4] # batches: 1
+[10:30:11][Info][ThreadId 4] batch sizes: [1]
+[10:30:11][Info][ThreadId 4] ****************************************
+[10:30:11][Info][ThreadId 4] rmvSigs
+[10:30:11][Info][ThreadId 4] state size: 4633
+[10:30:11][Info][ThreadId 4] # proposed changes: 9
+[10:30:11][Info][ThreadId 4] # batches: 8
+[10:30:11][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:30:14][Info][ThreadId 4] ****************************************
+[10:30:14][Info][ThreadId 4] rmvDecls
+[10:30:14][Info][ThreadId 4] state size: 4633
+[10:30:14][Info][ThreadId 4] # proposed changes: 51
+[10:30:14][Info][ThreadId 4] # batches: 8
+[10:30:14][Info][ThreadId 4] batch sizes: [9,6,6,6,6,6,6,6]
+[10:30:17][Notice][ThreadId 8031] APPLIED CHANGE
+[10:30:17][Notice][ThreadId 8031] First "instance Functor Box where"
+[10:30:19][Notice][ThreadId 8033] APPLIED CHANGE
+[10:30:19][Notice][ThreadId 8033] First "data Box a"
+[10:30:20][Info][ThreadId 4] ****************************************
+[10:30:20][Info][ThreadId 4] rmvConstructors
+[10:30:20][Info][ThreadId 4] state size: 4595
+[10:30:20][Info][ThreadId 4] # proposed changes: 6
+[10:30:20][Info][ThreadId 4] # batches: 1
+[10:30:20][Info][ThreadId 4] batch sizes: [6]
+[10:30:21][Info][ThreadId 4] ****************************************
+[10:30:21][Info][ThreadId 4] simplifyConDecl
+[10:30:21][Info][ThreadId 4] state size: 4595
+[10:30:21][Info][ThreadId 4] # proposed changes: 3
+[10:30:21][Info][ThreadId 4] # batches: 1
+[10:30:21][Info][ThreadId 4] batch sizes: [3]
+[10:30:21][Info][ThreadId 4] ***NEW ITERATION***
+[10:30:23][Info][ThreadId 4] ****************************************
+[10:30:23][Info][ThreadId 4] inlineType
+[10:30:23][Info][ThreadId 4] state size: 4595
+[10:30:23][Info][ThreadId 4] # proposed changes: 0
+[10:30:23][Info][ThreadId 4] # batches: 1
+[10:30:23][Info][ThreadId 4] batch sizes: [0]
+[10:30:23][Info][ThreadId 4] ****************************************
+[10:30:23][Info][ThreadId 4] rmvConArgs
+[10:30:23][Info][ThreadId 4] state size: 4595
+[10:30:23][Info][ThreadId 4] # proposed changes: 7
+[10:30:23][Info][ThreadId 4] # batches: 1
+[10:30:23][Info][ThreadId 4] batch sizes: [7]
+[10:30:24][Info][ThreadId 4] ****************************************
+[10:30:24][Info][ThreadId 4] rmvRHSs
+[10:30:24][Info][ThreadId 4] state size: 4595
+[10:30:24][Info][ThreadId 4] # proposed changes: 45
+[10:30:24][Info][ThreadId 4] # batches: 8
+[10:30:24][Info][ThreadId 4] batch sizes: [10,5,5,5,5,5,5,5]
+[10:30:24][Info][ThreadId 4] ****************************************
+[10:30:24][Info][ThreadId 4] rmvMatches
+[10:30:24][Info][ThreadId 4] state size: 4595
+[10:30:24][Info][ThreadId 4] # proposed changes: 45
+[10:30:24][Info][ThreadId 4] # batches: 8
+[10:30:24][Info][ThreadId 4] batch sizes: [10,5,5,5,5,5,5,5]
+[10:30:27][Info][ThreadId 4] ****************************************
+[10:30:27][Info][ThreadId 4] rmvGuards
+[10:30:27][Info][ThreadId 4] state size: 4595
+[10:30:27][Info][ThreadId 4] # proposed changes: 0
+[10:30:27][Info][ThreadId 4] # batches: 1
+[10:30:27][Info][ThreadId 4] batch sizes: [0]
+[10:30:27][Info][ThreadId 4] ****************************************
+[10:30:27][Info][ThreadId 4] expr2Undefined
+[10:30:27][Info][ThreadId 4] state size: 4595
+[10:30:27][Info][ThreadId 4] # proposed changes: 319
+[10:30:27][Info][ThreadId 4] # batches: 8
+[10:30:27][Info][ThreadId 4] batch sizes: [46,39,39,39,39,39,39,39]
+[10:31:26][Info][ThreadId 4] ****************************************
+[10:31:26][Info][ThreadId 4] TypeFamilies.apply
+[10:31:26][Info][ThreadId 4] state size: 4595
+[10:31:26][Info][ThreadId 4] # proposed changes: 6
+[10:31:26][Info][ThreadId 4] # batches: 1
+[10:31:26][Info][ThreadId 4] batch sizes: [6]
+[10:31:27][Info][ThreadId 4] ****************************************
+[10:31:27][Info][ThreadId 4] splitSigs
+[10:31:27][Info][ThreadId 4] state size: 4595
+[10:31:27][Info][ThreadId 4] # proposed changes: 1
+[10:31:27][Info][ThreadId 4] # batches: 1
+[10:31:27][Info][ThreadId 4] batch sizes: [1]
+[10:31:27][Info][ThreadId 4] ****************************************
+[10:31:27][Info][ThreadId 4] rmvSigs
+[10:31:27][Info][ThreadId 4] state size: 4595
+[10:31:27][Info][ThreadId 4] # proposed changes: 9
+[10:31:27][Info][ThreadId 4] # batches: 8
+[10:31:27][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:31:29][Info][ThreadId 4] ****************************************
+[10:31:29][Info][ThreadId 4] rmvDecls
+[10:31:29][Info][ThreadId 4] state size: 4595
+[10:31:29][Info][ThreadId 4] # proposed changes: 49
+[10:31:29][Info][ThreadId 4] # batches: 8
+[10:31:29][Info][ThreadId 4] batch sizes: [7,6,6,6,6,6,6,6]
+[10:31:34][Info][ThreadId 4] ****************************************
+[10:31:34][Info][ThreadId 4] rmvConstructors
+[10:31:34][Info][ThreadId 4] state size: 4595
+[10:31:34][Info][ThreadId 4] # proposed changes: 6
+[10:31:34][Info][ThreadId 4] # batches: 1
+[10:31:34][Info][ThreadId 4] batch sizes: [6]
+[10:31:35][Info][ThreadId 4] ****************************************
+[10:31:35][Info][ThreadId 4] simplifyConDecl
+[10:31:35][Info][ThreadId 4] state size: 4595
+[10:31:35][Info][ThreadId 4] # proposed changes: 3
+[10:31:35][Info][ThreadId 4] # batches: 1
+[10:31:35][Info][ThreadId 4] batch sizes: [3]
+[10:31:36][Info][ThreadId 4] ***NEW ITERATION***
+[10:31:37][Info][ThreadId 4] ****************************************
+[10:31:37][Info][ThreadId 4] rmvFunDeps
+[10:31:37][Info][ThreadId 4] state size: 4595
+[10:31:37][Info][ThreadId 4] # proposed changes: 0
+[10:31:37][Info][ThreadId 4] # batches: 1
+[10:31:37][Info][ThreadId 4] batch sizes: [0]
+[10:31:37][Info][ThreadId 4] ****************************************
+[10:31:37][Info][ThreadId 4] TypeFamilies.familyResultSig
+[10:31:37][Info][ThreadId 4] state size: 4595
+[10:31:37][Info][ThreadId 4] # proposed changes: 1
+[10:31:37][Info][ThreadId 4] # batches: 1
+[10:31:37][Info][ThreadId 4] batch sizes: [1]
+[10:31:37][Info][ThreadId 4] ****************************************
+[10:31:37][Info][ThreadId 4] filterExprSubList
+[10:31:37][Info][ThreadId 4] state size: 4595
+[10:31:37][Info][ThreadId 4] # proposed changes: 25
+[10:31:37][Info][ThreadId 4] # batches: 8
+[10:31:37][Info][ThreadId 4] batch sizes: [4,3,3,3,3,3,3,3]
+[10:31:39][Info][ThreadId 4] ****************************************
+[10:31:39][Info][ThreadId 4] simplifyExpr
+[10:31:39][Info][ThreadId 4] state size: 4595
+[10:31:39][Info][ThreadId 4] # proposed changes: 283
+[10:31:39][Info][ThreadId 4] # batches: 8
+[10:31:39][Info][ThreadId 4] batch sizes: [38,35,35,35,35,35,35,35]
+[10:31:44][Notice][ThreadId 9328] APPLIED CHANGE
+[10:31:44][Notice][ThreadId 9328] First "gmvmunstream s"
+[10:31:44][Notice][ThreadId 9328] First "  = case upperBound (bmsize s) of {"
+[10:31:44][Notice][ThreadId 9328] First "      Nothing -> gmvmunstreamUnknown s }"
+[10:31:44][Notice][ThreadId 9328] Second "gmvmunstream s = gmvmunstreamUnknown s"
+[10:31:48][Notice][ThreadId 9350] APPLIED CHANGE
+[10:31:48][Notice][ThreadId 9350] First "gcons x v"
+[10:31:48][Notice][ThreadId 9350] First "  = gelemseq (undefined :: v a) undefined $ gunstream $ bcons x"
+[10:31:48][Notice][ThreadId 9350] First "      $ gstream v"
+[10:31:48][Notice][ThreadId 9350] Second "gcons x v = gunstream $ bcons x $ gstream v"
+[10:31:51][Notice][ThreadId 9338] APPLIED CHANGE
+[10:31:51][Notice][ThreadId 9338] First "  = v `seq` n `seq` Bundle (Stream vstep undefined) undefined"
+[10:31:51][Notice][ThreadId 9338] Second "  = Bundle (Stream vstep undefined) undefined"
+[10:31:55][Notice][ThreadId 9332] APPLIED CHANGE
+[10:31:55][Notice][ThreadId 9332] First "nunstream s = s `seq` New (gmvunstream s)"
+[10:31:55][Notice][ThreadId 9332] Second "nunstream s = New (gmvunstream s)"
+[10:31:58][Notice][ThreadId 9328] APPLIED CHANGE
+[10:31:58][Notice][ThreadId 9328] First "        = do let j = i + n"
+[10:31:58][Notice][ThreadId 9328] Second "        = do let j = i"
+[10:32:00][Notice][ThreadId 9328] APPLIED CHANGE
+[10:32:00][Notice][ThreadId 9328] First "        = do let j = i"
+[10:32:00][Notice][ThreadId 9328] Second "        = do let j = n"
+[10:32:02][Notice][ThreadId 9326] APPLIED CHANGE
+[10:32:02][Notice][ThreadId 9326] First "gnew m = m `seq` runST (undefined =<< nrun m)"
+[10:32:02][Notice][ThreadId 9326] Second "gnew m = runST (undefined =<< nrun m)"
+[10:32:04][Notice][ThreadId 9344] APPLIED CHANGE
+[10:32:04][Notice][ThreadId 9344] First "  = Bundle (sappend ta tb) (undefined + undefined)"
+[10:32:04][Notice][ThreadId 9344] Second "  = Bundle (sappend ta tb) (undefined)"
+[10:32:06][Notice][ThreadId 9338] APPLIED CHANGE
+[10:32:06][Notice][ThreadId 9338] First "      n = gbasicLength v"
+[10:32:06][Notice][ThreadId 9338] Second "      n = v"
+[10:32:07][Info][ThreadId 4] ****************************************
+[10:32:07][Info][ThreadId 4] simplifyType
+[10:32:07][Info][ThreadId 4] state size: 4433
+[10:32:07][Info][ThreadId 4] # proposed changes: 29
+[10:32:07][Info][ThreadId 4] # batches: 9
+[10:32:07][Info][ThreadId 4] batch sizes: [5,3,3,3,3,3,3,3,3]
+[10:32:09][Notice][ThreadId 9927] APPLIED CHANGE
+[10:32:09][Notice][ThreadId 9927] First "    PrimMonad m => v (PrimState m) a -> Int -> m (v (PrimState m) a)"
+[10:32:09][Notice][ThreadId 9927] Second "    () => v (PrimState m) a -> Int -> m (v (PrimState m) a)"
+[10:32:10][Notice][ThreadId 9931] APPLIED CHANGE
+[10:32:10][Notice][ThreadId 9931] First "  gmbasicUnsafeWrite ::"
+[10:32:10][Notice][ThreadId 9931] First "    PrimMonad m => v (PrimState m) a -> Int -> a -> m ()"
+[10:32:10][Notice][ThreadId 9931] Second "  gmbasicUnsafeWrite :: () => v (PrimState m) a -> Int -> a -> m ()"
+[10:32:12][Notice][ThreadId 9931] APPLIED CHANGE
+[10:32:12][Notice][ThreadId 9931] First "  gmbasicUnsafeWrite :: () => v (PrimState m) a -> Int -> a -> m ()"
+[10:32:12][Notice][ThreadId 9931] Second "  gmbasicUnsafeWrite :: v (PrimState m) a -> Int -> a -> m ()"
+[10:32:15][Notice][ThreadId 9925] APPLIED CHANGE
+[10:32:15][Notice][ThreadId 9925] First "  gbasicUnsafeFreeze :: PrimMonad m => a -> m (v a)"
+[10:32:15][Notice][ThreadId 9925] Second "  gbasicUnsafeFreeze :: a -> m (v a)"
+[10:32:16][Notice][ThreadId 9925] APPLIED CHANGE
+[10:32:16][Notice][ThreadId 9925] First "  gbasicUnsafeIndexM :: Monad m => v a -> Int -> m a"
+[10:32:16][Notice][ThreadId 9925] Second "  gbasicUnsafeIndexM :: () => v a -> Int -> m a"
+[10:32:18][Notice][ThreadId 9925] APPLIED CHANGE
+[10:32:18][Notice][ThreadId 9925] First "  gbasicUnsafeIndexM :: () => v a -> Int -> m a"
+[10:32:18][Notice][ThreadId 9925] Second "  gbasicUnsafeIndexM :: v a -> Int -> m a"
+[10:32:20][Notice][ThreadId 9921] APPLIED CHANGE
+[10:32:20][Notice][ThreadId 9921] First "  gbasicUnsafeCopy :: PrimMonad m => a -> v a -> m ()"
+[10:32:20][Notice][ThreadId 9921] Second "  gbasicUnsafeCopy :: () => a -> v a -> m ()"
+[10:32:21][Notice][ThreadId 9921] APPLIED CHANGE
+[10:32:21][Notice][ThreadId 9921] First "  gbasicUnsafeCopy :: () => a -> v a -> m ()"
+[10:32:21][Notice][ThreadId 9921] Second "  gbasicUnsafeCopy :: a -> v a -> m ()"
+[10:32:23][Notice][ThreadId 9927] APPLIED CHANGE
+[10:32:23][Notice][ThreadId 9927] First "    () => v (PrimState m) a -> Int -> m (v (PrimState m) a)"
+[10:32:23][Notice][ThreadId 9927] Second "    v (PrimState m) a -> Int -> m (v (PrimState m) a)"
+[10:32:25][Notice][ThreadId 9951] APPLIED CHANGE
+[10:32:25][Notice][ThreadId 9951] First "gcons :: forall v a. GVector v a => a -> v a -> v a"
+[10:32:25][Notice][ThreadId 9951] Second "gcons :: GVector v a => a -> v a -> v a"
+[10:32:26][Notice][ThreadId 9935] APPLIED CHANGE
+[10:32:26][Notice][ThreadId 9935] First "  gmbasicUnsafeNew :: PrimMonad m => Int -> m (v (PrimState m) a)"
+[10:32:26][Notice][ThreadId 9935] Second "  gmbasicUnsafeNew :: () => Int -> m (v (PrimState m) a)"
+[10:32:28][Notice][ThreadId 9935] APPLIED CHANGE
+[10:32:28][Notice][ThreadId 9935] First "  gmbasicUnsafeNew :: () => Int -> m (v (PrimState m) a)"
+[10:32:28][Notice][ThreadId 9935] Second "  gmbasicUnsafeNew :: Int -> m (v (PrimState m) a)"
+[10:32:28][Info][ThreadId 4] ****************************************
+[10:32:28][Info][ThreadId 4] contexts
+[10:32:28][Info][ThreadId 4] state size: 4331
+[10:32:28][Info][ThreadId 4] # proposed changes: 6
+[10:32:28][Info][ThreadId 4] # batches: 1
+[10:32:28][Info][ThreadId 4] batch sizes: [6]
+[10:32:30][Info][ThreadId 4] ****************************************
+[10:32:30][Info][ThreadId 4] rmvDerivingClause
+[10:32:30][Info][ThreadId 4] state size: 4331
+[10:32:30][Info][ThreadId 4] # proposed changes: 0
+[10:32:30][Info][ThreadId 4] # batches: 1
+[10:32:30][Info][ThreadId 4] batch sizes: [0]
+[10:32:30][Info][ThreadId 4] ****************************************
+[10:32:30][Info][ThreadId 4] simplifyDerivingClause
+[10:32:30][Info][ThreadId 4] state size: 4331
+[10:32:30][Info][ThreadId 4] # proposed changes: 0
+[10:32:30][Info][ThreadId 4] # batches: 1
+[10:32:30][Info][ThreadId 4] batch sizes: [0]
+[10:32:30][Info][ThreadId 4] ****************************************
+[10:32:30][Info][ThreadId 4] localBinds
+[10:32:30][Info][ThreadId 4] state size: 4331
+[10:32:30][Info][ThreadId 4] # proposed changes: 21
+[10:32:30][Info][ThreadId 4] # batches: 10
+[10:32:30][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:32:32][Notice][ThreadId 10134] APPLIED CHANGE
+[10:32:32][Notice][ThreadId 10134] First "      {-# INLINE step #-}"
+[10:32:33][Notice][ThreadId 10118] APPLIED CHANGE
+[10:32:33][Notice][ThreadId 10118] First "      {-# INLINE [0] copyChunk #-}"
+[10:32:34][Notice][ThreadId 10132] APPLIED CHANGE
+[10:32:34][Notice][ThreadId 10132] First "      n = v"
+[10:32:36][Notice][ThreadId 10134] APPLIED CHANGE
+[10:32:36][Notice][ThreadId 10134] First "      {-# INLINE vstep #-}"
+[10:32:37][Notice][ThreadId 10132] APPLIED CHANGE
+[10:32:37][Notice][ThreadId 10132] First "      step i = undefined"
+[10:32:38][Notice][ThreadId 10142] APPLIED CHANGE
+[10:32:38][Notice][ThreadId 10142] First "      {-# INLINE [0] step #-}"
+[10:32:38][Info][ThreadId 4] ****************************************
+[10:32:38][Info][ThreadId 4] tyVarBndr
+[10:32:38][Info][ThreadId 4] state size: 4176
+[10:32:38][Info][ThreadId 4] # proposed changes: 1
+[10:32:38][Info][ThreadId 4] # batches: 1
+[10:32:38][Info][ThreadId 4] batch sizes: [1]
+[10:32:39][Info][ThreadId 4] ****************************************
+[10:32:39][Info][ThreadId 4] unqualImport
+[10:32:39][Info][ThreadId 4] state size: 4176
+[10:32:39][Info][ThreadId 4] # proposed changes: 5
+[10:32:39][Info][ThreadId 4] # batches: 1
+[10:32:39][Info][ThreadId 4] batch sizes: [5]
+[10:32:40][Notice][ThreadId 10216] APPLIED CHANGE
+[10:32:40][Notice][ThreadId 10216] First "import Control.Monad.ST ( runST )"
+[10:32:40][Notice][ThreadId 10216] Second "import Control.Monad.ST"
+[10:32:41][Notice][ThreadId 10216] APPLIED CHANGE
+[10:32:41][Notice][ThreadId 10216] First "import Data.Kind ( Type )"
+[10:32:41][Notice][ThreadId 10216] Second "import Data.Kind"
+[10:32:42][Notice][ThreadId 10216] APPLIED CHANGE
+[10:32:42][Notice][ThreadId 10216] First "import Data.Functor.Identity ( Identity(..) )"
+[10:32:42][Notice][ThreadId 10216] Second "import Data.Functor.Identity"
+[10:32:43][Notice][ThreadId 10216] APPLIED CHANGE
+[10:32:43][Notice][ThreadId 10216] First "import GHC.ST ( ST(..) )"
+[10:32:43][Notice][ThreadId 10216] Second "import GHC.ST"
+[10:32:44][Notice][ThreadId 10216] APPLIED CHANGE
+[10:32:44][Notice][ThreadId 10216] First "import GHC.Types ( SPEC(..) )"
+[10:32:44][Notice][ThreadId 10216] Second "import GHC.Types"
+[10:32:44][Info][ThreadId 4] ****************************************
+[10:32:44][Info][ThreadId 4] Functions.rmvUnusedParams
+[10:32:44][Info][ThreadId 4] state size: 4116
+[10:32:44][Info][ThreadId 4] # proposed changes: 37
+[10:32:44][Info][ThreadId 4] # batches: 9
+[10:32:44][Info][ThreadId 4] batch sizes: [5,4,4,4,4,4,4,4,4]
+[10:32:46][Notice][ThreadId 10257] APPLIED CHANGE
+[10:32:46][Notice][ThreadId 10257] First "upperBound Unknown = Nothing"
+[10:32:46][Notice][ThreadId 10257] Second "upperBound = Nothing"
+[10:32:47][Notice][ThreadId 10255] APPLIED CHANGE
+[10:32:47][Notice][ThreadId 10255] First "  = foldlM_loop SPEC w t"
+[10:32:47][Notice][ThreadId 10255] Second "  = foldlM_loop w t"
+[10:32:47][Notice][ThreadId 10255] First "      foldlM_loop !_ z s"
+[10:32:47][Notice][ThreadId 10255] Second "      foldlM_loop z s"
+[10:32:47][Notice][ThreadId 10255] First "                       foldlM_loop SPEC z' s' }"
+[10:32:47][Notice][ThreadId 10255] Second "                       foldlM_loop z' s' }"
+[10:32:48][Notice][ThreadId 10233] APPLIED CHANGE
+[10:32:48][Notice][ThreadId 10233] First "             v' <- if gmbasicLength v < j then"
+[10:32:48][Notice][ThreadId 10233] First "                       gmunsafeGrow v undefined"
+[10:32:48][Notice][ThreadId 10233] First "                   else"
+[10:32:48][Notice][ThreadId 10233] First "                       undefined"
+[10:32:48][Notice][ThreadId 10233] Second "             v' <- if gmbasicLength v < j then gmunsafeGrow v else undefined"
+[10:32:48][Notice][ThreadId 10233] First "gmunsafeGrow v n = gmbasicUnsafeGrow v undefined"
+[10:32:48][Notice][ThreadId 10233] Second "gmunsafeGrow v = gmbasicUnsafeGrow v undefined"
+[10:32:49][Notice][ThreadId 10243] APPLIED CHANGE
+[10:32:49][Notice][ThreadId 10243] First "bmsingleton x = bmfromStream (ssingleton x) undefined"
+[10:32:49][Notice][ThreadId 10243] Second "bmsingleton x = bmfromStream (ssingleton x)"
+[10:32:49][Notice][ThreadId 10243] First "bmfromStream (Stream step t) sz"
+[10:32:49][Notice][ThreadId 10243] Second "bmfromStream (Stream step t)"
+[10:32:50][Info][ThreadId 4] ****************************************
+[10:32:50][Info][ThreadId 4] etaReduceMatches
+[10:32:50][Info][ThreadId 4] state size: 4005
+[10:32:50][Info][ThreadId 4] # proposed changes: 4
+[10:32:50][Info][ThreadId 4] # batches: 1
+[10:32:50][Info][ThreadId 4] batch sizes: [4]
+[10:32:51][Notice][ThreadId 10343] APPLIED CHANGE
+[10:32:51][Notice][ThreadId 10343] First "bmcons x s = bmappend (bmsingleton x) s"
+[10:32:51][Notice][ThreadId 10343] Second "bmcons x = bmappend (bmsingleton x)"
+[10:32:51][Info][ThreadId 4] ****************************************
+[10:32:51][Info][ThreadId 4] Functions:inline
+[10:32:51][Info][ThreadId 4] state size: 4001
+[10:32:51][Info][ThreadId 4] # proposed changes: 24
+[10:32:51][Info][ThreadId 4] # batches: 8
+[10:32:51][Info][ThreadId 4] batch sizes: [3,3,3,3,3,3,3,3]
+[10:32:53][Notice][ThreadId 10375] APPLIED CHANGE
+[10:32:53][Notice][ThreadId 10375] First "gunstream s = gnew (nunstream s)"
+[10:32:53][Notice][ThreadId 10375] Second "gunstream s = gnew ((\\ s -> New (gmvunstream s)) s)"
+[10:32:55][Notice][ThreadId 10359] APPLIED CHANGE
+[10:32:55][Notice][ThreadId 10359] First "               $ fmap (\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v undefined x)) r"
+[10:32:55][Notice][ThreadId 10359] Second "               $ (\\ f (Yield x s) -> Yield (f x) undefined)"
+[10:32:55][Notice][ThreadId 10359] Second "                   (\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v undefined x)) r"
+[10:32:57][Notice][ThreadId 10383] APPLIED CHANGE
+[10:32:57][Notice][ThreadId 10383] First "gunstream s = gnew ((\\ s -> New (gmvunstream s)) s)"
+[10:32:57][Notice][ThreadId 10383] Second "gunstream s"
+[10:32:57][Notice][ThreadId 10383] Second "  = (\\ m -> runST (undefined =<< nrun m))"
+[10:32:57][Notice][ThreadId 10383] Second "      ((\\ s -> New (gmvunstream s)) s)"
+[10:32:59][Notice][ThreadId 10383] APPLIED CHANGE
+[10:32:59][Notice][ThreadId 10383] First "gcons x v = gunstream $ bcons x $ gstream v"
+[10:32:59][Notice][ThreadId 10383] Second "gcons x v = gunstream $ bcons x $ (\\ v -> gstream' v) v"
+[10:33:00][Notice][ThreadId 10377] APPLIED CHANGE
+[10:33:00][Notice][ThreadId 10377] First "             v' <- if gmbasicLength v < j then gmunsafeGrow v else undefined"
+[10:33:00][Notice][ThreadId 10377] Second "             v' <- if gmbasicLength v < j then"
+[10:33:00][Notice][ThreadId 10377] Second "                       (\\ v -> gmbasicUnsafeGrow v undefined) v"
+[10:33:00][Notice][ThreadId 10377] Second "                   else"
+[10:33:00][Notice][ThreadId 10377] Second "                       undefined"
+[10:33:02][Notice][ThreadId 10383] APPLIED CHANGE
+[10:33:02][Notice][ThreadId 10383] First "gcons x v = gunstream $ bcons x $ (\\ v -> gstream' v) v"
+[10:33:02][Notice][ThreadId 10383] Second "gcons x v"
+[10:33:02][Notice][ThreadId 10383] Second "  = gunstream $ bcons x $ (\\ v -> (\\ v -> bfromVector v) v) v"
+[10:33:02][Notice][ThreadId 10383] First "gstream v = gstream' v"
+[10:33:02][Notice][ThreadId 10383] Second "gstream v = (\\ v -> bfromVector v) v"
+[10:33:03][Notice][ThreadId 10375] APPLIED CHANGE
+[10:33:03][Notice][ThreadId 10375] First "  = do v <- gmunsafeNew undefined"
+[10:33:03][Notice][ThreadId 10375] Second "  = do v <- (\\ n -> gmbasicUnsafeNew undefined) undefined"
+[10:33:05][Notice][ThreadId 10375] APPLIED CHANGE
+[10:33:05][Notice][ThreadId 10375] First "nunstream s = New (gmvunstream s)"
+[10:33:05][Notice][ThreadId 10375] Second "nunstream s = New ((\\ s -> gmvmunstream (blift s)) s)"
+[10:33:05][Notice][ThreadId 10375] First "      ((\\ s -> New (gmvunstream s)) s)"
+[10:33:05][Notice][ThreadId 10375] Second "      ((\\ s -> New ((\\ s -> gmvmunstream (blift s)) s)) s)"
+[10:33:06][Notice][ThreadId 10373] APPLIED CHANGE
+[10:33:06][Notice][ThreadId 10373] First "gnew m = runST (undefined =<< nrun m)"
+[10:33:06][Notice][ThreadId 10373] Second "gnew m = runST (undefined =<< (\\ (New p) -> p) m)"
+[10:33:06][Notice][ThreadId 10373] First "  = (\\ m -> runST (undefined =<< nrun m))"
+[10:33:06][Notice][ThreadId 10373] Second "  = (\\ m -> runST (undefined =<< (\\ (New p) -> p) m))"
+[10:33:07][Notice][ThreadId 10357] APPLIED CHANGE
+[10:33:07][Notice][ThreadId 10357] First "       (v', n) <- sfoldlM copyChunk (v, 0) (bmchunks s)"
+[10:33:07][Notice][ThreadId 10357] Second "       (v', n) <- sfoldlM copyChunk (v, 0) (sChunks s)"
+[10:33:09][Notice][ThreadId 10365] APPLIED CHANGE
+[10:33:09][Notice][ThreadId 10365] First "bmcons x = bmappend (bmsingleton x)"
+[10:33:09][Notice][ThreadId 10365] Second "bmcons x"
+[10:33:09][Notice][ThreadId 10365] Second "  = (\\ (Bundle ta na) (Bundle tb nb)"
+[10:33:09][Notice][ThreadId 10365] Second "       -> Bundle (sappend ta tb) (undefined))"
+[10:33:09][Notice][ThreadId 10365] Second "      (bmsingleton x)"
+[10:33:09][Info][ThreadId 4] ****************************************
+[10:33:09][Info][ThreadId 4] betaReduceExprs
+[10:33:09][Info][ThreadId 4] state size: 4416
+[10:33:09][Info][ThreadId 4] # proposed changes: 10
+[10:33:09][Info][ThreadId 4] # batches: 9
+[10:33:09][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1]
+[10:33:11][Notice][ThreadId 10520] APPLIED CHANGE
+[10:33:11][Notice][ThreadId 10520] First "  = (\\ m -> runST (undefined =<< (\\ (New p) -> p) m))"
+[10:33:11][Notice][ThreadId 10520] First "      ((\\ s -> New ((\\ s -> gmvmunstream (blift s)) s)) s)"
+[10:33:11][Notice][ThreadId 10520] Second "  = (runST"
+[10:33:11][Notice][ThreadId 10520] Second "       (undefined"
+[10:33:11][Notice][ThreadId 10520] Second "          =<<"
+[10:33:11][Notice][ThreadId 10520] Second "            (\\ (New p) -> p)"
+[10:33:11][Notice][ThreadId 10520] Second "              ((\\ s -> New ((\\ s -> gmvmunstream (blift s)) s)) s)))"
+[10:33:13][Notice][ThreadId 10522] APPLIED CHANGE
+[10:33:13][Notice][ThreadId 10522] First "gcons x v"
+[10:33:13][Notice][ThreadId 10522] First "  = gunstream $ bcons x $ (\\ v -> (\\ v -> bfromVector v) v) v"
+[10:33:13][Notice][ThreadId 10522] Second "gcons x v = gunstream $ bcons x $ (\\ v -> (bfromVector v)) v"
+[10:33:13][Notice][ThreadId 10522] First "gstream v = (\\ v -> bfromVector v) v"
+[10:33:13][Notice][ThreadId 10522] Second "gstream v = (bfromVector v)"
+[10:33:14][Notice][ThreadId 10546] APPLIED CHANGE
+[10:33:14][Notice][ThreadId 10546] First "gcons x v = gunstream $ bcons x $ (\\ v -> (bfromVector v)) v"
+[10:33:14][Notice][ThreadId 10546] Second "gcons x v = gunstream $ bcons x $ ((\\ v -> bfromVector v) v)"
+[10:33:16][Notice][ThreadId 10538] APPLIED CHANGE
+[10:33:16][Notice][ThreadId 10538] First "               $ (\\ f (Yield x s) -> Yield (f x) undefined)"
+[10:33:16][Notice][ThreadId 10538] First "                   (\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v undefined x)) r"
+[10:33:16][Notice][ThreadId 10538] Second "               $ (\\ (Yield x s)"
+[10:33:16][Notice][ThreadId 10538] Second "                    -> Yield"
+[10:33:16][Notice][ThreadId 10538] Second "                         ((\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v undefined x)) x)"
+[10:33:16][Notice][ThreadId 10538] Second "                         undefined)"
+[10:33:16][Notice][ThreadId 10538] Second "                   r"
+[10:33:17][Notice][ThreadId 10526] APPLIED CHANGE
+[10:33:17][Notice][ThreadId 10526] First "                       (\\ v -> gmbasicUnsafeGrow v undefined) v"
+[10:33:17][Notice][ThreadId 10526] Second "                       (gmbasicUnsafeGrow v undefined)"
+[10:33:19][Notice][ThreadId 10530] APPLIED CHANGE
+[10:33:19][Notice][ThreadId 10530] First "  = do v <- (\\ n -> gmbasicUnsafeNew undefined) undefined"
+[10:33:19][Notice][ThreadId 10530] Second "  = do v <- (gmbasicUnsafeNew undefined)"
+[10:33:20][Notice][ThreadId 10534] APPLIED CHANGE
+[10:33:20][Notice][ThreadId 10534] First "nunstream s = New ((\\ s -> gmvmunstream (blift s)) s)"
+[10:33:20][Notice][ThreadId 10534] Second "nunstream s = New ((gmvmunstream (blift s)))"
+[10:33:20][Notice][ThreadId 10534] First "          =<<"
+[10:33:20][Notice][ThreadId 10534] First "            (\\ (New p) -> p)"
+[10:33:20][Notice][ThreadId 10534] First "              ((\\ s -> New ((\\ s -> gmvmunstream (blift s)) s)) s)))"
+[10:33:20][Notice][ThreadId 10534] Second "          =<< (\\ (New p) -> p) ((\\ s -> New ((gmvmunstream (blift s)))) s)))"
+[10:33:21][Notice][ThreadId 10516] APPLIED CHANGE
+[10:33:21][Notice][ThreadId 10516] First "          =<< (\\ (New p) -> p) ((\\ s -> New ((gmvmunstream (blift s)))) s)))"
+[10:33:21][Notice][ThreadId 10516] Second "          =<< (\\ (New p) -> p) ((New ((\\ s -> gmvmunstream (blift s)) s)))))"
+[10:33:21][Info][ThreadId 4] ****************************************
+[10:33:21][Info][ThreadId 4] rmvImports
+[10:33:21][Info][ThreadId 4] state size: 4420
+[10:33:21][Info][ThreadId 4] # proposed changes: 5
+[10:33:21][Info][ThreadId 4] # batches: 1
+[10:33:21][Info][ThreadId 4] batch sizes: [5]
+[10:33:22][Notice][ThreadId 10617] APPLIED CHANGE
+[10:33:22][Notice][ThreadId 10617] First "import Control.Monad.ST"
+[10:33:23][Notice][ThreadId 10617] APPLIED CHANGE
+[10:33:23][Notice][ThreadId 10617] First "import Data.Kind"
+[10:33:23][Info][ThreadId 4] ****************************************
+[10:33:23][Info][ThreadId 4] rmvTyClMethods
+[10:33:23][Info][ThreadId 4] state size: 4379
+[10:33:23][Info][ThreadId 4] # proposed changes: 10
+[10:33:23][Info][ThreadId 4] # batches: 9
+[10:33:23][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1]
+[10:33:25][Notice][ThreadId 10634] APPLIED CHANGE
+[10:33:25][Notice][ThreadId 10634] First "  gelemseq :: v a -> a -> b -> b"
+[10:33:26][Notice][ThreadId 10640] APPLIED CHANGE
+[10:33:26][Notice][ThreadId 10640] First "  gbasicLength :: v a -> Int"
+[10:33:27][Notice][ThreadId 10638] APPLIED CHANGE
+[10:33:27][Notice][ThreadId 10638] First "  gbasicUnsafeIndexM :: v a -> Int -> m a"
+[10:33:28][Notice][ThreadId 10644] APPLIED CHANGE
+[10:33:28][Notice][ThreadId 10644] First "  gbasicUnsafeFreeze :: a -> m (v a)"
+[10:33:28][Info][ThreadId 4] ****************************************
+[10:33:28][Info][ThreadId 4] handleMultiParams
+[10:33:28][Info][ThreadId 4] state size: 4238
+[10:33:28][Info][ThreadId 4] # proposed changes: 5
+[10:33:28][Info][ThreadId 4] # batches: 1
+[10:33:28][Info][ThreadId 4] batch sizes: [5]
+[10:33:29][Info][ThreadId 4] ****************************************
+[10:33:29][Info][ThreadId 4] Typeclasses.rmvUnusedParams
+[10:33:29][Info][ThreadId 4] state size: 4238
+[10:33:29][Info][ThreadId 4] # proposed changes: 12
+[10:33:29][Info][ThreadId 4] # batches: 11
+[10:33:29][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:33:31][Notice][ThreadId 10717] APPLIED CHANGE
+[10:33:31][Notice][ThreadId 10717] First "  gmbasicUnsafeWrite :: v (PrimState m) a -> Int -> a -> m ()"
+[10:33:31][Notice][ThreadId 10717] Second "  gmbasicUnsafeWrite :: v (PrimState m) a -> a -> m ()"
+[10:33:31][Notice][ThreadId 10717] First "                         ((\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v undefined x)) x)"
+[10:33:31][Notice][ThreadId 10717] First "                         undefined)"
+[10:33:31][Notice][ThreadId 10717] Second "                         ((\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v x)) x) undefined)"
+[10:33:32][Notice][ThreadId 10727] APPLIED CHANGE
+[10:33:32][Notice][ThreadId 10727] First "  gmbasicUnsafeNew :: Int -> m (v (PrimState m) a)"
+[10:33:32][Notice][ThreadId 10727] Second "  gmbasicUnsafeNew :: m (v (PrimState m) a)"
+[10:33:32][Notice][ThreadId 10727] First "gmunsafeNew n = gmbasicUnsafeNew undefined"
+[10:33:32][Notice][ThreadId 10727] Second "gmunsafeNew n = gmbasicUnsafeNew"
+[10:33:32][Notice][ThreadId 10727] First "  = do v <- (gmbasicUnsafeNew undefined)"
+[10:33:32][Notice][ThreadId 10727] Second "  = do v <- (gmbasicUnsafeNew)"
+[10:33:33][Notice][ThreadId 10705] APPLIED CHANGE
+[10:33:33][Notice][ThreadId 10705] First "  gbasicUnsafeCopy :: a -> v a -> m ()"
+[10:33:33][Notice][ThreadId 10705] Second "  gbasicUnsafeCopy :: v a -> m ()"
+[10:33:33][Notice][ThreadId 10705] First "            (Yield"
+[10:33:33][Notice][ThreadId 10705] First "               (Chunk undefined (\\ mv -> gbasicUnsafeCopy undefined v)) undefined)"
+[10:33:33][Notice][ThreadId 10705] Second "            (Yield (Chunk undefined (\\ mv -> gbasicUnsafeCopy v)) undefined)"
+[10:33:33][Info][ThreadId 4] ****************************************
+[10:33:33][Info][ThreadId 4] TypeFamilies.rmvEquations
+[10:33:33][Info][ThreadId 4] state size: 4139
+[10:33:33][Info][ThreadId 4] # proposed changes: 0
+[10:33:33][Info][ThreadId 4] # batches: 1
+[10:33:33][Info][ThreadId 4] batch sizes: [0]
+[10:33:33][Info][ThreadId 4] ****************************************
+[10:33:33][Info][ThreadId 4] TypeFamilies.rmvUnusedParams
+[10:33:33][Info][ThreadId 4] state size: 4139
+[10:33:33][Info][ThreadId 4] # proposed changes: 1
+[10:33:33][Info][ThreadId 4] # batches: 1
+[10:33:33][Info][ThreadId 4] batch sizes: [1]
+[10:33:33][Info][ThreadId 4] ****************************************
+[10:33:33][Info][ThreadId 4] pat2Wildcard
+[10:33:33][Info][ThreadId 4] state size: 4139
+[10:33:33][Info][ThreadId 4] # proposed changes: 111
+[10:33:33][Info][ThreadId 4] # batches: 8
+[10:33:33][Info][ThreadId 4] batch sizes: [20,13,13,13,13,13,13,13]
+[10:33:35][Notice][ThreadId 10773] APPLIED CHANGE
+[10:33:35][Notice][ThreadId 10773] First "Bundle ta na `bmappend` Bundle tb nb"
+[10:33:35][Notice][ThreadId 10773] Second "Bundle ta na `bmappend` Bundle tb _"
+[10:33:35][Notice][ThreadId 10773] First "  = (\\ (Bundle ta na) (Bundle tb nb)"
+[10:33:35][Notice][ThreadId 10773] Second "  = (\\ (Bundle ta na) (Bundle tb _)"
+[10:33:37][Notice][ThreadId 10769] APPLIED CHANGE
+[10:33:37][Notice][ThreadId 10769] First "gmunsafeNew n = gmbasicUnsafeNew"
+[10:33:37][Notice][ThreadId 10769] Second "gmunsafeNew _ = gmbasicUnsafeNew"
+[10:33:39][Notice][ThreadId 10785] APPLIED CHANGE
+[10:33:39][Notice][ThreadId 10785] First "Stream stepa ta `sappend` Stream stepb tb"
+[10:33:39][Notice][ThreadId 10785] Second "Stream stepa ta `sappend` Stream stepb _"
+[10:33:41][Notice][ThreadId 10777] APPLIED CHANGE
+[10:33:41][Notice][ThreadId 10777] First "            (Yield (Chunk undefined (\\ mv -> gbasicUnsafeCopy v)) undefined)"
+[10:33:41][Notice][ThreadId 10777] Second "            (Yield (Chunk undefined (\\ _ -> gbasicUnsafeCopy v)) undefined)"
+[10:33:43][Notice][ThreadId 10773] APPLIED CHANGE
+[10:33:43][Notice][ThreadId 10773] First "  fmap f (Yield x s) = Yield (f x) undefined"
+[10:33:43][Notice][ThreadId 10773] Second "  fmap f (Yield x _) = Yield (f x) undefined"
+[10:33:43][Notice][ThreadId 10773] First "               $ (\\ (Yield x s)"
+[10:33:43][Notice][ThreadId 10773] Second "               $ (\\ (Yield x _)"
+[10:33:45][Notice][ThreadId 10773] APPLIED CHANGE
+[10:33:45][Notice][ThreadId 10773] First "                         ((\\ x -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v x)) x) undefined)"
+[10:33:45][Notice][ThreadId 10773] Second "                         ((\\ _ -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v x)) x) undefined)"
+[10:33:47][Notice][ThreadId 10785] APPLIED CHANGE
+[10:33:47][Notice][ThreadId 10785] First "             case r of { Yield x sa' -> return $ Yield x (Left undefined) }"
+[10:33:47][Notice][ThreadId 10785] Second "             case r of { Yield x _ -> return $ Yield x (Left undefined) }"
+[10:33:48][Notice][ThreadId 10781] APPLIED CHANGE
+[10:33:48][Notice][ThreadId 10781] First "      step True = Yield x undefined"
+[10:33:48][Notice][ThreadId 10781] Second "      step _ = Yield x undefined"
+[10:33:50][Notice][ThreadId 10767] APPLIED CHANGE
+[10:33:50][Notice][ThreadId 10767] First "      copyChunk (v, i) (Chunk n f)"
+[10:33:50][Notice][ThreadId 10767] Second "      copyChunk (v, _) (Chunk n f)"
+[10:33:51][Notice][ThreadId 10785] APPLIED CHANGE
+[10:33:51][Notice][ThreadId 10785] First "      step (Right sb)"
+[10:33:51][Notice][ThreadId 10785] Second "      step _"
+[10:33:53][Notice][ThreadId 10769] APPLIED CHANGE
+[10:33:53][Notice][ThreadId 10769] First "       (v', n) <- sfoldlM copyChunk (v, 0) (sChunks s)"
+[10:33:53][Notice][ThreadId 10769] Second "       _ <- sfoldlM copyChunk (v, 0) (sChunks s)"
+[10:33:54][Notice][ThreadId 10781] APPLIED CHANGE
+[10:33:54][Notice][ThreadId 10781] First "Bundle ta na `bmappend` Bundle tb _"
+[10:33:54][Notice][ThreadId 10781] Second "Bundle ta _ `bmappend` Bundle tb _"
+[10:33:54][Notice][ThreadId 10781] First "  = (\\ (Bundle ta na) (Bundle tb _)"
+[10:33:54][Notice][ThreadId 10781] Second "  = (\\ (Bundle ta _) (Bundle tb _)"
+[10:33:55][Info][ThreadId 4] ****************************************
+[10:33:55][Info][ThreadId 4] type2Unit
+[10:33:55][Info][ThreadId 4] state size: 4113
+[10:33:55][Info][ThreadId 4] # proposed changes: 220
+[10:33:55][Info][ThreadId 4] # batches: 8
+[10:33:55][Info][ThreadId 4] batch sizes: [31,27,27,27,27,27,27,27]
+[10:33:57][Notice][ThreadId 11129] APPLIED CHANGE
+[10:33:57][Notice][ThreadId 11129] First "data New v a = New (forall s. ST s (Mutable v s a))"
+[10:33:57][Notice][ThreadId 11129] Second "data New v a = New (forall s. ST s (Mutable v () a))"
+[10:33:59][Notice][ThreadId 11129] APPLIED CHANGE
+[10:33:59][Notice][ThreadId 11129] First "data New v a = New (forall s. ST s (Mutable v () a))"
+[10:33:59][Notice][ThreadId 11129] Second "data New v a = New (forall s. ST s (Mutable v () ()))"
+[10:34:02][Notice][ThreadId 11131] APPLIED CHANGE
+[10:34:02][Notice][ThreadId 11131] First "gcons :: GVector v a => a -> v a -> v a"
+[10:34:02][Notice][ThreadId 11131] Second "gcons :: GVector v a => a -> v a -> ()"
+[10:34:04][Notice][ThreadId 11119] APPLIED CHANGE
+[10:34:04][Notice][ThreadId 11119] First "  type PrimState (ST s) = s"
+[10:34:04][Notice][ThreadId 11119] Second "  type PrimState (ST s) = ()"
+[10:34:06][Notice][ThreadId 11109] APPLIED CHANGE
+[10:34:06][Notice][ThreadId 11109] First "    v (PrimState m) a -> Int -> m (v (PrimState m) a)"
+[10:34:06][Notice][ThreadId 11109] Second "    v (PrimState m) a -> () -> m (v (PrimState m) a)"
+[10:34:08][Notice][ThreadId 11121] APPLIED CHANGE
+[10:34:08][Notice][ThreadId 11121] First "  = Bundle {sChunks :: Stream m (Chunk v a), sSize :: Size}"
+[10:34:08][Notice][ThreadId 11121] Second "  = Bundle {sChunks :: Stream m (Chunk v a), sSize :: ()}"
+[10:34:10][Notice][ThreadId 11131] APPLIED CHANGE
+[10:34:10][Notice][ThreadId 11131] First "data New v a = New (forall s. ST s (Mutable v () ()))"
+[10:34:10][Notice][ThreadId 11131] Second "data New v a = New (forall s. ST s ())"
+[10:34:11][Notice][ThreadId 11119] APPLIED CHANGE
+[10:34:11][Notice][ThreadId 11119] First "  gmbasicLength :: v s a -> Int"
+[10:34:11][Notice][ThreadId 11119] Second "  gmbasicLength :: v () a -> Int"
+[10:34:13][Notice][ThreadId 11109] APPLIED CHANGE
+[10:34:13][Notice][ThreadId 11109] First "  gmbasicUnsafeGrow ::"
+[10:34:13][Notice][ThreadId 11109] First "    v (PrimState m) a -> () -> m (v (PrimState m) a)"
+[10:34:13][Notice][ThreadId 11109] Second "  gmbasicUnsafeGrow :: v (PrimState m) a -> () -> m (v () a)"
+[10:34:14][Notice][ThreadId 11119] APPLIED CHANGE
+[10:34:14][Notice][ThreadId 11119] First "  gmbasicUnsafeSlice :: Int -> Int -> v s a -> v s a"
+[10:34:14][Notice][ThreadId 11119] Second "  gmbasicUnsafeSlice :: () -> Int -> v s a -> v s a"
+[10:34:15][Notice][ThreadId 11119] APPLIED CHANGE
+[10:34:15][Notice][ThreadId 11119] First "  gmbasicUnsafeSlice :: () -> Int -> v s a -> v s a"
+[10:34:15][Notice][ThreadId 11119] Second "  gmbasicUnsafeSlice :: () -> () -> v s a -> v s a"
+[10:34:16][Info][ThreadId 4] ****************************************
+[10:34:16][Info][ThreadId 4] type2WildCard
+[10:34:16][Info][ThreadId 4] state size: 4081
+[10:34:16][Info][ThreadId 4] # proposed changes: 199
+[10:34:16][Info][ThreadId 4] # batches: 8
+[10:34:16][Info][ThreadId 4] batch sizes: [31,24,24,24,24,24,24,24]
+[10:34:17][Notice][ThreadId 11600] APPLIED CHANGE
+[10:34:17][Notice][ThreadId 11600] First "  type PrimState (ST s) = ()"
+[10:34:17][Notice][ThreadId 11600] Second "  type PrimState _ = ()"
+[10:34:25][Info][ThreadId 4] ****************************************
+[10:34:25][Info][ThreadId 4] inlineType
+[10:34:25][Info][ThreadId 4] state size: 4076
+[10:34:25][Info][ThreadId 4] # proposed changes: 0
+[10:34:25][Info][ThreadId 4] # batches: 1
+[10:34:25][Info][ThreadId 4] batch sizes: [0]
+[10:34:25][Info][ThreadId 4] ****************************************
+[10:34:25][Info][ThreadId 4] rmvConArgs
+[10:34:25][Info][ThreadId 4] state size: 4076
+[10:34:25][Info][ThreadId 4] # proposed changes: 7
+[10:34:25][Info][ThreadId 4] # batches: 1
+[10:34:25][Info][ThreadId 4] batch sizes: [7]
+[10:34:26][Info][ThreadId 4] ****************************************
+[10:34:26][Info][ThreadId 4] rmvRHSs
+[10:34:26][Info][ThreadId 4] state size: 4076
+[10:34:26][Info][ThreadId 4] # proposed changes: 48
+[10:34:26][Info][ThreadId 4] # batches: 8
+[10:34:26][Info][ThreadId 4] batch sizes: [6,6,6,6,6,6,6,6]
+[10:34:27][Info][ThreadId 4] ****************************************
+[10:34:27][Info][ThreadId 4] rmvMatches
+[10:34:27][Info][ThreadId 4] state size: 4076
+[10:34:27][Info][ThreadId 4] # proposed changes: 48
+[10:34:27][Info][ThreadId 4] # batches: 8
+[10:34:27][Info][ThreadId 4] batch sizes: [6,6,6,6,6,6,6,6]
+[10:34:28][Notice][ThreadId 12071] APPLIED CHANGE
+[10:34:28][Notice][ThreadId 12071] First "bmchunks = sChunks"
+[10:34:30][Notice][ThreadId 12071] APPLIED CHANGE
+[10:34:30][Notice][ThreadId 12071] First "bmsize = sSize"
+[10:34:31][Notice][ThreadId 12077] APPLIED CHANGE
+[10:34:31][Notice][ThreadId 12077] First "gstream v = (bfromVector v)"
+[10:34:32][Notice][ThreadId 12071] APPLIED CHANGE
+[10:34:32][Notice][ThreadId 12071] First "nunstream s = New ((gmvmunstream (blift s)))"
+[10:34:33][Notice][ThreadId 12071] APPLIED CHANGE
+[10:34:33][Notice][ThreadId 12071] First "gmunsafeNew _ = gmbasicUnsafeNew"
+[10:34:35][Notice][ThreadId 12073] APPLIED CHANGE
+[10:34:35][Notice][ThreadId 12073] First "gmunsafeGrow v = gmbasicUnsafeGrow v undefined"
+[10:34:36][Notice][ThreadId 12073] APPLIED CHANGE
+[10:34:36][Notice][ThreadId 12073] First "gnew m = runST (undefined =<< (\\ (New p) -> p) m)"
+[10:34:37][Notice][ThreadId 12051] APPLIED CHANGE
+[10:34:37][Notice][ThreadId 12051] First "  _ + _ = Unknown"
+[10:34:38][Notice][ThreadId 12051] APPLIED CHANGE
+[10:34:38][Notice][ThreadId 12051] First "upperBound = Nothing"
+[10:34:38][Info][ThreadId 4] ****************************************
+[10:34:38][Info][ThreadId 4] rmvGuards
+[10:34:38][Info][ThreadId 4] state size: 3800
+[10:34:38][Info][ThreadId 4] # proposed changes: 0
+[10:34:38][Info][ThreadId 4] # batches: 1
+[10:34:38][Info][ThreadId 4] batch sizes: [0]
+[10:34:38][Info][ThreadId 4] ****************************************
+[10:34:38][Info][ThreadId 4] expr2Undefined
+[10:34:38][Info][ThreadId 4] state size: 3800
+[10:34:38][Info][ThreadId 4] # proposed changes: 291
+[10:34:38][Info][ThreadId 4] # batches: 8
+[10:34:38][Info][ThreadId 4] batch sizes: [39,36,36,36,36,36,36,36]
+[10:34:40][Notice][ThreadId 12217] APPLIED CHANGE
+[10:34:40][Notice][ThreadId 12217] First "  = Bundle (Stream step' t) undefined"
+[10:34:40][Notice][ThreadId 12217] Second "  = Bundle (Stream step' undefined) undefined"
+[10:34:43][Notice][ThreadId 12217] APPLIED CHANGE
+[10:34:43][Notice][ThreadId 12217] First "        = do r <- step s"
+[10:34:43][Notice][ThreadId 12217] Second "        = do r <- step undefined"
+[10:34:49][Notice][ThreadId 12223] APPLIED CHANGE
+[10:34:49][Notice][ThreadId 12223] First "  = Bundle (Stream (return . runIdentity . vstep) t) sz"
+[10:34:49][Notice][ThreadId 12223] Second "  = Bundle (Stream (return . runIdentity . vstep) t) undefined"
+[10:34:52][Notice][ThreadId 12213] APPLIED CHANGE
+[10:34:52][Notice][ThreadId 12213] First "       _ <- sfoldlM copyChunk (v, 0) (sChunks s)"
+[10:34:52][Notice][ThreadId 12213] Second "       _ <- sfoldlM copyChunk (v, undefined) (sChunks s)"
+[10:34:54][Notice][ThreadId 12219] APPLIED CHANGE
+[10:34:54][Notice][ThreadId 12219] First "  = Bundle (sappend ta tb) (undefined)"
+[10:34:54][Notice][ThreadId 12219] Second "  = Bundle (sappend ta tb) undefined"
+[10:34:54][Notice][ThreadId 12219] First "       -> Bundle (sappend ta tb) (undefined))"
+[10:34:54][Notice][ThreadId 12219] Second "       -> Bundle (sappend ta tb) undefined)"
+[10:34:56][Notice][ThreadId 12209] APPLIED CHANGE
+[10:34:56][Notice][ThreadId 12209] First "             return (undefined, j)"
+[10:34:56][Notice][ThreadId 12209] Second "             return (undefined, undefined)"
+[10:35:00][Notice][ThreadId 12229] APPLIED CHANGE
+[10:35:00][Notice][ThreadId 12229] First "  = Stream step (Left ta)"
+[10:35:00][Notice][ThreadId 12229] Second "  = Stream step (Left undefined)"
+[10:35:04][Notice][ThreadId 12233] APPLIED CHANGE
+[10:35:04][Notice][ThreadId 12233] First "  fmap f (Yield x _) = Yield (f x) undefined"
+[10:35:04][Notice][ThreadId 12233] Second "  fmap f (Yield x _) = Yield (f undefined) undefined"
+[10:35:04][Notice][ThreadId 12233] First "                         ((\\ _ -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v x)) x) undefined)"
+[10:35:04][Notice][ThreadId 12233] Second "                         ((\\ _ -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v x)) undefined)"
+[10:35:04][Notice][ThreadId 12233] Second "                         undefined)"
+[10:35:07][Notice][ThreadId 12229] APPLIED CHANGE
+[10:35:07][Notice][ThreadId 12229] First "        = do r <- stepa sa"
+[10:35:07][Notice][ThreadId 12229] Second "        = do r <- stepa undefined"
+[10:35:10][Notice][ThreadId 12227] APPLIED CHANGE
+[10:35:10][Notice][ThreadId 12227] First "  = Stream (return . step) True"
+[10:35:10][Notice][ThreadId 12227] Second "  = Stream (return . step) undefined"
+[10:35:21][Notice][ThreadId 12229] APPLIED CHANGE
+[10:35:21][Notice][ThreadId 12229] First "             case r of { Yield x _ -> return $ Yield x (Left undefined) }"
+[10:35:21][Notice][ThreadId 12229] Second "             case r of { Yield x _ -> return $ Yield x undefined }"
+[10:35:22][Info][ThreadId 4] ****************************************
+[10:35:22][Info][ThreadId 4] TypeFamilies.apply
+[10:35:22][Info][ThreadId 4] state size: 3888
+[10:35:22][Info][ThreadId 4] # proposed changes: 5
+[10:35:22][Info][ThreadId 4] # batches: 1
+[10:35:22][Info][ThreadId 4] batch sizes: [5]
+[10:35:24][Notice][ThreadId 12862] APPLIED CHANGE
+[10:35:24][Notice][ThreadId 12862] First "  gmbasicUnsafeNew :: m (v (PrimState m) a)"
+[10:35:24][Notice][ThreadId 12862] Second "  gmbasicUnsafeNew :: m (v (()) a)"
+[10:35:25][Notice][ThreadId 12862] APPLIED CHANGE
+[10:35:25][Notice][ThreadId 12862] First "  gmbasicUnsafeGrow :: v (PrimState m) a -> () -> m (v () a)"
+[10:35:25][Notice][ThreadId 12862] Second "  gmbasicUnsafeGrow :: v (()) a -> () -> m (v () a)"
+[10:35:25][Info][ThreadId 4] ****************************************
+[10:35:25][Info][ThreadId 4] splitSigs
+[10:35:25][Info][ThreadId 4] state size: 3870
+[10:35:25][Info][ThreadId 4] # proposed changes: 1
+[10:35:25][Info][ThreadId 4] # batches: 1
+[10:35:25][Info][ThreadId 4] batch sizes: [1]
+[10:35:25][Info][ThreadId 4] ****************************************
+[10:35:25][Info][ThreadId 4] rmvSigs
+[10:35:25][Info][ThreadId 4] state size: 3870
+[10:35:25][Info][ThreadId 4] # proposed changes: 9
+[10:35:25][Info][ThreadId 4] # batches: 8
+[10:35:25][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:35:27][Notice][ThreadId 12899] APPLIED CHANGE
+[10:35:27][Notice][ThreadId 12899] First "{-# INLINE [1] sfoldlM #-}"
+[10:35:27][Info][ThreadId 4] ****************************************
+[10:35:27][Info][ThreadId 4] rmvDecls
+[10:35:27][Info][ThreadId 4] state size: 3843
+[10:35:27][Info][ThreadId 4] # proposed changes: 48
+[10:35:27][Info][ThreadId 4] # batches: 8
+[10:35:27][Info][ThreadId 4] batch sizes: [6,6,6,6,6,6,6,6]
+[10:35:29][Notice][ThreadId 12922] APPLIED CHANGE
+[10:35:29][Notice][ThreadId 12922] First "instance Functor (Step s) where"
+[10:35:29][Notice][ThreadId 12922] First "  {-# INLINE fmap #-}"
+[10:35:29][Notice][ThreadId 12922] First "  fmap f (Yield x _) = Yield (f undefined) undefined"
+[10:35:31][Notice][ThreadId 12938] APPLIED CHANGE
+[10:35:31][Notice][ThreadId 12938] First "nrun (New p) = p"
+[10:35:33][Notice][ThreadId 12940] APPLIED CHANGE
+[10:35:33][Notice][ThreadId 12940] First "gmvunstream s = gmvmunstream (blift s)"
+[10:35:34][Notice][ThreadId 12922] APPLIED CHANGE
+[10:35:34][Notice][ThreadId 12922] First "instance Num Size where"
+[10:35:35][Notice][ThreadId 12928] APPLIED CHANGE
+[10:35:35][Notice][ThreadId 12928] First "Bundle ta _ `bmappend` Bundle tb _"
+[10:35:35][Notice][ThreadId 12928] First "  = Bundle (sappend ta tb) undefined"
+[10:35:37][Notice][ThreadId 12944] APPLIED CHANGE
+[10:35:37][Notice][ThreadId 12944] First "gstream' v = bfromVector v"
+[10:35:37][Info][ThreadId 4] ****************************************
+[10:35:37][Info][ThreadId 4] rmvConstructors
+[10:35:37][Info][ThreadId 4] state size: 3557
+[10:35:37][Info][ThreadId 4] # proposed changes: 6
+[10:35:37][Info][ThreadId 4] # batches: 1
+[10:35:37][Info][ThreadId 4] batch sizes: [6]
+[10:35:39][Notice][ThreadId 13051] APPLIED CHANGE
+[10:35:39][Notice][ThreadId 13051] First "data Size = Unknown"
+[10:35:39][Notice][ThreadId 13051] Second "data Size"
+[10:35:39][Info][ThreadId 4] ****************************************
+[10:35:39][Info][ThreadId 4] simplifyConDecl
+[10:35:39][Info][ThreadId 4] state size: 3547
+[10:35:39][Info][ThreadId 4] # proposed changes: 3
+[10:35:39][Info][ThreadId 4] # batches: 1
+[10:35:39][Info][ThreadId 4] batch sizes: [3]
+[10:35:39][Info][ThreadId 4] ***NEW ITERATION***
+[10:35:40][Info][ThreadId 4] ****************************************
+[10:35:40][Info][ThreadId 4] rmvFunDeps
+[10:35:40][Info][ThreadId 4] state size: 3547
+[10:35:40][Info][ThreadId 4] # proposed changes: 0
+[10:35:40][Info][ThreadId 4] # batches: 1
+[10:35:40][Info][ThreadId 4] batch sizes: [0]
+[10:35:40][Info][ThreadId 4] ****************************************
+[10:35:40][Info][ThreadId 4] TypeFamilies.familyResultSig
+[10:35:40][Info][ThreadId 4] state size: 3547
+[10:35:40][Info][ThreadId 4] # proposed changes: 1
+[10:35:40][Info][ThreadId 4] # batches: 1
+[10:35:40][Info][ThreadId 4] batch sizes: [1]
+[10:35:40][Info][ThreadId 4] ****************************************
+[10:35:40][Info][ThreadId 4] filterExprSubList
+[10:35:40][Info][ThreadId 4] state size: 3547
+[10:35:40][Info][ThreadId 4] # proposed changes: 24
+[10:35:40][Info][ThreadId 4] # batches: 8
+[10:35:40][Info][ThreadId 4] batch sizes: [3,3,3,3,3,3,3,3]
+[10:35:43][Info][ThreadId 4] ****************************************
+[10:35:43][Info][ThreadId 4] simplifyExpr
+[10:35:43][Info][ThreadId 4] state size: 3547
+[10:35:43][Info][ThreadId 4] # proposed changes: 230
+[10:35:43][Info][ThreadId 4] # batches: 8
+[10:35:43][Info][ThreadId 4] batch sizes: [34,28,28,28,28,28,28,28]
+[10:35:46][Notice][ThreadId 13160] APPLIED CHANGE
+[10:35:46][Notice][ThreadId 13160] First "  = do v <- (gmbasicUnsafeNew)"
+[10:35:46][Notice][ThreadId 13160] Second "  = do v <- gmbasicUnsafeNew"
+[10:35:50][Notice][ThreadId 13182] APPLIED CHANGE
+[10:35:50][Notice][ThreadId 13182] First "gcons x v = gunstream $ bcons x $ ((\\ v -> bfromVector v) v)"
+[10:35:50][Notice][ThreadId 13182] Second "gcons x v = gunstream $ bcons x $ (\\ v -> bfromVector v) v"
+[10:35:52][Notice][ThreadId 13158] APPLIED CHANGE
+[10:35:52][Notice][ThreadId 13158] First "  = (runST"
+[10:35:52][Notice][ThreadId 13158] First "       (undefined"
+[10:35:52][Notice][ThreadId 13158] First "          =<< (\\ (New p) -> p) ((New ((\\ s -> gmvmunstream (blift s)) s)))))"
+[10:35:52][Notice][ThreadId 13158] Second "  = runST"
+[10:35:52][Notice][ThreadId 13158] Second "      (undefined"
+[10:35:52][Notice][ThreadId 13158] Second "         =<< (\\ (New p) -> p) ((New ((\\ s -> gmvmunstream (blift s)) s))))"
+[10:35:55][Notice][ThreadId 13166] APPLIED CHANGE
+[10:35:55][Notice][ThreadId 13166] First "                    -> Yield"
+[10:35:55][Notice][ThreadId 13166] First "                         ((\\ _ -> Chunk 1 (\\ v -> gmbasicUnsafeWrite v x)) undefined)"
+[10:35:55][Notice][ThreadId 13166] First "                         undefined)"
+[10:35:55][Notice][ThreadId 13166] Second "                    -> Yield (Chunk 1 (\\ v -> gmbasicUnsafeWrite v x)) undefined)"
+[10:35:57][Notice][ThreadId 13158] APPLIED CHANGE
+[10:35:57][Notice][ThreadId 13158] First "      (undefined"
+[10:35:57][Notice][ThreadId 13158] First "         =<< (\\ (New p) -> p) ((New ((\\ s -> gmvmunstream (blift s)) s))))"
+[10:35:57][Notice][ThreadId 13158] Second "      ((\\ (New p) -> p) ((New ((\\ s -> gmvmunstream (blift s)) s))))"
+[10:35:59][Notice][ThreadId 13158] APPLIED CHANGE
+[10:35:59][Notice][ThreadId 13158] First "      ((\\ (New p) -> p) ((New ((\\ s -> gmvmunstream (blift s)) s))))"
+[10:35:59][Notice][ThreadId 13158] Second "      ((\\ (New p) -> p) (New ((\\ s -> gmvmunstream (blift s)) s)))"
+[10:36:00][Notice][ThreadId 13160] APPLIED CHANGE
+[10:36:00][Notice][ThreadId 13160] First "                       (gmbasicUnsafeGrow v undefined)"
+[10:36:00][Notice][ThreadId 13160] Second "                       gmbasicUnsafeGrow v undefined"
+[10:36:00][Info][ThreadId 4] ****************************************
+[10:36:00][Info][ThreadId 4] simplifyType
+[10:36:00][Info][ThreadId 4] state size: 3443
+[10:36:00][Info][ThreadId 4] # proposed changes: 17
+[10:36:00][Info][ThreadId 4] # batches: 8
+[10:36:00][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2]
+[10:36:02][Info][ThreadId 4] ****************************************
+[10:36:02][Info][ThreadId 4] contexts
+[10:36:02][Info][ThreadId 4] state size: 3443
+[10:36:02][Info][ThreadId 4] # proposed changes: 6
+[10:36:02][Info][ThreadId 4] # batches: 1
+[10:36:02][Info][ThreadId 4] batch sizes: [6]
+[10:36:04][Info][ThreadId 4] ****************************************
+[10:36:04][Info][ThreadId 4] rmvDerivingClause
+[10:36:04][Info][ThreadId 4] state size: 3443
+[10:36:04][Info][ThreadId 4] # proposed changes: 0
+[10:36:04][Info][ThreadId 4] # batches: 1
+[10:36:04][Info][ThreadId 4] batch sizes: [0]
+[10:36:04][Info][ThreadId 4] ****************************************
+[10:36:04][Info][ThreadId 4] simplifyDerivingClause
+[10:36:04][Info][ThreadId 4] state size: 3443
+[10:36:04][Info][ThreadId 4] # proposed changes: 0
+[10:36:04][Info][ThreadId 4] # batches: 1
+[10:36:04][Info][ThreadId 4] batch sizes: [0]
+[10:36:04][Info][ThreadId 4] ****************************************
+[10:36:04][Info][ThreadId 4] localBinds
+[10:36:04][Info][ThreadId 4] state size: 3443
+[10:36:04][Info][ThreadId 4] # proposed changes: 15
+[10:36:04][Info][ThreadId 4] # batches: 14
+[10:36:04][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1,1,1,1]
+[10:36:05][Notice][ThreadId 13746] APPLIED CHANGE
+[10:36:05][Notice][ThreadId 13746] First "      {-# INLINE [0] step #-}"
+[10:36:05][Info][ThreadId 4] ****************************************
+[10:36:05][Info][ThreadId 4] tyVarBndr
+[10:36:05][Info][ThreadId 4] state size: 3413
+[10:36:05][Info][ThreadId 4] # proposed changes: 1
+[10:36:05][Info][ThreadId 4] # batches: 1
+[10:36:05][Info][ThreadId 4] batch sizes: [1]
+[10:36:06][Info][ThreadId 4] ****************************************
+[10:36:06][Info][ThreadId 4] unqualImport
+[10:36:06][Info][ThreadId 4] state size: 3413
+[10:36:06][Info][ThreadId 4] # proposed changes: 3
+[10:36:06][Info][ThreadId 4] # batches: 1
+[10:36:06][Info][ThreadId 4] batch sizes: [3]
+[10:36:06][Info][ThreadId 4] ****************************************
+[10:36:06][Info][ThreadId 4] Functions.rmvUnusedParams
+[10:36:06][Info][ThreadId 4] state size: 3413
+[10:36:06][Info][ThreadId 4] # proposed changes: 22
+[10:36:06][Info][ThreadId 4] # batches: 10
+[10:36:06][Info][ThreadId 4] batch sizes: [4,2,2,2,2,2,2,2,2,2]
+[10:36:07][Info][ThreadId 4] ****************************************
+[10:36:07][Info][ThreadId 4] etaReduceMatches
+[10:36:07][Info][ThreadId 4] state size: 3413
+[10:36:07][Info][ThreadId 4] # proposed changes: 4
+[10:36:07][Info][ThreadId 4] # batches: 1
+[10:36:07][Info][ThreadId 4] batch sizes: [4]
+[10:36:08][Notice][ThreadId 13840] APPLIED CHANGE
+[10:36:08][Notice][ThreadId 13840] First "      step _ = Yield x undefined"
+[10:36:08][Notice][ThreadId 13840] Second "      step = Yield x"
+[10:36:08][Info][ThreadId 4] ****************************************
+[10:36:08][Info][ThreadId 4] Functions:inline
+[10:36:08][Info][ThreadId 4] state size: 3401
+[10:36:08][Info][ThreadId 4] # proposed changes: 12
+[10:36:08][Info][ThreadId 4] # batches: 11
+[10:36:08][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:36:09][Info][ThreadId 4] ****************************************
+[10:36:09][Info][ThreadId 4] betaReduceExprs
+[10:36:09][Info][ThreadId 4] state size: 3401
+[10:36:09][Info][ThreadId 4] # proposed changes: 2
+[10:36:09][Info][ThreadId 4] # batches: 1
+[10:36:09][Info][ThreadId 4] batch sizes: [2]
+[10:36:10][Notice][ThreadId 13902] APPLIED CHANGE
+[10:36:10][Notice][ThreadId 13902] First "gcons x v = gunstream $ bcons x $ (\\ v -> bfromVector v) v"
+[10:36:10][Notice][ThreadId 13902] Second "gcons x v = gunstream $ bcons x $ (bfromVector v)"
+[10:36:11][Notice][ThreadId 13902] APPLIED CHANGE
+[10:36:11][Notice][ThreadId 13902] First "  = runST"
+[10:36:11][Notice][ThreadId 13902] First "      ((\\ (New p) -> p) (New ((\\ s -> gmvmunstream (blift s)) s)))"
+[10:36:11][Notice][ThreadId 13902] Second "  = runST ((\\ (New p) -> p) (New ((gmvmunstream (blift s)))))"
+[10:36:11][Info][ThreadId 4] ****************************************
+[10:36:11][Info][ThreadId 4] rmvImports
+[10:36:11][Info][ThreadId 4] state size: 3377
+[10:36:11][Info][ThreadId 4] # proposed changes: 3
+[10:36:11][Info][ThreadId 4] # batches: 1
+[10:36:11][Info][ThreadId 4] batch sizes: [3]
+[10:36:11][Info][ThreadId 4] ****************************************
+[10:36:11][Info][ThreadId 4] rmvTyClMethods
+[10:36:11][Info][ThreadId 4] state size: 3377
+[10:36:11][Info][ThreadId 4] # proposed changes: 6
+[10:36:11][Info][ThreadId 4] # batches: 1
+[10:36:11][Info][ThreadId 4] batch sizes: [6]
+[10:36:13][Info][ThreadId 4] ****************************************
+[10:36:13][Info][ThreadId 4] handleMultiParams
+[10:36:13][Info][ThreadId 4] state size: 3377
+[10:36:13][Info][ThreadId 4] # proposed changes: 5
+[10:36:13][Info][ThreadId 4] # batches: 1
+[10:36:13][Info][ThreadId 4] batch sizes: [5]
+[10:36:13][Info][ThreadId 4] ****************************************
+[10:36:13][Info][ThreadId 4] Typeclasses.rmvUnusedParams
+[10:36:13][Info][ThreadId 4] state size: 3377
+[10:36:13][Info][ThreadId 4] # proposed changes: 9
+[10:36:13][Info][ThreadId 4] # batches: 8
+[10:36:13][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:36:15][Info][ThreadId 4] ****************************************
+[10:36:15][Info][ThreadId 4] TypeFamilies.rmvEquations
+[10:36:15][Info][ThreadId 4] state size: 3377
+[10:36:15][Info][ThreadId 4] # proposed changes: 0
+[10:36:15][Info][ThreadId 4] # batches: 1
+[10:36:15][Info][ThreadId 4] batch sizes: [0]
+[10:36:15][Info][ThreadId 4] ****************************************
+[10:36:15][Info][ThreadId 4] TypeFamilies.rmvUnusedParams
+[10:36:15][Info][ThreadId 4] state size: 3377
+[10:36:15][Info][ThreadId 4] # proposed changes: 1
+[10:36:15][Info][ThreadId 4] # batches: 1
+[10:36:15][Info][ThreadId 4] batch sizes: [1]
+[10:36:15][Info][ThreadId 4] ****************************************
+[10:36:15][Info][ThreadId 4] pat2Wildcard
+[10:36:15][Info][ThreadId 4] state size: 3377
+[10:36:15][Info][ThreadId 4] # proposed changes: 70
+[10:36:15][Info][ThreadId 4] # batches: 8
+[10:36:15][Info][ThreadId 4] batch sizes: [14,8,8,8,8,8,8,8]
+[10:36:17][Notice][ThreadId 14005] APPLIED CHANGE
+[10:36:17][Notice][ThreadId 14005] First "bmfromStream (Stream step t)"
+[10:36:17][Notice][ThreadId 14005] Second "bmfromStream (Stream step _)"
+[10:36:19][Notice][ThreadId 14005] APPLIED CHANGE
+[10:36:19][Notice][ThreadId 14005] First "      step' s"
+[10:36:19][Notice][ThreadId 14005] Second "      step' _"
+[10:36:20][Notice][ThreadId 14019] APPLIED CHANGE
+[10:36:20][Notice][ThreadId 14019] First "Stream stepa ta `sappend` Stream stepb _"
+[10:36:20][Notice][ThreadId 14019] Second "Stream stepa _ `sappend` Stream stepb _"
+[10:36:21][Notice][ThreadId 14011] APPLIED CHANGE
+[10:36:21][Notice][ThreadId 14011] First "blift (Bundle (Stream vstep t) sz)"
+[10:36:21][Notice][ThreadId 14011] Second "blift (Bundle (Stream vstep t) _)"
+[10:36:23][Notice][ThreadId 14019] APPLIED CHANGE
+[10:36:23][Notice][ThreadId 14019] First "      step (Left sa)"
+[10:36:23][Notice][ThreadId 14019] Second "      step (Left _)"
+[10:36:23][Info][ThreadId 4] ****************************************
+[10:36:23][Info][ThreadId 4] type2Unit
+[10:36:23][Info][ThreadId 4] state size: 3374
+[10:36:23][Info][ThreadId 4] # proposed changes: 181
+[10:36:23][Info][ThreadId 4] # batches: 8
+[10:36:23][Info][ThreadId 4] batch sizes: [27,22,22,22,22,22,22,22]
+[10:36:26][Notice][ThreadId 14184] APPLIED CHANGE
+[10:36:26][Notice][ThreadId 14184] First "  gmbasicUnsafeSlice :: () -> () -> v s a -> v s a"
+[10:36:26][Notice][ThreadId 14184] Second "  gmbasicUnsafeSlice :: () -> () -> v s a -> v () a"
+[10:36:29][Notice][ThreadId 14181] APPLIED CHANGE
+[10:36:29][Notice][ThreadId 14181] First "  gmbasicUnsafeGrow :: v (()) a -> () -> m (v () a)"
+[10:36:29][Notice][ThreadId 14181] Second "  gmbasicUnsafeGrow :: v () a -> () -> m (v () a)"
+[10:36:31][Notice][ThreadId 14188] APPLIED CHANGE
+[10:36:31][Notice][ThreadId 14188] First "  gmbasicUnsafeSlice :: () -> () -> v s a -> v () a"
+[10:36:31][Notice][ThreadId 14188] Second "  gmbasicUnsafeSlice :: () -> () -> v () a -> v () a"
+[10:36:32][Notice][ThreadId 14184] APPLIED CHANGE
+[10:36:32][Notice][ThreadId 14184] First "  gmbasicUnsafeNew :: m (v (()) a)"
+[10:36:32][Notice][ThreadId 14184] Second "  gmbasicUnsafeNew :: m (v () a)"
+[10:36:34][Info][ThreadId 4] ****************************************
+[10:36:34][Info][ThreadId 4] type2WildCard
+[10:36:34][Info][ThreadId 4] state size: 3372
+[10:36:34][Info][ThreadId 4] # proposed changes: 176
+[10:36:34][Info][ThreadId 4] # batches: 8
+[10:36:34][Info][ThreadId 4] batch sizes: [22,22,22,22,22,22,22,22]
+[10:36:41][Info][ThreadId 4] ****************************************
+[10:36:41][Info][ThreadId 4] inlineType
+[10:36:41][Info][ThreadId 4] state size: 3372
+[10:36:41][Info][ThreadId 4] # proposed changes: 0
+[10:36:41][Info][ThreadId 4] # batches: 1
+[10:36:41][Info][ThreadId 4] batch sizes: [0]
+[10:36:41][Info][ThreadId 4] ****************************************
+[10:36:41][Info][ThreadId 4] rmvConArgs
+[10:36:41][Info][ThreadId 4] state size: 3372
+[10:36:41][Info][ThreadId 4] # proposed changes: 7
+[10:36:41][Info][ThreadId 4] # batches: 1
+[10:36:41][Info][ThreadId 4] batch sizes: [7]
+[10:36:43][Notice][ThreadId 14945] APPLIED CHANGE
+[10:36:43][Notice][ThreadId 14945] First "data MBundle m v a"
+[10:36:43][Notice][ThreadId 14945] First "  = Bundle {sChunks :: Stream m (Chunk v a), sSize :: ()}"
+[10:36:43][Notice][ThreadId 14945] Second "data MBundle m v a = Bundle {sChunks :: Stream m (Chunk v a)}"
+[10:36:43][Notice][ThreadId 14945] First "blift (Bundle (Stream vstep t) _)"
+[10:36:43][Notice][ThreadId 14945] First "  = Bundle (Stream (return . runIdentity . vstep) t) undefined"
+[10:36:43][Notice][ThreadId 14945] Second "blift (Bundle (Stream vstep t))"
+[10:36:43][Notice][ThreadId 14945] Second "  = Bundle (Stream (return . runIdentity . vstep) t)"
+[10:36:43][Notice][ThreadId 14945] First "  = Bundle (Stream vstep undefined) undefined"
+[10:36:43][Notice][ThreadId 14945] Second "  = Bundle (Stream vstep undefined)"
+[10:36:43][Notice][ThreadId 14945] First "  = (\\ (Bundle ta _) (Bundle tb _)"
+[10:36:43][Notice][ThreadId 14945] First "       -> Bundle (sappend ta tb) undefined)"
+[10:36:43][Notice][ThreadId 14945] Second "  = (\\ (Bundle ta) (Bundle tb) -> Bundle (sappend ta tb))"
+[10:36:43][Notice][ThreadId 14945] First "  = Bundle (Stream step' undefined) undefined"
+[10:36:43][Notice][ThreadId 14945] Second "  = Bundle (Stream step' undefined)"
+[10:36:43][Info][ThreadId 4] ****************************************
+[10:36:43][Info][ThreadId 4] rmvRHSs
+[10:36:43][Info][ThreadId 4] state size: 3304
+[10:36:43][Info][ThreadId 4] # proposed changes: 30
+[10:36:43][Info][ThreadId 4] # batches: 9
+[10:36:43][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:36:43][Info][ThreadId 4] ****************************************
+[10:36:43][Info][ThreadId 4] rmvMatches
+[10:36:43][Info][ThreadId 4] state size: 3304
+[10:36:43][Info][ThreadId 4] # proposed changes: 30
+[10:36:43][Info][ThreadId 4] # batches: 9
+[10:36:43][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:36:45][Info][ThreadId 4] ****************************************
+[10:36:45][Info][ThreadId 4] rmvGuards
+[10:36:45][Info][ThreadId 4] state size: 3304
+[10:36:45][Info][ThreadId 4] # proposed changes: 0
+[10:36:45][Info][ThreadId 4] # batches: 1
+[10:36:45][Info][ThreadId 4] batch sizes: [0]
+[10:36:45][Info][ThreadId 4] ****************************************
+[10:36:45][Info][ThreadId 4] expr2Undefined
+[10:36:45][Info][ThreadId 4] state size: 3304
+[10:36:45][Info][ThreadId 4] # proposed changes: 230
+[10:36:45][Info][ThreadId 4] # batches: 8
+[10:36:45][Info][ThreadId 4] batch sizes: [34,28,28,28,28,28,28,28]
+[10:37:13][Info][ThreadId 4] ****************************************
+[10:37:13][Info][ThreadId 4] TypeFamilies.apply
+[10:37:13][Info][ThreadId 4] state size: 3304
+[10:37:13][Info][ThreadId 4] # proposed changes: 3
+[10:37:13][Info][ThreadId 4] # batches: 1
+[10:37:13][Info][ThreadId 4] batch sizes: [3]
+[10:37:14][Info][ThreadId 4] ****************************************
+[10:37:14][Info][ThreadId 4] splitSigs
+[10:37:14][Info][ThreadId 4] state size: 3304
+[10:37:14][Info][ThreadId 4] # proposed changes: 1
+[10:37:14][Info][ThreadId 4] # batches: 1
+[10:37:14][Info][ThreadId 4] batch sizes: [1]
+[10:37:14][Info][ThreadId 4] ****************************************
+[10:37:14][Info][ThreadId 4] rmvSigs
+[10:37:14][Info][ThreadId 4] state size: 3304
+[10:37:14][Info][ThreadId 4] # proposed changes: 8
+[10:37:14][Info][ThreadId 4] # batches: 8
+[10:37:14][Info][ThreadId 4] batch sizes: [1,1,1,1,1,1,1,1]
+[10:37:15][Info][ThreadId 4] ****************************************
+[10:37:15][Info][ThreadId 4] rmvDecls
+[10:37:15][Info][ThreadId 4] state size: 3304
+[10:37:15][Info][ThreadId 4] # proposed changes: 42
+[10:37:15][Info][ThreadId 4] # batches: 8
+[10:37:15][Info][ThreadId 4] batch sizes: [7,5,5,5,5,5,5,5]
+[10:37:17][Notice][ThreadId 15646] APPLIED CHANGE
+[10:37:17][Notice][ThreadId 15646] First "data Size"
+[10:37:18][Info][ThreadId 4] ****************************************
+[10:37:18][Info][ThreadId 4] rmvConstructors
+[10:37:18][Info][ThreadId 4] state size: 3294
+[10:37:18][Info][ThreadId 4] # proposed changes: 5
+[10:37:18][Info][ThreadId 4] # batches: 1
+[10:37:18][Info][ThreadId 4] batch sizes: [5]
+[10:37:19][Info][ThreadId 4] ****************************************
+[10:37:19][Info][ThreadId 4] simplifyConDecl
+[10:37:19][Info][ThreadId 4] state size: 3294
+[10:37:19][Info][ThreadId 4] # proposed changes: 2
+[10:37:19][Info][ThreadId 4] # batches: 1
+[10:37:19][Info][ThreadId 4] batch sizes: [2]
+[10:37:19][Info][ThreadId 4] ***NEW ITERATION***
+[10:37:20][Info][ThreadId 4] ****************************************
+[10:37:20][Info][ThreadId 4] rmvFunDeps
+[10:37:20][Info][ThreadId 4] state size: 3294
+[10:37:20][Info][ThreadId 4] # proposed changes: 0
+[10:37:20][Info][ThreadId 4] # batches: 1
+[10:37:20][Info][ThreadId 4] batch sizes: [0]
+[10:37:20][Info][ThreadId 4] ****************************************
+[10:37:20][Info][ThreadId 4] TypeFamilies.familyResultSig
+[10:37:20][Info][ThreadId 4] state size: 3294
+[10:37:20][Info][ThreadId 4] # proposed changes: 1
+[10:37:20][Info][ThreadId 4] # batches: 1
+[10:37:20][Info][ThreadId 4] batch sizes: [1]
+[10:37:20][Info][ThreadId 4] ****************************************
+[10:37:20][Info][ThreadId 4] filterExprSubList
+[10:37:20][Info][ThreadId 4] state size: 3294
+[10:37:20][Info][ThreadId 4] # proposed changes: 24
+[10:37:20][Info][ThreadId 4] # batches: 8
+[10:37:20][Info][ThreadId 4] batch sizes: [3,3,3,3,3,3,3,3]
+[10:37:22][Info][ThreadId 4] ****************************************
+[10:37:22][Info][ThreadId 4] simplifyExpr
+[10:37:22][Info][ThreadId 4] state size: 3294
+[10:37:22][Info][ThreadId 4] # proposed changes: 203
+[10:37:22][Info][ThreadId 4] # batches: 8
+[10:37:22][Info][ThreadId 4] batch sizes: [28,25,25,25,25,25,25,25]
+[10:37:27][Notice][ThreadId 15843] APPLIED CHANGE
+[10:37:27][Notice][ThreadId 15843] First "gcons x v = gunstream $ bcons x $ (bfromVector v)"
+[10:37:27][Notice][ThreadId 15843] Second "gcons x v = gunstream $ bcons x $ bfromVector v"
+[10:37:34][Notice][ThreadId 15817] APPLIED CHANGE
+[10:37:34][Notice][ThreadId 15817] First "  = runST ((\\ (New p) -> p) (New ((gmvmunstream (blift s)))))"
+[10:37:34][Notice][ThreadId 15817] Second "  = runST ((\\ (New p) -> p) (New (gmvmunstream (blift s))))"
+[10:37:34][Info][ThreadId 4] ****************************************
+[10:37:34][Info][ThreadId 4] simplifyType
+[10:37:34][Info][ThreadId 4] state size: 3290
+[10:37:34][Info][ThreadId 4] # proposed changes: 21
+[10:37:34][Info][ThreadId 4] # batches: 10
+[10:37:34][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:37:36][Info][ThreadId 4] ****************************************
+[10:37:36][Info][ThreadId 4] contexts
+[10:37:36][Info][ThreadId 4] state size: 3290
+[10:37:36][Info][ThreadId 4] # proposed changes: 6
+[10:37:36][Info][ThreadId 4] # batches: 1
+[10:37:36][Info][ThreadId 4] batch sizes: [6]
+[10:37:38][Info][ThreadId 4] ****************************************
+[10:37:38][Info][ThreadId 4] rmvDerivingClause
+[10:37:38][Info][ThreadId 4] state size: 3290
+[10:37:38][Info][ThreadId 4] # proposed changes: 0
+[10:37:38][Info][ThreadId 4] # batches: 1
+[10:37:38][Info][ThreadId 4] batch sizes: [0]
+[10:37:38][Info][ThreadId 4] ****************************************
+[10:37:38][Info][ThreadId 4] simplifyDerivingClause
+[10:37:38][Info][ThreadId 4] state size: 3290
+[10:37:38][Info][ThreadId 4] # proposed changes: 0
+[10:37:38][Info][ThreadId 4] # batches: 1
+[10:37:38][Info][ThreadId 4] batch sizes: [0]
+[10:37:38][Info][ThreadId 4] ****************************************
+[10:37:38][Info][ThreadId 4] localBinds
+[10:37:38][Info][ThreadId 4] state size: 3290
+[10:37:38][Info][ThreadId 4] # proposed changes: 14
+[10:37:38][Info][ThreadId 4] # batches: 13
+[10:37:38][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1,1,1]
+[10:37:38][Info][ThreadId 4] ****************************************
+[10:37:38][Info][ThreadId 4] tyVarBndr
+[10:37:38][Info][ThreadId 4] state size: 3290
+[10:37:38][Info][ThreadId 4] # proposed changes: 1
+[10:37:38][Info][ThreadId 4] # batches: 1
+[10:37:38][Info][ThreadId 4] batch sizes: [1]
+[10:37:39][Info][ThreadId 4] ****************************************
+[10:37:39][Info][ThreadId 4] unqualImport
+[10:37:39][Info][ThreadId 4] state size: 3290
+[10:37:39][Info][ThreadId 4] # proposed changes: 3
+[10:37:39][Info][ThreadId 4] # batches: 1
+[10:37:39][Info][ThreadId 4] batch sizes: [3]
+[10:37:39][Info][ThreadId 4] ****************************************
+[10:37:39][Info][ThreadId 4] Functions.rmvUnusedParams
+[10:37:39][Info][ThreadId 4] state size: 3290
+[10:37:39][Info][ThreadId 4] # proposed changes: 21
+[10:37:39][Info][ThreadId 4] # batches: 10
+[10:37:39][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:37:40][Info][ThreadId 4] ****************************************
+[10:37:40][Info][ThreadId 4] etaReduceMatches
+[10:37:40][Info][ThreadId 4] state size: 3290
+[10:37:40][Info][ThreadId 4] # proposed changes: 2
+[10:37:40][Info][ThreadId 4] # batches: 1
+[10:37:40][Info][ThreadId 4] batch sizes: [2]
+[10:37:40][Info][ThreadId 4] ****************************************
+[10:37:40][Info][ThreadId 4] Functions:inline
+[10:37:40][Info][ThreadId 4] state size: 3290
+[10:37:40][Info][ThreadId 4] # proposed changes: 12
+[10:37:40][Info][ThreadId 4] # batches: 11
+[10:37:40][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:37:41][Info][ThreadId 4] ****************************************
+[10:37:41][Info][ThreadId 4] betaReduceExprs
+[10:37:41][Info][ThreadId 4] state size: 3290
+[10:37:41][Info][ThreadId 4] # proposed changes: 0
+[10:37:41][Info][ThreadId 4] # batches: 1
+[10:37:41][Info][ThreadId 4] batch sizes: [0]
+[10:37:41][Info][ThreadId 4] ****************************************
+[10:37:41][Info][ThreadId 4] rmvImports
+[10:37:41][Info][ThreadId 4] state size: 3290
+[10:37:41][Info][ThreadId 4] # proposed changes: 3
+[10:37:41][Info][ThreadId 4] # batches: 1
+[10:37:41][Info][ThreadId 4] batch sizes: [3]
+[10:37:42][Info][ThreadId 4] ****************************************
+[10:37:42][Info][ThreadId 4] rmvTyClMethods
+[10:37:42][Info][ThreadId 4] state size: 3290
+[10:37:42][Info][ThreadId 4] # proposed changes: 6
+[10:37:42][Info][ThreadId 4] # batches: 1
+[10:37:42][Info][ThreadId 4] batch sizes: [6]
+[10:37:43][Info][ThreadId 4] ****************************************
+[10:37:43][Info][ThreadId 4] handleMultiParams
+[10:37:43][Info][ThreadId 4] state size: 3290
+[10:37:43][Info][ThreadId 4] # proposed changes: 5
+[10:37:43][Info][ThreadId 4] # batches: 1
+[10:37:43][Info][ThreadId 4] batch sizes: [5]
+[10:37:44][Info][ThreadId 4] ****************************************
+[10:37:44][Info][ThreadId 4] Typeclasses.rmvUnusedParams
+[10:37:44][Info][ThreadId 4] state size: 3290
+[10:37:44][Info][ThreadId 4] # proposed changes: 9
+[10:37:44][Info][ThreadId 4] # batches: 8
+[10:37:44][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:37:45][Info][ThreadId 4] ****************************************
+[10:37:45][Info][ThreadId 4] TypeFamilies.rmvEquations
+[10:37:45][Info][ThreadId 4] state size: 3290
+[10:37:45][Info][ThreadId 4] # proposed changes: 0
+[10:37:45][Info][ThreadId 4] # batches: 1
+[10:37:45][Info][ThreadId 4] batch sizes: [0]
+[10:37:45][Info][ThreadId 4] ****************************************
+[10:37:45][Info][ThreadId 4] TypeFamilies.rmvUnusedParams
+[10:37:45][Info][ThreadId 4] state size: 3290
+[10:37:45][Info][ThreadId 4] # proposed changes: 1
+[10:37:45][Info][ThreadId 4] # batches: 1
+[10:37:45][Info][ThreadId 4] batch sizes: [1]
+[10:37:45][Info][ThreadId 4] ****************************************
+[10:37:45][Info][ThreadId 4] pat2Wildcard
+[10:37:45][Info][ThreadId 4] state size: 3290
+[10:37:45][Info][ThreadId 4] # proposed changes: 65
+[10:37:45][Info][ThreadId 4] # batches: 8
+[10:37:45][Info][ThreadId 4] batch sizes: [9,8,8,8,8,8,8,8]
+[10:37:49][Notice][ThreadId 16632] APPLIED CHANGE
+[10:37:49][Notice][ThreadId 16632] First "      vstep True"
+[10:37:49][Notice][ThreadId 16632] Second "      vstep _"
+[10:37:50][Info][ThreadId 4] ****************************************
+[10:37:50][Info][ThreadId 4] type2Unit
+[10:37:50][Info][ThreadId 4] state size: 3287
+[10:37:50][Info][ThreadId 4] # proposed changes: 177
+[10:37:50][Info][ThreadId 4] # batches: 8
+[10:37:50][Info][ThreadId 4] batch sizes: [23,22,22,22,22,22,22,22]
+[10:38:00][Info][ThreadId 4] ****************************************
+[10:38:00][Info][ThreadId 4] type2WildCard
+[10:38:00][Info][ThreadId 4] state size: 3287
+[10:38:00][Info][ThreadId 4] # proposed changes: 176
+[10:38:00][Info][ThreadId 4] # batches: 8
+[10:38:00][Info][ThreadId 4] batch sizes: [22,22,22,22,22,22,22,22]
+[10:38:08][Info][ThreadId 4] ****************************************
+[10:38:08][Info][ThreadId 4] inlineType
+[10:38:08][Info][ThreadId 4] state size: 3287
+[10:38:08][Info][ThreadId 4] # proposed changes: 0
+[10:38:08][Info][ThreadId 4] # batches: 1
+[10:38:08][Info][ThreadId 4] batch sizes: [0]
+[10:38:08][Info][ThreadId 4] ****************************************
+[10:38:08][Info][ThreadId 4] rmvConArgs
+[10:38:08][Info][ThreadId 4] state size: 3287
+[10:38:08][Info][ThreadId 4] # proposed changes: 6
+[10:38:08][Info][ThreadId 4] # batches: 1
+[10:38:08][Info][ThreadId 4] batch sizes: [6]
+[10:38:09][Info][ThreadId 4] ****************************************
+[10:38:09][Info][ThreadId 4] rmvRHSs
+[10:38:09][Info][ThreadId 4] state size: 3287
+[10:38:09][Info][ThreadId 4] # proposed changes: 30
+[10:38:09][Info][ThreadId 4] # batches: 9
+[10:38:09][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:38:09][Info][ThreadId 4] ****************************************
+[10:38:09][Info][ThreadId 4] rmvMatches
+[10:38:09][Info][ThreadId 4] state size: 3287
+[10:38:09][Info][ThreadId 4] # proposed changes: 30
+[10:38:09][Info][ThreadId 4] # batches: 9
+[10:38:09][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:38:11][Info][ThreadId 4] ****************************************
+[10:38:11][Info][ThreadId 4] rmvGuards
+[10:38:11][Info][ThreadId 4] state size: 3287
+[10:38:11][Info][ThreadId 4] # proposed changes: 0
+[10:38:11][Info][ThreadId 4] # batches: 1
+[10:38:11][Info][ThreadId 4] batch sizes: [0]
+[10:38:11][Info][ThreadId 4] ****************************************
+[10:38:11][Info][ThreadId 4] expr2Undefined
+[10:38:11][Info][ThreadId 4] state size: 3287
+[10:38:11][Info][ThreadId 4] # proposed changes: 228
+[10:38:11][Info][ThreadId 4] # batches: 8
+[10:38:11][Info][ThreadId 4] batch sizes: [32,28,28,28,28,28,28,28]
+[10:38:42][Info][ThreadId 4] ****************************************
+[10:38:42][Info][ThreadId 4] TypeFamilies.apply
+[10:38:42][Info][ThreadId 4] state size: 3287
+[10:38:42][Info][ThreadId 4] # proposed changes: 3
+[10:38:42][Info][ThreadId 4] # batches: 1
+[10:38:42][Info][ThreadId 4] batch sizes: [3]
+[10:38:42][Info][ThreadId 4] ****************************************
+[10:38:42][Info][ThreadId 4] splitSigs
+[10:38:42][Info][ThreadId 4] state size: 3287
+[10:38:42][Info][ThreadId 4] # proposed changes: 1
+[10:38:42][Info][ThreadId 4] # batches: 1
+[10:38:42][Info][ThreadId 4] batch sizes: [1]
+[10:38:42][Info][ThreadId 4] ****************************************
+[10:38:42][Info][ThreadId 4] rmvSigs
+[10:38:42][Info][ThreadId 4] state size: 3287
+[10:38:42][Info][ThreadId 4] # proposed changes: 8
+[10:38:42][Info][ThreadId 4] # batches: 8
+[10:38:42][Info][ThreadId 4] batch sizes: [1,1,1,1,1,1,1,1]
+[10:38:43][Info][ThreadId 4] ****************************************
+[10:38:43][Info][ThreadId 4] rmvDecls
+[10:38:43][Info][ThreadId 4] state size: 3287
+[10:38:43][Info][ThreadId 4] # proposed changes: 41
+[10:38:43][Info][ThreadId 4] # batches: 8
+[10:38:43][Info][ThreadId 4] batch sizes: [6,5,5,5,5,5,5,5]
+[10:38:46][Info][ThreadId 4] ****************************************
+[10:38:46][Info][ThreadId 4] rmvConstructors
+[10:38:46][Info][ThreadId 4] state size: 3287
+[10:38:46][Info][ThreadId 4] # proposed changes: 5
+[10:38:46][Info][ThreadId 4] # batches: 1
+[10:38:46][Info][ThreadId 4] batch sizes: [5]
+[10:38:47][Info][ThreadId 4] ****************************************
+[10:38:47][Info][ThreadId 4] simplifyConDecl
+[10:38:47][Info][ThreadId 4] state size: 3287
+[10:38:47][Info][ThreadId 4] # proposed changes: 2
+[10:38:47][Info][ThreadId 4] # batches: 1
+[10:38:47][Info][ThreadId 4] batch sizes: [2]
+[10:38:47][Info][ThreadId 4] ***NEW ITERATION***
+[10:38:48][Info][ThreadId 4] ****************************************
+[10:38:48][Info][ThreadId 4] rmvFunDeps
+[10:38:48][Info][ThreadId 4] state size: 3287
+[10:38:48][Info][ThreadId 4] # proposed changes: 0
+[10:38:48][Info][ThreadId 4] # batches: 1
+[10:38:48][Info][ThreadId 4] batch sizes: [0]
+[10:38:48][Info][ThreadId 4] ****************************************
+[10:38:48][Info][ThreadId 4] TypeFamilies.familyResultSig
+[10:38:48][Info][ThreadId 4] state size: 3287
+[10:38:48][Info][ThreadId 4] # proposed changes: 1
+[10:38:48][Info][ThreadId 4] # batches: 1
+[10:38:48][Info][ThreadId 4] batch sizes: [1]
+[10:38:48][Info][ThreadId 4] ****************************************
+[10:38:48][Info][ThreadId 4] filterExprSubList
+[10:38:48][Info][ThreadId 4] state size: 3287
+[10:38:48][Info][ThreadId 4] # proposed changes: 24
+[10:38:48][Info][ThreadId 4] # batches: 8
+[10:38:48][Info][ThreadId 4] batch sizes: [3,3,3,3,3,3,3,3]
+[10:38:50][Info][ThreadId 4] ****************************************
+[10:38:50][Info][ThreadId 4] simplifyExpr
+[10:38:50][Info][ThreadId 4] state size: 3287
+[10:38:50][Info][ThreadId 4] # proposed changes: 201
+[10:38:50][Info][ThreadId 4] # batches: 8
+[10:38:50][Info][ThreadId 4] batch sizes: [26,25,25,25,25,25,25,25]
+[10:39:02][Info][ThreadId 4] ****************************************
+[10:39:02][Info][ThreadId 4] simplifyType
+[10:39:02][Info][ThreadId 4] state size: 3287
+[10:39:02][Info][ThreadId 4] # proposed changes: 21
+[10:39:02][Info][ThreadId 4] # batches: 10
+[10:39:02][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:39:04][Info][ThreadId 4] ****************************************
+[10:39:04][Info][ThreadId 4] contexts
+[10:39:04][Info][ThreadId 4] state size: 3287
+[10:39:04][Info][ThreadId 4] # proposed changes: 6
+[10:39:04][Info][ThreadId 4] # batches: 1
+[10:39:04][Info][ThreadId 4] batch sizes: [6]
+[10:39:06][Info][ThreadId 4] ****************************************
+[10:39:06][Info][ThreadId 4] rmvDerivingClause
+[10:39:06][Info][ThreadId 4] state size: 3287
+[10:39:06][Info][ThreadId 4] # proposed changes: 0
+[10:39:06][Info][ThreadId 4] # batches: 1
+[10:39:06][Info][ThreadId 4] batch sizes: [0]
+[10:39:06][Info][ThreadId 4] ****************************************
+[10:39:06][Info][ThreadId 4] simplifyDerivingClause
+[10:39:06][Info][ThreadId 4] state size: 3287
+[10:39:06][Info][ThreadId 4] # proposed changes: 0
+[10:39:06][Info][ThreadId 4] # batches: 1
+[10:39:06][Info][ThreadId 4] batch sizes: [0]
+[10:39:06][Info][ThreadId 4] ****************************************
+[10:39:06][Info][ThreadId 4] localBinds
+[10:39:06][Info][ThreadId 4] state size: 3287
+[10:39:06][Info][ThreadId 4] # proposed changes: 14
+[10:39:06][Info][ThreadId 4] # batches: 13
+[10:39:06][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1,1,1]
+[10:39:06][Info][ThreadId 4] ****************************************
+[10:39:06][Info][ThreadId 4] tyVarBndr
+[10:39:06][Info][ThreadId 4] state size: 3287
+[10:39:06][Info][ThreadId 4] # proposed changes: 1
+[10:39:06][Info][ThreadId 4] # batches: 1
+[10:39:06][Info][ThreadId 4] batch sizes: [1]
+[10:39:07][Info][ThreadId 4] ****************************************
+[10:39:07][Info][ThreadId 4] unqualImport
+[10:39:07][Info][ThreadId 4] state size: 3287
+[10:39:07][Info][ThreadId 4] # proposed changes: 3
+[10:39:07][Info][ThreadId 4] # batches: 1
+[10:39:07][Info][ThreadId 4] batch sizes: [3]
+[10:39:07][Info][ThreadId 4] ****************************************
+[10:39:07][Info][ThreadId 4] Functions.rmvUnusedParams
+[10:39:07][Info][ThreadId 4] state size: 3287
+[10:39:07][Info][ThreadId 4] # proposed changes: 21
+[10:39:07][Info][ThreadId 4] # batches: 10
+[10:39:07][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:39:08][Info][ThreadId 4] ****************************************
+[10:39:08][Info][ThreadId 4] etaReduceMatches
+[10:39:08][Info][ThreadId 4] state size: 3287
+[10:39:08][Info][ThreadId 4] # proposed changes: 3
+[10:39:08][Info][ThreadId 4] # batches: 1
+[10:39:08][Info][ThreadId 4] batch sizes: [3]
+[10:39:08][Info][ThreadId 4] ****************************************
+[10:39:08][Info][ThreadId 4] Functions:inline
+[10:39:08][Info][ThreadId 4] state size: 3287
+[10:39:08][Info][ThreadId 4] # proposed changes: 12
+[10:39:08][Info][ThreadId 4] # batches: 11
+[10:39:08][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:39:09][Info][ThreadId 4] ****************************************
+[10:39:09][Info][ThreadId 4] betaReduceExprs
+[10:39:09][Info][ThreadId 4] state size: 3287
+[10:39:09][Info][ThreadId 4] # proposed changes: 0
+[10:39:09][Info][ThreadId 4] # batches: 1
+[10:39:09][Info][ThreadId 4] batch sizes: [0]
+[10:39:09][Info][ThreadId 4] ****************************************
+[10:39:09][Info][ThreadId 4] rmvImports
+[10:39:09][Info][ThreadId 4] state size: 3287
+[10:39:09][Info][ThreadId 4] # proposed changes: 3
+[10:39:09][Info][ThreadId 4] # batches: 1
+[10:39:09][Info][ThreadId 4] batch sizes: [3]
+[10:39:10][Info][ThreadId 4] ****************************************
+[10:39:10][Info][ThreadId 4] rmvTyClMethods
+[10:39:10][Info][ThreadId 4] state size: 3287
+[10:39:10][Info][ThreadId 4] # proposed changes: 6
+[10:39:10][Info][ThreadId 4] # batches: 1
+[10:39:10][Info][ThreadId 4] batch sizes: [6]
+[10:39:11][Info][ThreadId 4] ****************************************
+[10:39:11][Info][ThreadId 4] handleMultiParams
+[10:39:11][Info][ThreadId 4] state size: 3287
+[10:39:11][Info][ThreadId 4] # proposed changes: 5
+[10:39:11][Info][ThreadId 4] # batches: 1
+[10:39:11][Info][ThreadId 4] batch sizes: [5]
+[10:39:12][Info][ThreadId 4] ****************************************
+[10:39:12][Info][ThreadId 4] Typeclasses.rmvUnusedParams
+[10:39:12][Info][ThreadId 4] state size: 3287
+[10:39:12][Info][ThreadId 4] # proposed changes: 9
+[10:39:12][Info][ThreadId 4] # batches: 8
+[10:39:12][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:39:13][Info][ThreadId 4] ****************************************
+[10:39:13][Info][ThreadId 4] TypeFamilies.rmvEquations
+[10:39:13][Info][ThreadId 4] state size: 3287
+[10:39:13][Info][ThreadId 4] # proposed changes: 0
+[10:39:13][Info][ThreadId 4] # batches: 1
+[10:39:13][Info][ThreadId 4] batch sizes: [0]
+[10:39:13][Info][ThreadId 4] ****************************************
+[10:39:13][Info][ThreadId 4] TypeFamilies.rmvUnusedParams
+[10:39:13][Info][ThreadId 4] state size: 3287
+[10:39:13][Info][ThreadId 4] # proposed changes: 1
+[10:39:13][Info][ThreadId 4] # batches: 1
+[10:39:13][Info][ThreadId 4] batch sizes: [1]
+[10:39:13][Info][ThreadId 4] ****************************************
+[10:39:13][Info][ThreadId 4] pat2Wildcard
+[10:39:13][Info][ThreadId 4] state size: 3287
+[10:39:13][Info][ThreadId 4] # proposed changes: 64
+[10:39:13][Info][ThreadId 4] # batches: 8
+[10:39:13][Info][ThreadId 4] batch sizes: [8,8,8,8,8,8,8,8]
+[10:39:17][Info][ThreadId 4] ****************************************
+[10:39:17][Info][ThreadId 4] type2Unit
+[10:39:17][Info][ThreadId 4] state size: 3287
+[10:39:17][Info][ThreadId 4] # proposed changes: 177
+[10:39:17][Info][ThreadId 4] # batches: 8
+[10:39:17][Info][ThreadId 4] batch sizes: [23,22,22,22,22,22,22,22]
+[10:39:25][Info][ThreadId 4] ****************************************
+[10:39:25][Info][ThreadId 4] type2WildCard
+[10:39:25][Info][ThreadId 4] state size: 3287
+[10:39:25][Info][ThreadId 4] # proposed changes: 176
+[10:39:25][Info][ThreadId 4] # batches: 8
+[10:39:25][Info][ThreadId 4] batch sizes: [22,22,22,22,22,22,22,22]
+[10:39:33][Info][ThreadId 4] ****************************************
+[10:39:33][Info][ThreadId 4] inlineType
+[10:39:33][Info][ThreadId 4] state size: 3287
+[10:39:33][Info][ThreadId 4] # proposed changes: 0
+[10:39:33][Info][ThreadId 4] # batches: 1
+[10:39:33][Info][ThreadId 4] batch sizes: [0]
+[10:39:33][Info][ThreadId 4] ****************************************
+[10:39:33][Info][ThreadId 4] rmvConArgs
+[10:39:33][Info][ThreadId 4] state size: 3287
+[10:39:33][Info][ThreadId 4] # proposed changes: 6
+[10:39:33][Info][ThreadId 4] # batches: 1
+[10:39:33][Info][ThreadId 4] batch sizes: [6]
+[10:39:34][Info][ThreadId 4] ****************************************
+[10:39:34][Info][ThreadId 4] rmvRHSs
+[10:39:34][Info][ThreadId 4] state size: 3287
+[10:39:34][Info][ThreadId 4] # proposed changes: 30
+[10:39:34][Info][ThreadId 4] # batches: 9
+[10:39:34][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:39:34][Info][ThreadId 4] ****************************************
+[10:39:34][Info][ThreadId 4] rmvMatches
+[10:39:34][Info][ThreadId 4] state size: 3287
+[10:39:34][Info][ThreadId 4] # proposed changes: 30
+[10:39:34][Info][ThreadId 4] # batches: 9
+[10:39:34][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:39:36][Info][ThreadId 4] ****************************************
+[10:39:36][Info][ThreadId 4] rmvGuards
+[10:39:36][Info][ThreadId 4] state size: 3287
+[10:39:36][Info][ThreadId 4] # proposed changes: 0
+[10:39:36][Info][ThreadId 4] # batches: 1
+[10:39:36][Info][ThreadId 4] batch sizes: [0]
+[10:39:36][Info][ThreadId 4] ****************************************
+[10:39:36][Info][ThreadId 4] expr2Undefined
+[10:39:36][Info][ThreadId 4] state size: 3287
+[10:39:36][Info][ThreadId 4] # proposed changes: 228
+[10:39:36][Info][ThreadId 4] # batches: 8
+[10:39:36][Info][ThreadId 4] batch sizes: [32,28,28,28,28,28,28,28]
+[10:40:05][Info][ThreadId 4] ****************************************
+[10:40:05][Info][ThreadId 4] TypeFamilies.apply
+[10:40:05][Info][ThreadId 4] state size: 3287
+[10:40:05][Info][ThreadId 4] # proposed changes: 3
+[10:40:05][Info][ThreadId 4] # batches: 1
+[10:40:05][Info][ThreadId 4] batch sizes: [3]
+[10:40:05][Info][ThreadId 4] ****************************************
+[10:40:05][Info][ThreadId 4] splitSigs
+[10:40:05][Info][ThreadId 4] state size: 3287
+[10:40:05][Info][ThreadId 4] # proposed changes: 1
+[10:40:05][Info][ThreadId 4] # batches: 1
+[10:40:05][Info][ThreadId 4] batch sizes: [1]
+[10:40:05][Info][ThreadId 4] ****************************************
+[10:40:05][Info][ThreadId 4] rmvSigs
+[10:40:05][Info][ThreadId 4] state size: 3287
+[10:40:05][Info][ThreadId 4] # proposed changes: 8
+[10:40:05][Info][ThreadId 4] # batches: 8
+[10:40:05][Info][ThreadId 4] batch sizes: [1,1,1,1,1,1,1,1]
+[10:40:06][Info][ThreadId 4] ****************************************
+[10:40:06][Info][ThreadId 4] rmvDecls
+[10:40:06][Info][ThreadId 4] state size: 3287
+[10:40:06][Info][ThreadId 4] # proposed changes: 41
+[10:40:06][Info][ThreadId 4] # batches: 8
+[10:40:06][Info][ThreadId 4] batch sizes: [6,5,5,5,5,5,5,5]
+[10:40:09][Info][ThreadId 4] ****************************************
+[10:40:09][Info][ThreadId 4] rmvConstructors
+[10:40:09][Info][ThreadId 4] state size: 3287
+[10:40:09][Info][ThreadId 4] # proposed changes: 5
+[10:40:09][Info][ThreadId 4] # batches: 1
+[10:40:09][Info][ThreadId 4] batch sizes: [5]
+[10:40:09][Info][ThreadId 4] ****************************************
+[10:40:09][Info][ThreadId 4] simplifyConDecl
+[10:40:09][Info][ThreadId 4] state size: 3287
+[10:40:09][Info][ThreadId 4] # proposed changes: 2
+[10:40:09][Info][ThreadId 4] # batches: 1
+[10:40:09][Info][ThreadId 4] batch sizes: [2]
+[10:40:10][Info][ThreadId 4] ***NEW ITERATION***
+[10:40:11][Info][ThreadId 4] ****************************************
+[10:40:11][Info][ThreadId 4] rmvFunDeps
+[10:40:11][Info][ThreadId 4] state size: 3287
+[10:40:11][Info][ThreadId 4] # proposed changes: 0
+[10:40:11][Info][ThreadId 4] # batches: 1
+[10:40:11][Info][ThreadId 4] batch sizes: [0]
+[10:40:11][Info][ThreadId 4] ****************************************
+[10:40:11][Info][ThreadId 4] TypeFamilies.familyResultSig
+[10:40:11][Info][ThreadId 4] state size: 3287
+[10:40:11][Info][ThreadId 4] # proposed changes: 1
+[10:40:11][Info][ThreadId 4] # batches: 1
+[10:40:11][Info][ThreadId 4] batch sizes: [1]
+[10:40:11][Info][ThreadId 4] ****************************************
+[10:40:11][Info][ThreadId 4] filterExprSubList
+[10:40:11][Info][ThreadId 4] state size: 3287
+[10:40:11][Info][ThreadId 4] # proposed changes: 24
+[10:40:11][Info][ThreadId 4] # batches: 8
+[10:40:11][Info][ThreadId 4] batch sizes: [3,3,3,3,3,3,3,3]
+[10:40:13][Info][ThreadId 4] ****************************************
+[10:40:13][Info][ThreadId 4] simplifyExpr
+[10:40:13][Info][ThreadId 4] state size: 3287
+[10:40:13][Info][ThreadId 4] # proposed changes: 201
+[10:40:13][Info][ThreadId 4] # batches: 8
+[10:40:13][Info][ThreadId 4] batch sizes: [26,25,25,25,25,25,25,25]
+[10:40:25][Info][ThreadId 4] ****************************************
+[10:40:25][Info][ThreadId 4] simplifyType
+[10:40:25][Info][ThreadId 4] state size: 3287
+[10:40:25][Info][ThreadId 4] # proposed changes: 21
+[10:40:25][Info][ThreadId 4] # batches: 10
+[10:40:25][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:40:26][Info][ThreadId 4] ****************************************
+[10:40:26][Info][ThreadId 4] contexts
+[10:40:26][Info][ThreadId 4] state size: 3287
+[10:40:26][Info][ThreadId 4] # proposed changes: 6
+[10:40:26][Info][ThreadId 4] # batches: 1
+[10:40:26][Info][ThreadId 4] batch sizes: [6]
+[10:40:28][Info][ThreadId 4] ****************************************
+[10:40:28][Info][ThreadId 4] rmvDerivingClause
+[10:40:28][Info][ThreadId 4] state size: 3287
+[10:40:28][Info][ThreadId 4] # proposed changes: 0
+[10:40:28][Info][ThreadId 4] # batches: 1
+[10:40:28][Info][ThreadId 4] batch sizes: [0]
+[10:40:28][Info][ThreadId 4] ****************************************
+[10:40:28][Info][ThreadId 4] simplifyDerivingClause
+[10:40:28][Info][ThreadId 4] state size: 3287
+[10:40:28][Info][ThreadId 4] # proposed changes: 0
+[10:40:28][Info][ThreadId 4] # batches: 1
+[10:40:28][Info][ThreadId 4] batch sizes: [0]
+[10:40:28][Info][ThreadId 4] ****************************************
+[10:40:28][Info][ThreadId 4] localBinds
+[10:40:28][Info][ThreadId 4] state size: 3287
+[10:40:28][Info][ThreadId 4] # proposed changes: 14
+[10:40:28][Info][ThreadId 4] # batches: 13
+[10:40:28][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1,1,1]
+[10:40:29][Info][ThreadId 4] ****************************************
+[10:40:29][Info][ThreadId 4] tyVarBndr
+[10:40:29][Info][ThreadId 4] state size: 3287
+[10:40:29][Info][ThreadId 4] # proposed changes: 1
+[10:40:29][Info][ThreadId 4] # batches: 1
+[10:40:29][Info][ThreadId 4] batch sizes: [1]
+[10:40:29][Info][ThreadId 4] ****************************************
+[10:40:29][Info][ThreadId 4] unqualImport
+[10:40:29][Info][ThreadId 4] state size: 3287
+[10:40:29][Info][ThreadId 4] # proposed changes: 3
+[10:40:29][Info][ThreadId 4] # batches: 1
+[10:40:29][Info][ThreadId 4] batch sizes: [3]
+[10:40:29][Info][ThreadId 4] ****************************************
+[10:40:29][Info][ThreadId 4] Functions.rmvUnusedParams
+[10:40:29][Info][ThreadId 4] state size: 3287
+[10:40:29][Info][ThreadId 4] # proposed changes: 21
+[10:40:29][Info][ThreadId 4] # batches: 10
+[10:40:29][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:40:30][Info][ThreadId 4] ****************************************
+[10:40:30][Info][ThreadId 4] etaReduceMatches
+[10:40:30][Info][ThreadId 4] state size: 3287
+[10:40:30][Info][ThreadId 4] # proposed changes: 3
+[10:40:30][Info][ThreadId 4] # batches: 1
+[10:40:30][Info][ThreadId 4] batch sizes: [3]
+[10:40:30][Info][ThreadId 4] ****************************************
+[10:40:30][Info][ThreadId 4] Functions:inline
+[10:40:30][Info][ThreadId 4] state size: 3287
+[10:40:30][Info][ThreadId 4] # proposed changes: 12
+[10:40:30][Info][ThreadId 4] # batches: 11
+[10:40:30][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:40:31][Info][ThreadId 4] ****************************************
+[10:40:31][Info][ThreadId 4] betaReduceExprs
+[10:40:31][Info][ThreadId 4] state size: 3287
+[10:40:31][Info][ThreadId 4] # proposed changes: 0
+[10:40:31][Info][ThreadId 4] # batches: 1
+[10:40:31][Info][ThreadId 4] batch sizes: [0]
+[10:40:31][Info][ThreadId 4] ****************************************
+[10:40:31][Info][ThreadId 4] rmvImports
+[10:40:31][Info][ThreadId 4] state size: 3287
+[10:40:31][Info][ThreadId 4] # proposed changes: 3
+[10:40:31][Info][ThreadId 4] # batches: 1
+[10:40:31][Info][ThreadId 4] batch sizes: [3]
+[10:40:32][Info][ThreadId 4] ****************************************
+[10:40:32][Info][ThreadId 4] rmvTyClMethods
+[10:40:32][Info][ThreadId 4] state size: 3287
+[10:40:32][Info][ThreadId 4] # proposed changes: 6
+[10:40:32][Info][ThreadId 4] # batches: 1
+[10:40:32][Info][ThreadId 4] batch sizes: [6]
+[10:40:33][Info][ThreadId 4] ****************************************
+[10:40:33][Info][ThreadId 4] handleMultiParams
+[10:40:33][Info][ThreadId 4] state size: 3287
+[10:40:33][Info][ThreadId 4] # proposed changes: 5
+[10:40:33][Info][ThreadId 4] # batches: 1
+[10:40:33][Info][ThreadId 4] batch sizes: [5]
+[10:40:34][Info][ThreadId 4] ****************************************
+[10:40:34][Info][ThreadId 4] Typeclasses.rmvUnusedParams
+[10:40:34][Info][ThreadId 4] state size: 3287
+[10:40:34][Info][ThreadId 4] # proposed changes: 9
+[10:40:34][Info][ThreadId 4] # batches: 8
+[10:40:34][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:40:35][Info][ThreadId 4] ****************************************
+[10:40:35][Info][ThreadId 4] TypeFamilies.rmvEquations
+[10:40:35][Info][ThreadId 4] state size: 3287
+[10:40:35][Info][ThreadId 4] # proposed changes: 0
+[10:40:35][Info][ThreadId 4] # batches: 1
+[10:40:35][Info][ThreadId 4] batch sizes: [0]
+[10:40:35][Info][ThreadId 4] ****************************************
+[10:40:35][Info][ThreadId 4] TypeFamilies.rmvUnusedParams
+[10:40:35][Info][ThreadId 4] state size: 3287
+[10:40:35][Info][ThreadId 4] # proposed changes: 1
+[10:40:35][Info][ThreadId 4] # batches: 1
+[10:40:35][Info][ThreadId 4] batch sizes: [1]
+[10:40:35][Info][ThreadId 4] ****************************************
+[10:40:35][Info][ThreadId 4] pat2Wildcard
+[10:40:35][Info][ThreadId 4] state size: 3287
+[10:40:35][Info][ThreadId 4] # proposed changes: 64
+[10:40:35][Info][ThreadId 4] # batches: 8
+[10:40:35][Info][ThreadId 4] batch sizes: [8,8,8,8,8,8,8,8]
+[10:40:39][Info][ThreadId 4] ****************************************
+[10:40:39][Info][ThreadId 4] type2Unit
+[10:40:39][Info][ThreadId 4] state size: 3287
+[10:40:39][Info][ThreadId 4] # proposed changes: 177
+[10:40:39][Info][ThreadId 4] # batches: 8
+[10:40:39][Info][ThreadId 4] batch sizes: [23,22,22,22,22,22,22,22]
+[10:40:47][Info][ThreadId 4] ****************************************
+[10:40:47][Info][ThreadId 4] type2WildCard
+[10:40:47][Info][ThreadId 4] state size: 3287
+[10:40:47][Info][ThreadId 4] # proposed changes: 176
+[10:40:47][Info][ThreadId 4] # batches: 8
+[10:40:47][Info][ThreadId 4] batch sizes: [22,22,22,22,22,22,22,22]
+[10:40:55][Info][ThreadId 4] ****************************************
+[10:40:55][Info][ThreadId 4] inlineType
+[10:40:55][Info][ThreadId 4] state size: 3287
+[10:40:55][Info][ThreadId 4] # proposed changes: 0
+[10:40:55][Info][ThreadId 4] # batches: 1
+[10:40:55][Info][ThreadId 4] batch sizes: [0]
+[10:40:55][Info][ThreadId 4] ****************************************
+[10:40:55][Info][ThreadId 4] rmvConArgs
+[10:40:55][Info][ThreadId 4] state size: 3287
+[10:40:55][Info][ThreadId 4] # proposed changes: 6
+[10:40:55][Info][ThreadId 4] # batches: 1
+[10:40:55][Info][ThreadId 4] batch sizes: [6]
+[10:40:56][Info][ThreadId 4] ****************************************
+[10:40:56][Info][ThreadId 4] rmvRHSs
+[10:40:56][Info][ThreadId 4] state size: 3287
+[10:40:56][Info][ThreadId 4] # proposed changes: 30
+[10:40:56][Info][ThreadId 4] # batches: 9
+[10:40:56][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:40:56][Info][ThreadId 4] ****************************************
+[10:40:56][Info][ThreadId 4] rmvMatches
+[10:40:56][Info][ThreadId 4] state size: 3287
+[10:40:56][Info][ThreadId 4] # proposed changes: 30
+[10:40:56][Info][ThreadId 4] # batches: 9
+[10:40:56][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:40:58][Info][ThreadId 4] ****************************************
+[10:40:58][Info][ThreadId 4] rmvGuards
+[10:40:58][Info][ThreadId 4] state size: 3287
+[10:40:58][Info][ThreadId 4] # proposed changes: 0
+[10:40:58][Info][ThreadId 4] # batches: 1
+[10:40:58][Info][ThreadId 4] batch sizes: [0]
+[10:40:58][Info][ThreadId 4] ****************************************
+[10:40:58][Info][ThreadId 4] expr2Undefined
+[10:40:58][Info][ThreadId 4] state size: 3287
+[10:40:58][Info][ThreadId 4] # proposed changes: 228
+[10:40:58][Info][ThreadId 4] # batches: 8
+[10:40:58][Info][ThreadId 4] batch sizes: [32,28,28,28,28,28,28,28]
+[10:41:26][Info][ThreadId 4] ****************************************
+[10:41:26][Info][ThreadId 4] TypeFamilies.apply
+[10:41:26][Info][ThreadId 4] state size: 3287
+[10:41:26][Info][ThreadId 4] # proposed changes: 3
+[10:41:26][Info][ThreadId 4] # batches: 1
+[10:41:26][Info][ThreadId 4] batch sizes: [3]
+[10:41:27][Info][ThreadId 4] ****************************************
+[10:41:27][Info][ThreadId 4] splitSigs
+[10:41:27][Info][ThreadId 4] state size: 3287
+[10:41:27][Info][ThreadId 4] # proposed changes: 1
+[10:41:27][Info][ThreadId 4] # batches: 1
+[10:41:27][Info][ThreadId 4] batch sizes: [1]
+[10:41:27][Info][ThreadId 4] ****************************************
+[10:41:27][Info][ThreadId 4] rmvSigs
+[10:41:27][Info][ThreadId 4] state size: 3287
+[10:41:27][Info][ThreadId 4] # proposed changes: 8
+[10:41:27][Info][ThreadId 4] # batches: 8
+[10:41:27][Info][ThreadId 4] batch sizes: [1,1,1,1,1,1,1,1]
+[10:41:28][Info][ThreadId 4] ****************************************
+[10:41:28][Info][ThreadId 4] rmvDecls
+[10:41:28][Info][ThreadId 4] state size: 3287
+[10:41:28][Info][ThreadId 4] # proposed changes: 41
+[10:41:28][Info][ThreadId 4] # batches: 8
+[10:41:28][Info][ThreadId 4] batch sizes: [6,5,5,5,5,5,5,5]
+[10:41:30][Info][ThreadId 4] ****************************************
+[10:41:30][Info][ThreadId 4] rmvConstructors
+[10:41:30][Info][ThreadId 4] state size: 3287
+[10:41:30][Info][ThreadId 4] # proposed changes: 5
+[10:41:30][Info][ThreadId 4] # batches: 1
+[10:41:30][Info][ThreadId 4] batch sizes: [5]
+[10:41:31][Info][ThreadId 4] ****************************************
+[10:41:31][Info][ThreadId 4] simplifyConDecl
+[10:41:31][Info][ThreadId 4] state size: 3287
+[10:41:31][Info][ThreadId 4] # proposed changes: 2
+[10:41:31][Info][ThreadId 4] # batches: 1
+[10:41:31][Info][ThreadId 4] batch sizes: [2]
+[10:41:32][Info][ThreadId 4] ****************************************
+[10:41:32][Info][ThreadId 4] Removing Pragmas
+[10:41:32][Info][ThreadId 4] state size: 3287
+[10:41:33][Notice][ThreadId 4] APPLIED CHANGE
+[10:41:33][Notice][ThreadId 4] First "{-# LANGUAGE BangPatterns, FlexibleContexts, GADTs, MultiParamTypeClasses, RankNTypes, ScopedTypeVariables, TypeFamilies #-}"
+[10:41:33][Notice][ThreadId 4] Second "{-# LANGUAGE FlexibleContexts, GADTs, MultiParamTypeClasses, RankNTypes, ScopedTypeVariables, TypeFamilies #-}"
+[10:41:35][Notice][ThreadId 4] APPLIED CHANGE
+[10:41:35][Notice][ThreadId 4] First "{-# LANGUAGE FlexibleContexts, GADTs, MultiParamTypeClasses, RankNTypes, ScopedTypeVariables, TypeFamilies #-}"
+[10:41:35][Notice][ThreadId 4] Second "{-# LANGUAGE FlexibleContexts, GADTs, MultiParamTypeClasses, RankNTypes, TypeFamilies #-}"
+[10:41:35][Info][ThreadId 4] ****************************************
+[10:41:35][Info][ThreadId 4] rmvExports
+[10:41:35][Info][ThreadId 4] state size: 3252
+[10:41:35][Info][ThreadId 4] # proposed changes: 1
+[10:41:35][Info][ThreadId 4] # batches: 1
+[10:41:35][Info][ThreadId 4] batch sizes: [1]
+[10:41:35][Info][ThreadId 4] ***NEW ITERATION***
+[10:41:36][Info][ThreadId 4] ****************************************
+[10:41:36][Info][ThreadId 4] rmvFunDeps
+[10:41:36][Info][ThreadId 4] state size: 3252
+[10:41:36][Info][ThreadId 4] # proposed changes: 0
+[10:41:36][Info][ThreadId 4] # batches: 1
+[10:41:36][Info][ThreadId 4] batch sizes: [0]
+[10:41:36][Info][ThreadId 4] ****************************************
+[10:41:36][Info][ThreadId 4] TypeFamilies.familyResultSig
+[10:41:36][Info][ThreadId 4] state size: 3252
+[10:41:36][Info][ThreadId 4] # proposed changes: 1
+[10:41:36][Info][ThreadId 4] # batches: 1
+[10:41:36][Info][ThreadId 4] batch sizes: [1]
+[10:41:36][Info][ThreadId 4] ****************************************
+[10:41:36][Info][ThreadId 4] filterExprSubList
+[10:41:36][Info][ThreadId 4] state size: 3252
+[10:41:36][Info][ThreadId 4] # proposed changes: 24
+[10:41:36][Info][ThreadId 4] # batches: 8
+[10:41:36][Info][ThreadId 4] batch sizes: [3,3,3,3,3,3,3,3]
+[10:41:39][Info][ThreadId 4] ****************************************
+[10:41:39][Info][ThreadId 4] simplifyExpr
+[10:41:39][Info][ThreadId 4] state size: 3252
+[10:41:39][Info][ThreadId 4] # proposed changes: 201
+[10:41:39][Info][ThreadId 4] # batches: 8
+[10:41:39][Info][ThreadId 4] batch sizes: [26,25,25,25,25,25,25,25]
+[10:41:50][Info][ThreadId 4] ****************************************
+[10:41:50][Info][ThreadId 4] simplifyType
+[10:41:50][Info][ThreadId 4] state size: 3252
+[10:41:50][Info][ThreadId 4] # proposed changes: 21
+[10:41:50][Info][ThreadId 4] # batches: 10
+[10:41:50][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:41:52][Info][ThreadId 4] ****************************************
+[10:41:52][Info][ThreadId 4] contexts
+[10:41:52][Info][ThreadId 4] state size: 3252
+[10:41:52][Info][ThreadId 4] # proposed changes: 6
+[10:41:52][Info][ThreadId 4] # batches: 1
+[10:41:52][Info][ThreadId 4] batch sizes: [6]
+[10:41:53][Info][ThreadId 4] ****************************************
+[10:41:53][Info][ThreadId 4] rmvDerivingClause
+[10:41:53][Info][ThreadId 4] state size: 3252
+[10:41:53][Info][ThreadId 4] # proposed changes: 0
+[10:41:53][Info][ThreadId 4] # batches: 1
+[10:41:53][Info][ThreadId 4] batch sizes: [0]
+[10:41:53][Info][ThreadId 4] ****************************************
+[10:41:53][Info][ThreadId 4] simplifyDerivingClause
+[10:41:53][Info][ThreadId 4] state size: 3252
+[10:41:53][Info][ThreadId 4] # proposed changes: 0
+[10:41:53][Info][ThreadId 4] # batches: 1
+[10:41:53][Info][ThreadId 4] batch sizes: [0]
+[10:41:53][Info][ThreadId 4] ****************************************
+[10:41:53][Info][ThreadId 4] localBinds
+[10:41:53][Info][ThreadId 4] state size: 3252
+[10:41:53][Info][ThreadId 4] # proposed changes: 14
+[10:41:53][Info][ThreadId 4] # batches: 13
+[10:41:53][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1,1,1]
+[10:41:54][Info][ThreadId 4] ****************************************
+[10:41:54][Info][ThreadId 4] tyVarBndr
+[10:41:54][Info][ThreadId 4] state size: 3252
+[10:41:54][Info][ThreadId 4] # proposed changes: 1
+[10:41:54][Info][ThreadId 4] # batches: 1
+[10:41:54][Info][ThreadId 4] batch sizes: [1]
+[10:41:54][Info][ThreadId 4] ****************************************
+[10:41:54][Info][ThreadId 4] unqualImport
+[10:41:54][Info][ThreadId 4] state size: 3252
+[10:41:54][Info][ThreadId 4] # proposed changes: 3
+[10:41:54][Info][ThreadId 4] # batches: 1
+[10:41:54][Info][ThreadId 4] batch sizes: [3]
+[10:41:54][Info][ThreadId 4] ****************************************
+[10:41:54][Info][ThreadId 4] Functions.rmvUnusedParams
+[10:41:54][Info][ThreadId 4] state size: 3252
+[10:41:54][Info][ThreadId 4] # proposed changes: 21
+[10:41:54][Info][ThreadId 4] # batches: 10
+[10:41:54][Info][ThreadId 4] batch sizes: [3,2,2,2,2,2,2,2,2,2]
+[10:41:55][Info][ThreadId 4] ****************************************
+[10:41:55][Info][ThreadId 4] etaReduceMatches
+[10:41:55][Info][ThreadId 4] state size: 3252
+[10:41:55][Info][ThreadId 4] # proposed changes: 3
+[10:41:55][Info][ThreadId 4] # batches: 1
+[10:41:55][Info][ThreadId 4] batch sizes: [3]
+[10:41:56][Info][ThreadId 4] ****************************************
+[10:41:56][Info][ThreadId 4] Functions:inline
+[10:41:56][Info][ThreadId 4] state size: 3252
+[10:41:56][Info][ThreadId 4] # proposed changes: 12
+[10:41:56][Info][ThreadId 4] # batches: 11
+[10:41:56][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1,1,1,1]
+[10:41:57][Info][ThreadId 4] ****************************************
+[10:41:57][Info][ThreadId 4] betaReduceExprs
+[10:41:57][Info][ThreadId 4] state size: 3252
+[10:41:57][Info][ThreadId 4] # proposed changes: 0
+[10:41:57][Info][ThreadId 4] # batches: 1
+[10:41:57][Info][ThreadId 4] batch sizes: [0]
+[10:41:57][Info][ThreadId 4] ****************************************
+[10:41:57][Info][ThreadId 4] rmvImports
+[10:41:57][Info][ThreadId 4] state size: 3252
+[10:41:57][Info][ThreadId 4] # proposed changes: 3
+[10:41:57][Info][ThreadId 4] # batches: 1
+[10:41:57][Info][ThreadId 4] batch sizes: [3]
+[10:41:57][Info][ThreadId 4] ****************************************
+[10:41:57][Info][ThreadId 4] rmvTyClMethods
+[10:41:57][Info][ThreadId 4] state size: 3252
+[10:41:57][Info][ThreadId 4] # proposed changes: 6
+[10:41:57][Info][ThreadId 4] # batches: 1
+[10:41:57][Info][ThreadId 4] batch sizes: [6]
+[10:41:59][Info][ThreadId 4] ****************************************
+[10:41:59][Info][ThreadId 4] handleMultiParams
+[10:41:59][Info][ThreadId 4] state size: 3252
+[10:41:59][Info][ThreadId 4] # proposed changes: 5
+[10:41:59][Info][ThreadId 4] # batches: 1
+[10:41:59][Info][ThreadId 4] batch sizes: [5]
+[10:41:59][Info][ThreadId 4] ****************************************
+[10:41:59][Info][ThreadId 4] Typeclasses.rmvUnusedParams
+[10:41:59][Info][ThreadId 4] state size: 3252
+[10:41:59][Info][ThreadId 4] # proposed changes: 9
+[10:41:59][Info][ThreadId 4] # batches: 8
+[10:41:59][Info][ThreadId 4] batch sizes: [2,1,1,1,1,1,1,1]
+[10:42:01][Info][ThreadId 4] ****************************************
+[10:42:01][Info][ThreadId 4] TypeFamilies.rmvEquations
+[10:42:01][Info][ThreadId 4] state size: 3252
+[10:42:01][Info][ThreadId 4] # proposed changes: 0
+[10:42:01][Info][ThreadId 4] # batches: 1
+[10:42:01][Info][ThreadId 4] batch sizes: [0]
+[10:42:01][Info][ThreadId 4] ****************************************
+[10:42:01][Info][ThreadId 4] TypeFamilies.rmvUnusedParams
+[10:42:01][Info][ThreadId 4] state size: 3252
+[10:42:01][Info][ThreadId 4] # proposed changes: 1
+[10:42:01][Info][ThreadId 4] # batches: 1
+[10:42:01][Info][ThreadId 4] batch sizes: [1]
+[10:42:01][Info][ThreadId 4] ****************************************
+[10:42:01][Info][ThreadId 4] pat2Wildcard
+[10:42:01][Info][ThreadId 4] state size: 3252
+[10:42:01][Info][ThreadId 4] # proposed changes: 64
+[10:42:01][Info][ThreadId 4] # batches: 8
+[10:42:01][Info][ThreadId 4] batch sizes: [8,8,8,8,8,8,8,8]
+[10:42:05][Info][ThreadId 4] ****************************************
+[10:42:05][Info][ThreadId 4] type2Unit
+[10:42:05][Info][ThreadId 4] state size: 3252
+[10:42:05][Info][ThreadId 4] # proposed changes: 177
+[10:42:05][Info][ThreadId 4] # batches: 8
+[10:42:05][Info][ThreadId 4] batch sizes: [23,22,22,22,22,22,22,22]
+[10:42:13][Info][ThreadId 4] ****************************************
+[10:42:13][Info][ThreadId 4] type2WildCard
+[10:42:13][Info][ThreadId 4] state size: 3252
+[10:42:13][Info][ThreadId 4] # proposed changes: 176
+[10:42:13][Info][ThreadId 4] # batches: 8
+[10:42:13][Info][ThreadId 4] batch sizes: [22,22,22,22,22,22,22,22]
+[10:42:21][Info][ThreadId 4] ****************************************
+[10:42:21][Info][ThreadId 4] inlineType
+[10:42:21][Info][ThreadId 4] state size: 3252
+[10:42:21][Info][ThreadId 4] # proposed changes: 0
+[10:42:21][Info][ThreadId 4] # batches: 1
+[10:42:21][Info][ThreadId 4] batch sizes: [0]
+[10:42:21][Info][ThreadId 4] ****************************************
+[10:42:21][Info][ThreadId 4] rmvConArgs
+[10:42:21][Info][ThreadId 4] state size: 3252
+[10:42:21][Info][ThreadId 4] # proposed changes: 6
+[10:42:21][Info][ThreadId 4] # batches: 1
+[10:42:21][Info][ThreadId 4] batch sizes: [6]
+[10:42:22][Info][ThreadId 4] ****************************************
+[10:42:22][Info][ThreadId 4] rmvRHSs
+[10:42:22][Info][ThreadId 4] state size: 3252
+[10:42:22][Info][ThreadId 4] # proposed changes: 30
+[10:42:22][Info][ThreadId 4] # batches: 9
+[10:42:22][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:42:22][Info][ThreadId 4] ****************************************
+[10:42:22][Info][ThreadId 4] rmvMatches
+[10:42:22][Info][ThreadId 4] state size: 3252
+[10:42:22][Info][ThreadId 4] # proposed changes: 30
+[10:42:22][Info][ThreadId 4] # batches: 9
+[10:42:22][Info][ThreadId 4] batch sizes: [6,3,3,3,3,3,3,3,3]
+[10:42:24][Info][ThreadId 4] ****************************************
+[10:42:24][Info][ThreadId 4] rmvGuards
+[10:42:24][Info][ThreadId 4] state size: 3252
+[10:42:24][Info][ThreadId 4] # proposed changes: 0
+[10:42:24][Info][ThreadId 4] # batches: 1
+[10:42:24][Info][ThreadId 4] batch sizes: [0]
+[10:42:24][Info][ThreadId 4] ****************************************
+[10:42:24][Info][ThreadId 4] expr2Undefined
+[10:42:24][Info][ThreadId 4] state size: 3252
+[10:42:24][Info][ThreadId 4] # proposed changes: 228
+[10:42:24][Info][ThreadId 4] # batches: 8
+[10:42:24][Info][ThreadId 4] batch sizes: [32,28,28,28,28,28,28,28]
+[10:42:54][Info][ThreadId 4] ****************************************
+[10:42:54][Info][ThreadId 4] TypeFamilies.apply
+[10:42:54][Info][ThreadId 4] state size: 3252
+[10:42:54][Info][ThreadId 4] # proposed changes: 3
+[10:42:54][Info][ThreadId 4] # batches: 1
+[10:42:54][Info][ThreadId 4] batch sizes: [3]
+[10:42:55][Info][ThreadId 4] ****************************************
+[10:42:55][Info][ThreadId 4] splitSigs
+[10:42:55][Info][ThreadId 4] state size: 3252
+[10:42:55][Info][ThreadId 4] # proposed changes: 1
+[10:42:55][Info][ThreadId 4] # batches: 1
+[10:42:55][Info][ThreadId 4] batch sizes: [1]
+[10:42:55][Info][ThreadId 4] ****************************************
+[10:42:55][Info][ThreadId 4] rmvSigs
+[10:42:55][Info][ThreadId 4] state size: 3252
+[10:42:55][Info][ThreadId 4] # proposed changes: 8
+[10:42:55][Info][ThreadId 4] # batches: 8
+[10:42:55][Info][ThreadId 4] batch sizes: [1,1,1,1,1,1,1,1]
+[10:42:56][Info][ThreadId 4] ****************************************
+[10:42:56][Info][ThreadId 4] rmvDecls
+[10:42:56][Info][ThreadId 4] state size: 3252
+[10:42:56][Info][ThreadId 4] # proposed changes: 41
+[10:42:56][Info][ThreadId 4] # batches: 8
+[10:42:56][Info][ThreadId 4] batch sizes: [6,5,5,5,5,5,5,5]
+[10:42:59][Info][ThreadId 4] ****************************************
+[10:42:59][Info][ThreadId 4] rmvConstructors
+[10:42:59][Info][ThreadId 4] state size: 3252
+[10:42:59][Info][ThreadId 4] # proposed changes: 5
+[10:42:59][Info][ThreadId 4] # batches: 1
+[10:42:59][Info][ThreadId 4] batch sizes: [5]
+[10:42:59][Info][ThreadId 4] ****************************************
+[10:42:59][Info][ThreadId 4] simplifyConDecl
+[10:42:59][Info][ThreadId 4] state size: 3252
+[10:42:59][Info][ThreadId 4] # proposed changes: 2
+[10:42:59][Info][ThreadId 4] # batches: 1
+[10:42:59][Info][ThreadId 4] batch sizes: [2]
+[10:43:00][Info][ThreadId 4] ****************************************
+[10:43:00][Info][ThreadId 4] Removing Pragmas
+[10:43:00][Info][ThreadId 4] state size: 3252
+[10:43:01][Info][ThreadId 4] ****************************************
+[10:43:01][Info][ThreadId 4] rmvExports
+[10:43:01][Info][ThreadId 4] state size: 3252
+[10:43:01][Info][ThreadId 4] # proposed changes: 1
+[10:43:01][Info][ThreadId 4] # batches: 1
+[10:43:01][Info][ThreadId 4] batch sizes: [1]
+[10:43:02][Info][ThreadId 4] *******************************************************
+[10:43:02][Info][ThreadId 4] Finished.
+[10:43:02][Info][ThreadId 4] Old size:        11405
+[10:43:02][Info][ThreadId 4] Reduced size:    3252

@@ -4,3 +4,9 @@
 [submodule "ticket18140_3/protocol-buffers"]
 	path = ticket18140_3/protocol-buffers
 	url = https://github.com/k-bx/protocol-buffers.git
+[submodule "ticket18098/ghc"]
+	path = ticket18098/ghc
+	url = https://gitlab.haskell.org/ghc/ghc.git
+[submodule "ticket18098/ghc.nix"]
+	path = ticket18098/ghc.nix
+	url = https://github.com/alpmestan/ghc.nix.git

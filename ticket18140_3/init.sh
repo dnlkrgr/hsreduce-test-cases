@@ -18,12 +18,13 @@ cd $DIR_NAME_LOWER
 cabal update
 
 echo 'merging project ...'
-nix-shell --run 'hsreduce merge --sourceFile src-auto-generated/Text/DescriptorProtos/FileOptions.hs'
+nix-shell --run '~/.cabal/bin/hsreduce merge --sourceFile src-auto-generated/Text/DescriptorProtos/FileOptions.hs'
 cd ../
 # primitive version of "inlining dependencies"
 cp -r Text descriptor
 cd ../$DIR_NAME_LOWER
 
+echo ''
 echo 'is merged file interesting?'
 nix-shell ghc8101.nix --run './interesting.sh'
 

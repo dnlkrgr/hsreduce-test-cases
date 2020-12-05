@@ -18,6 +18,5 @@ RATIO=$(python -c "print ($A * 1.0/ $B)")
 echo $RATIO
 
 BIG_ENOUGH=$(python -c "print ($RATIO > 15.0)")
-SMALL_ENOUGH=$(python -c "print ($RATIO < 64.0)")
 
-[[ $A_BROKEN -eq 0 && $B_BROKEN -eq 0 && $BIG_ENOUGH == "True" && $SMALL_ENOUGH == "True" ]]
+[[ $A_BROKEN -eq 0 && $B_BROKEN -eq 0 && $BIG_ENOUGH == "True" ]]

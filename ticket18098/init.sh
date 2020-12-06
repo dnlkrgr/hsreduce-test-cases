@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cabal update
+
 cd ghc.nix
 git submodule init
 git submodule update

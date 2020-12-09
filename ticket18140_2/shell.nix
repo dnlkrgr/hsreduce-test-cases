@@ -10,4 +10,7 @@ let ghc = haskell.packages.ghc8101.ghcWithPackages (p: with p; [ aeson bytestrin
 in mkShell {
   name = "ticket18140_1";
   buildInputs = [ ghc ];
+  shellHook = ''
+      export TMPDIR="/tmp"
+    '';
 }

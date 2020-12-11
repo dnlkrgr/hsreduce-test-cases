@@ -14,6 +14,10 @@ cp ghc8101.nix $DIR_NAME_LOWER
 cp hie.yaml $DIR_NAME_LOWER
 cp shell.nix $DIR_NAME_LOWER
 
+# inlining of dependencies
+cp protocol-buffers-descriptor.cabal $DIR_NAME_LOWER
+cp -r $DIR_NAME/Text $DIR_NAME_LOWER
+
 cd $DIR_NAME_LOWER
 cabal update
 
@@ -26,7 +30,7 @@ cd ../$DIR_NAME_LOWER
 
 echo ''
 echo 'is merged file interesting?'
-nix-shell ghc8101.nix --run './interesting.sh'
+nix-shell ghc8101.nix --run './interesting.sh && echo "merged file is interesting" || echo "merged file is uninteresting"'
 
 echo ''
 echo 'Next steps:'

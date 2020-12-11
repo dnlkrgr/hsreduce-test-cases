@@ -24,7 +24,7 @@ nix-shell --run '~/.cabal/bin/hsreduce merge --sourceFile Main.hs'
 
 echo ''
 echo 'is merged file interesting?'
-nix-shell ghc861.nix --run "./interesting.sh"
+nix-shell ghc861.nix --run './interesting.sh && echo "merged file is interesting" || echo "merged file is uninteresting"'
 
 echo ''
 echo 'Next steps:'

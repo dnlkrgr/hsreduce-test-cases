@@ -26,7 +26,7 @@ sieve1 n
       (do sieveArr <- U.unsafeThaw (U.generate n initSieve)
           return sieveArr)
   where
-      initSieve _ = 2
+      initSieve _ = 0
 main
   = do args <- getArgs
        let n = read (head args)

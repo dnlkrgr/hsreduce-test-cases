@@ -1,6 +1,5 @@
-{-# LANGUAGE TypeInType, ViewPatterns, TypeOperators, RankNTypes, PatternSynonyms, FlexibleInstances, GADTs, ScopedTypeVariables, UndecidableInstances, TypeApplications #-}
+{-# LANGUAGE TypeInType, ViewPatterns, PatternSynonyms, GADTs #-}
 module DataTypeableInternal (
-        pattern App
     ) where
 data TypeRep (a :: k)
   where TrFun :: () -> () -> () -> TypeRep (() -> ())

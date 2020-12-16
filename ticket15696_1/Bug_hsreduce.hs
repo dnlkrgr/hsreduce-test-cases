@@ -1,5 +1,7 @@
-{-# LANGUAGE MagicHash #-}
-module Main where
+
+module Main (
+        main
+    ) where
 import Data.Foldable as Foldable
 main
   = print $ Foldable.foldl' (flip wumbo) (singleton a) b
@@ -11,7 +13,7 @@ data T
   = T2
   deriving Show
 data Set a
-  = Bin a (Set ()) (Set a) | Tip
+  = Bin !a !(Set ()) !(Set a) | Tip
   deriving Show
 wumbo x0
   = go x0 undefined

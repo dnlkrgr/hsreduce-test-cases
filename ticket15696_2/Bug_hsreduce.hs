@@ -1,5 +1,7 @@
-{-# LANGUAGE CPP, CPP, BangPatterns, PatternGuards, DeriveDataTypeable, StandaloneDeriving, Trustworthy, RoleAnnotations, TypeFamilies, CPP, MagicHash, CPP #-}
-module Main where
+{-# LANGUAGE BangPatterns #-}
+module Main (
+        main
+    ) where
 import Data.Foldable as Foldable
 data Set_DataSetInternal a
   = Bin_DataSetInternal a (Set_DataSetInternal a) (Set_DataSetInternal a) |

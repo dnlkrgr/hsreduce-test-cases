@@ -5,17 +5,21 @@ module Bug (
 import Data.Functor.Identity
 import GHC.ST
 import GHC.Types
-gcons :: GVector v a => a -> v a -> ()
-gcons x v = gunstream $ bcons x $ bfromVector v
+gcons x v
+  = gunstream
+      $ (\ (Bundle _ ta _) (Bundle _ tb _)
+           -> Bundle undefined (sappend ta tb) undefined)
+          (bmfromStream (ssingleton x) undefined)
+      $ v
 {-# INLINE gcons #-}
-data New v a = New (forall s. ST s ())
-data Chunk v a
-  = Chunk Int (forall m.
-               (PrimMonad m, GVector v a) => Mutable v (PrimState m) a -> m ())
+data New v a = New (forall s. ST s (Mutable v () ()))
+data Chunk v a = Chunk (forall m. Mutable v () a -> m ())
 data Step s a where Yield :: a -> s -> Step s a
 data Stream m a = forall s. Stream (s -> m (Step s a)) s
-type Bundle = MBundle Identity
-data MBundle m v a = Bundle {sChunks :: Stream m (Chunk v a)}
+data MBundle m v a
+  = Bundle {_sElems :: (),
+            sChunks :: Stream m (Chunk v a),
+            sSize :: ()}
 class Monad m => PrimMonad m where
   type PrimState m
 instance PrimMonad (ST s) where
@@ -23,12 +27,10 @@ instance PrimMonad (ST s) where
 type family Mutable (v :: Type -> Type) :: Type -> Type -> Type
 class GMVector v a where
   gmbasicLength :: v () a -> Int
-  gmbasicUnsafeSlice :: () -> () -> v () a -> v () a
   gmbasicUnsafeNew :: m (v () a)
-  gmbasicUnsafeWrite :: v (PrimState m) a -> a -> m ()
-  gmbasicUnsafeGrow :: v () a -> () -> m (v () a)
-class GMVector (Mutable v) a => GVector v a where
-  gbasicUnsafeCopy :: v a -> m ()
+  gmbasicUnsafeWrite :: v () () -> a -> m ()
+  gmbasicUnsafeGrow :: v () a -> Int -> m (v () a)
+class GMVector (Mutable v) a => GVector v a
 sfoldlM m w (Stream step t)
   = foldlM_loop w t
   where
@@ -41,58 +43,44 @@ sfoldlM m w (Stream step t)
 Stream stepa _ `sappend` Stream stepb _
   = Stream step (Left undefined)
   where
-      step (Left _)
-        = do r <- stepa undefined
+      step (Left sa)
+        = do r <- stepa sa
              case r of { Yield x _ -> return $ Yield x undefined }
       step _
         = do r <- stepb undefined
-             case r of { Yield x sb' -> return $ Yield x (Right sb') }
-{-# INLINE [1] sappend #-}
+             case r of { Yield x _ -> return $ Yield x undefined }
 ssingleton x
   = Stream (return . step) undefined
   where
       step = Yield x
-bfromVector :: GVector v a => v a -> Bundle v a
-bfromVector = bmfromVector
-blift (Bundle (Stream vstep t))
-  = Bundle (Stream (return . runIdentity . vstep) t)
+blift (Bundle _ (Stream vstep t) _)
+  = Bundle
+      undefined (Stream (return . runIdentity . vstep) t) undefined
 {-# INLINE [1] blift #-}
-bmfromVector v
-  = Bundle (Stream vstep undefined)
-  where
-      vstep _
-        = return
-            (Yield (Chunk undefined (\ _ -> gbasicUnsafeCopy v)) undefined)
-bcons = bmcons
-bmcons x
-  = (\ (Bundle ta) (Bundle tb) -> Bundle (sappend ta tb))
-      (bmsingleton x)
-bmsingleton x = bmfromStream (ssingleton x)
-{-# INLINE [1] bmsingleton #-}
 bmfromStream (Stream step _)
-  = Bundle (Stream step' undefined)
+  = Bundle undefined (Stream step' undefined)
   where
       step' _
         = do r <- step undefined
              return
                $ (\ (Yield x _)
-                    -> Yield (Chunk 1 (\ v -> gmbasicUnsafeWrite v x)) undefined)
+                    -> Yield (Chunk (\ v -> gmbasicUnsafeWrite v x)) undefined)
                    r
-gmvmunstream s = gmvmunstreamUnknown s
+gmvmunstream ::
+  (PrimMonad m, GVector v a) => MBundle m v a -> m (Mutable v () ())
+gmvmunstream = gmvmunstreamUnknown
 {-# INLINE [1] gmvmunstream #-}
 gmvmunstreamUnknown s
   = do v <- gmbasicUnsafeNew
        _ <- sfoldlM copyChunk (v, undefined) (sChunks s)
        undefined
   where
-      copyChunk (v, _) (Chunk n f)
-        = do let j = n
-             v' <- if gmbasicLength v < j then
-                       gmbasicUnsafeGrow v undefined
-                   else
-                       undefined
-             f (gmbasicUnsafeSlice undefined undefined v')
+      copyChunk (v, i) (Chunk f)
+        = do let j = i
+             v' <- gmbasicUnsafeGrow v (max (max (gmbasicLength v) 1) j)
+             f v'
              return (undefined, undefined)
 {-# INLINE gmvmunstreamUnknown #-}
-gunstream s
-  = runST ((\ (New p) -> p) (New (gmvmunstream (blift s))))
+gnew :: New v () -> v ()
+gnew m = runST (undefined =<< (\ (New p) -> p) m)
+gunstream s = gnew (New (gmvmunstream (blift s)))
